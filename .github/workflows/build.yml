@@ -36,6 +36,7 @@ jobs:
             25
 
       - uses: gradle/actions/setup-gradle@v4
+      - run: chmod +x gradlew
 
       - name: Build every Minecraft version x loader combination
         run: ./gradlew chiseledBuild --no-parallel --stacktrace
