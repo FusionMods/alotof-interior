@@ -8,17 +8,18 @@ ASSETS_DIR = REPO_ROOT / "src/main/resources/assets/alotofinterior"
 
 WOOD_TYPES = [
     "oak",
-    #"spruce",
-    #"birch",
-    #"jungle",
-    #"acacia",
-    #"dark_oak",
-    #"mangrove",
-    #"crimson",
-    #"warped",
+    "spruce",
+    "birch",
+    "jungle",
+    "acacia",
+    "dark_oak",
+    "mangrove",
+    "crimson",
+    "warped",
 ]
 TOP_TYPES = [
     "glass",
+    "tinted_glass",
     "white_stained_glass",
     "light_gray_stained_glass",
     "gray_stained_glass",
@@ -50,14 +51,16 @@ TOP_TYPES = [
 LEG_TOP_Y = 10
 TABLE_TOP_Y = 12
 
+LEG_RENDER_TOP_Y = LEG_TOP_Y
+
 DIRECTIONS = ("north", "east", "south", "west")
 
 # Corner name -> (from, to, the two outer faces that should cull against a neighbour).
 CORNERS = {
-    "nw": {"from": [0, 0, 0], "to": [2, LEG_TOP_Y, 2], "cull": ("north", "west")},
-    "ne": {"from": [14, 0, 0], "to": [16, LEG_TOP_Y, 2], "cull": ("north", "east")},
-    "se": {"from": [14, 0, 14], "to": [16, LEG_TOP_Y, 16], "cull": ("south", "east")},
-    "sw": {"from": [0, 0, 14], "to": [2, LEG_TOP_Y, 16], "cull": ("south", "west")},
+    "nw": {"from": [0, 0, 0], "to": [2, LEG_RENDER_TOP_Y, 2], "cull": ("north", "west")},
+    "ne": {"from": [14, 0, 0], "to": [16, LEG_RENDER_TOP_Y, 2], "cull": ("north", "east")},
+    "se": {"from": [14, 0, 14], "to": [16, LEG_RENDER_TOP_Y, 16], "cull": ("south", "east")},
+    "sw": {"from": [0, 0, 14], "to": [2, LEG_RENDER_TOP_Y, 16], "cull": ("south", "west")},
 }
 
 # Corner name -> the two BooleanProperty names (in TableBlock) that must both be
@@ -125,13 +128,20 @@ def top_textures(top_type: str) -> dict:
         }
     if top_type == "glass":
         return {"0": "minecraft:block/glass", "1": "minecraft:block/glass_pane_top"}
+    if top_type == "tinted_glass":
+        # No tinted glass pane exists in vanilla to source a trim texture from, so
+        # (like the wood tops below) reuse the same texture for both slots.
+        return {"0": "minecraft:block/tinted_glass", "1": "minecraft:block/tinted_glass"}
     return {"0": f"minecraft:block/{top_type}_planks", "1": f"minecraft:block/{top_type}_planks"}
 
 
 def render_type_for(top_type: str) -> str:
     if top_type == "glass":
         return "cutout"
-    if "stained_glass" in top_type:
+    if "stained_glass" in top_type or top_type == "tinted_glass":
+        # Confirmed by inspecting minecraft:textures/block/tinted_glass.png directly -
+        # its alpha channel only has partial values (110/200, never 0 or 255), the same
+        # semi-transparent profile as stained glass, not plain glass's binary cutout.
         return "translucent"
     return "solid"
 
@@ -146,6 +156,7 @@ def render_type_for(top_type: str) -> str:
 # (a missing-sprite tile falls through to the block's own texture, not a crash).
 CONTINUITY_GLASS_FOLDERS = {
     "glass": "standard",
+    "tinted_glass": "tinted",
     "white_stained_glass": "white",
     "light_gray_stained_glass": "light_gray",
     "gray_stained_glass": "gray",
@@ -191,16 +202,6 @@ def ctm_properties(wood_type: str, top_type: str) -> str:
 
 
 def gen_table() -> None:
-    (ASSETS_DIR / "models/block").mkdir(parents=True, exist_ok=True)
-    (ASSETS_DIR / "models/block/base").mkdir(parents=True, exist_ok=True)
-    (ASSETS_DIR / "blockstates").mkdir(parents=True, exist_ok=True)
-    (ASSETS_DIR / "models/item").mkdir(parents=True, exist_ok=True)
-    (ASSETS_DIR / "items").mkdir(parents=True, exist_ok=True)
-    (ASSETS_DIR / "optifine/ctm/table").mkdir(parents=True, exist_ok=True)
-
-    for subdir in ("models/block/base", "blockstates", "models/item", "models/block", "items", "optifine/ctm/table"):
-        for file in (ASSETS_DIR / subdir).glob("table_*"):
-            file.unlink()
 
     # Shared geometry-only base parts. The blockstate combines these via "multipart"
     # so a corner's leg (or a trim face) can be omitted when a neighbouring table
@@ -322,6 +323,125 @@ def gen_table() -> None:
             with open(ASSETS_DIR / f"optifine/ctm/table/table_{wood_type}_{top_type}.properties", "w") as f:
                 f.write(ctm_properties(wood_type, top_type))
 
+def gen_stool() -> None:
+    write_json(
+        ASSETS_DIR / "models/block/base/stool_core.json",
+        {
+            "parent": "block/block",
+            "format_version": "1.9.0",
+            "credit": "Made with Blockbench",
+            "textures": {"particle": "#0"},
+            "elements": [
+                {
+                    "from": [2, 6, 2],
+                    "to": [14, 8, 14],
+                    "rotation": {"angle": 0, "axis": "y", "origin": [2, 6, 2]},
+                    "faces": {
+                        "north": {"uv": [2, 12, 14, 14], "texture": "#1"},
+                        "east": {"uv": [2, 12, 14, 14], "texture": "#1"},
+                        "south": {"uv": [2, 12, 14, 14], "texture": "#1"},
+                        "west": {"uv": [2, 12, 14, 14], "texture": "#1"},
+                        "up": {"uv": [14, 14, 2, 2], "texture": "#1"},
+                        "down": {"uv": [14, 2, 2, 14], "texture": "#1"}
+                    }
+                },
+                {
+                    "from": [3, 0, 11],
+                    "to": [5, 6, 13],
+                    "rotation": {"angle": 0, "axis": "y", "origin": [3, 0, 11]},
+                    "faces": {
+                        "north": {"uv": [4, 10, 6, 16], "texture": "#0"},
+                        "east": {"uv": [2, 10, 4, 16], "texture": "#0"},
+                        "south": {"uv": [8, 10, 10, 16], "texture": "#0"},
+                        "west": {"uv": [6, 10, 8, 16], "texture": "#0"},
+                        "down": {"uv": [8, 8, 6, 10], "texture": "#0", "cullface": "down"}
+                    }
+                },
+                {
+                    "from": [11, 0, 11],
+                    "to": [13, 6, 13],
+                    "rotation": {"angle": 0, "axis": "y", "origin": [11, 0, 11]},
+                    "faces": {
+                        "north": {"uv": [4, 10, 6, 16], "texture": "#0"},
+                        "east": {"uv": [2, 10, 4, 16], "texture": "#0"},
+                        "south": {"uv": [8, 10, 10, 16], "texture": "#0"},
+                        "west": {"uv": [6, 10, 8, 16], "texture": "#0"},
+                        "down": {"uv": [8, 8, 6, 10], "texture": "#0", "cullface": "down"}
+                    }
+                },
+                {
+                    "from": [3, 0, 3],
+                    "to": [5, 6, 5],
+                    "rotation": {"angle": 0, "axis": "y", "origin": [3, 0, 3]},
+                    "faces": {
+                        "north": {"uv": [8, 10, 10, 16], "texture": "#0"},
+                        "east": {"uv": [6, 10, 8, 16], "texture": "#0"},
+                        "south": {"uv": [12, 10, 14, 16], "texture": "#0"},
+                        "west": {"uv": [10, 10, 12, 16], "texture": "#0"},
+                        "down": {"uv": [12, 8, 10, 10], "texture": "#0", "cullface": "down"}
+                    }
+                },
+                {
+                    "from": [11, 0, 3],
+                    "to": [13, 6, 5],
+                    "rotation": {"angle": 0, "axis": "y", "origin": [11, 0, 3]},
+                    "faces": {
+                        "north": {"uv": [8, 10, 10, 16], "texture": "#0"},
+                        "east": {"uv": [6, 10, 8, 16], "texture": "#0"},
+                        "south": {"uv": [12, 10, 14, 16], "texture": "#0"},
+                        "west": {"uv": [10, 10, 12, 16], "texture": "#0"},
+                        "down": {"uv": [12, 8, 10, 10], "texture": "#0", "cullface": "down"}
+                    }
+                }
+            ]
+        },
+    )
+    
+    for wood_type_leg in WOOD_TYPES:
+        for wood_type_seat in WOOD_TYPES:
+            write_json(
+                ASSETS_DIR / f"models/block/stool_{wood_type_leg}_{wood_type_seat}.json",
+                {
+                    "parent": "alotofinterior:block/base/stool_core",
+                    "textures": {
+                        "0": f"minecraft:block/{wood_type_leg}_planks",
+                        "1": f"minecraft:block/{wood_type_seat}_planks",
+                    },
+                },
+            )
+            
+            # blockstate (stool doesn't have any multipart conditions, so it's just a single model with no variants)
+            write_json(
+                ASSETS_DIR / f"blockstates/stool_{wood_type_leg}_{wood_type_seat}.json",
+                {
+                    "variants": {
+                        "": {"model": f"alotofinterior:block/stool_{wood_type_leg}_{wood_type_seat}"}
+                    }
+                },
+            )
+            # item model
+            write_json(
+                ASSETS_DIR / f"models/item/stool_{wood_type_leg}_{wood_type_seat}.json",
+                {"parent": f"alotofinterior:block/stool_{wood_type_leg}_{wood_type_seat}"},
+            )
+            write_json(
+                ASSETS_DIR / f"items/stool_{wood_type_leg}_{wood_type_seat}.json",
+                {"model": {"type": "minecraft:model", "model": f"alotofinterior:block/stool_{wood_type_leg}_{wood_type_seat}"}},
+            )
+
 
 if __name__ == "__main__":
+    (ASSETS_DIR / "models/block").mkdir(parents=True, exist_ok=True)
+    (ASSETS_DIR / "models/block/base").mkdir(parents=True, exist_ok=True)
+    (ASSETS_DIR / "blockstates").mkdir(parents=True, exist_ok=True)
+    (ASSETS_DIR / "models/item").mkdir(parents=True, exist_ok=True)
+    (ASSETS_DIR / "items").mkdir(parents=True, exist_ok=True)
+    (ASSETS_DIR / "optifine/ctm/table").mkdir(parents=True, exist_ok=True)
+
+    for subdir in ("models/block/base", "blockstates", "models/item", "models/block", "items", "optifine/ctm/table"):
+        for file in (ASSETS_DIR / subdir).glob("table_*"):
+            file.unlink()
+        for file in (ASSETS_DIR / subdir).glob("stool_*"):
+            file.unlink()
     gen_table()
+    gen_stool()

@@ -1,0 +1,6 @@
+{
+    "parent": "alotofinterior:block/base/table_leg_nw",
+    "textures": {
+        "2": "minecraft:block/warped_planks"
+    }
+}

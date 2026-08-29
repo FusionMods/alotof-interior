@@ -27,13 +27,13 @@ jobs:
       # One JDK to launch Gradle itself - the foojay toolchain resolver (see
       # settings.gradle.kts) auto-downloads whichever per-version JDK (17/21/25, see
       # each versions/<mc>/gradle.properties) each subproject actually needs to compile.
-      - uses: actions/setup-java@v4
+      - uses: actions/setup-java@v5
         with:
           distribution: temurin
           java-version: |
-            - 17
-            - 21
-            - 25
+            17
+            21
+            25
 
       - uses: gradle/actions/setup-gradle@v4
 

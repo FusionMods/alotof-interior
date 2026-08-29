@@ -1,0 +1,77 @@
+{
+    "multipart": [
+        {
+            "apply": {
+                "model": "alotofinterior:block/table_top_core_dark_oak"
+            }
+        },
+        {
+            "when": {
+                "north": "false"
+            },
+            "apply": {
+                "model": "alotofinterior:block/table_top_trim_north_dark_oak"
+            }
+        },
+        {
+            "when": {
+                "east": "false"
+            },
+            "apply": {
+                "model": "alotofinterior:block/table_top_trim_east_dark_oak"
+            }
+        },
+        {
+            "when": {
+                "south": "false"
+            },
+            "apply": {
+                "model": "alotofinterior:block/table_top_trim_south_dark_oak"
+            }
+        },
+        {
+            "when": {
+                "west": "false"
+            },
+            "apply": {
+                "model": "alotofinterior:block/table_top_trim_west_dark_oak"
+            }
+        },
+        {
+            "when": {
+                "north": "false",
+                "west": "false"
+            },
+            "apply": {
+                "model": "alotofinterior:block/table_leg_mangrove_nw"
+            }
+        },
+        {
+            "when": {
+                "north": "false",
+                "east": "false"
+            },
+            "apply": {
+                "model": "alotofinterior:block/table_leg_mangrove_ne"
+            }
+        },
+        {
+            "when": {
+                "south": "false",
+                "east": "false"
+            },
+            "apply": {
+                "model": "alotofinterior:block/table_leg_mangrove_se"
+            }
+        },
+        {
+            "when": {
+                "south": "false",
+                "west": "false"
+            },
+            "apply": {
+                "model": "alotofinterior:block/table_leg_mangrove_sw"
+            }
+        }
+    ]
+}

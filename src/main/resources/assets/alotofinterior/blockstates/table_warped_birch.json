@@ -1,0 +1,77 @@
+{
+    "multipart": [
+        {
+            "apply": {
+                "model": "alotofinterior:block/table_top_core_birch"
+            }
+        },
+        {
+            "when": {
+                "north": "false"
+            },
+            "apply": {
+                "model": "alotofinterior:block/table_top_trim_north_birch"
+            }
+        },
+        {
+            "when": {
+                "east": "false"
+            },
+            "apply": {
+                "model": "alotofinterior:block/table_top_trim_east_birch"
+            }
+        },
+        {
+            "when": {
+                "south": "false"
+            },
+            "apply": {
+                "model": "alotofinterior:block/table_top_trim_south_birch"
+            }
+        },
+        {
+            "when": {
+                "west": "false"
+            },
+            "apply": {
+                "model": "alotofinterior:block/table_top_trim_west_birch"
+            }
+        },
+        {
+            "when": {
+                "north": "false",
+                "west": "false"
+            },
+            "apply": {
+                "model": "alotofinterior:block/table_leg_warped_nw"
+            }
+        },
+        {
+            "when": {
+                "north": "false",
+                "east": "false"
+            },
+            "apply": {
+                "model": "alotofinterior:block/table_leg_warped_ne"
+            }
+        },
+        {
+            "when": {
+                "south": "false",
+                "east": "false"
+            },
+            "apply": {
+                "model": "alotofinterior:block/table_leg_warped_se"
+            }
+        },
+        {
+            "when": {
+                "south": "false",
+                "west": "false"
+            },
+            "apply": {
+                "model": "alotofinterior:block/table_leg_warped_sw"
+            }
+        }
+    ]
+}

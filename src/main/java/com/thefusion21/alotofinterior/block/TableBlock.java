@@ -1,4 +1,5 @@
 package com.thefusion21.alotofinterior.block;
+
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -13,8 +14,10 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.material.FluidState;
+import net.minecraft.world.level.material.Fluids;
 //? if >= 1.21.6 {
 /*
 import net.minecraft.world.level.ScheduledTickAccess;
@@ -26,7 +29,12 @@ public class TableBlock extends Block implements SimpleWaterloggedBlock {
     public static final BooleanProperty EAST = BooleanProperty.create("east");
     public static final BooleanProperty SOUTH = BooleanProperty.create("south");
     public static final BooleanProperty WEST = BooleanProperty.create("west");
-    public static final BooleanProperty WATERLOGGED = BooleanProperty.create("waterlogged");
+    // Must reuse vanilla's own instance, not a new BooleanProperty.create("waterlogged") -
+    // SimpleWaterloggedBlock's default placeLiquid()/getFluidState() hard-code a reference
+    // to BlockStateProperties.WATERLOGGED, and blockstate property lookup is identity-based,
+    // so a same-named-but-different property object throws "Cannot get property ... as it
+    // does not exist" the moment a water bucket is used on this block.
+    public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
     // Always 3/4 of a block tall - legs from y=0 to y=10, top slab from y=10 to y=12,
     // matching the geometry gen.py writes into models/block/base/table_*.json.
@@ -70,6 +78,15 @@ public class TableBlock extends Block implements SimpleWaterloggedBlock {
     @Override
     public boolean useShapeForLightOcclusion(BlockState blockState) {
         return false;
+    }
+
+    @Override
+    public FluidState getFluidState(BlockState blockState) {
+        // SimpleWaterloggedBlock's default placeLiquid() only flips the WATERLOGGED
+        // property - Block#getFluidState() isn't touched by that interface, so without
+        // this override the game still thinks the block has no fluid at all: no water
+        // render, no swimming/breathing, no fluid ticking.
+        return blockState.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(blockState);
     }
 
     @Override
