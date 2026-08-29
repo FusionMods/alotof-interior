@@ -36,13 +36,15 @@ public class TableBlock extends Block implements SimpleWaterloggedBlock {
     // does not exist" the moment a water bucket is used on this block.
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
-    // Always 3/4 of a block tall - legs from y=0 to y=10, top slab from y=10 to y=12,
-    // matching the geometry gen.py writes into models/block/base/table_*.json.
-    private static final VoxelShape TOP = Block.box(0, 10, 0, 16, 12, 16);
-    private static final VoxelShape LEG_NW = Block.box(0, 0, 0, 2, 10, 2);
-    private static final VoxelShape LEG_NE = Block.box(14, 0, 0, 16, 10, 2);
-    private static final VoxelShape LEG_SE = Block.box(14, 0, 14, 16, 10, 16);
-    private static final VoxelShape LEG_SW = Block.box(0, 0, 14, 2, 10, 16);
+    // Legs from y=0 to y=11, top slab from y=11 to y=13 - one unit taller than a plain
+    // 3/4 block so a player sitting on a nearby stool has knee clearance underneath
+    // instead of clipping the tabletop - matching the geometry gen.py writes into
+    // models/block/base/table_*.json.
+    private static final VoxelShape TOP = Block.box(0, 11, 0, 16, 13, 16);
+    private static final VoxelShape LEG_NW = Block.box(0, 0, 0, 2, 11, 2);
+    private static final VoxelShape LEG_NE = Block.box(14, 0, 0, 16, 11, 2);
+    private static final VoxelShape LEG_SE = Block.box(14, 0, 14, 16, 11, 16);
+    private static final VoxelShape LEG_SW = Block.box(0, 0, 14, 2, 11, 16);
 
     public TableBlock(Properties properties) {
         super(properties);

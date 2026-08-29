@@ -1,15 +1,19 @@
 package com.thefusion21.alotofinterior.block;
 
+import com.thefusion21.alotofinterior.entity.SeatEntity;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.state.BlockState;
@@ -19,13 +23,19 @@ import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
+import net.minecraft.world.phys.BlockHitResult;
+//? if < 1.20.5 {
+/*
+import net.minecraft.world.InteractionHand;
+*/
+//?}
 //? if >= 1.21.6 {
 /*
 import net.minecraft.world.level.ScheduledTickAccess;
 */
 //?}
 
-public class StoolBlock extends Block implements SimpleWaterloggedBlock {
+public class StoolBlock extends Block implements SimpleWaterloggedBlock, Seat {
     // Must reuse vanilla's own instance, not a new BooleanProperty.create("waterlogged") -
     // SimpleWaterloggedBlock's default placeLiquid()/getFluidState() hard-code a reference
     // to BlockStateProperties.WATERLOGGED, and blockstate property lookup is identity-based,
@@ -74,4 +84,34 @@ public class StoolBlock extends Block implements SimpleWaterloggedBlock {
             CollisionContext collisionContext) {
         return Shapes.or(LEG_NW, LEG_NE, LEG_SE, LEG_SW, SEAT);
     }
+
+    @Override
+    public double getSeatHeight(BlockState state) {
+        // Matches the SEAT box's top face (y=8 out of 16) above.
+        return 0.5;
+    }
+
+    @Override
+    public float getSeatYaw(BlockState state) {
+        return 0;
+    }
+
+    @Override
+    public float getMaxYawDeviation(BlockState state) {
+        return Float.POSITIVE_INFINITY;
+    }
+
+    //? if < 1.20.5 {
+    /*
+    @Override
+    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+        return SeatEntity.sit(this, state, level, pos, player);
+    }
+    */
+    //?} else {
+    @Override
+    protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hit) {
+        return SeatEntity.sit(this, state, level, pos, player);
+    }
+    //?}
 }

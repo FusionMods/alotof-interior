@@ -1,5 +1,7 @@
 package com.thefusion21.alotofinterior.client;
 
+import com.thefusion21.alotofinterior.registry.ModEntities;
+import dev.architectury.registry.client.level.entity.EntityRendererRegistry;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 //? if < 26.1 {
@@ -24,6 +26,15 @@ public final class ALotOfInteriorClient {
         //? if < 26.1 {
         registerRenderTypes();
         //?}
+        registerEntityRenderers();
+    }
+
+    // SeatEntity is fully invisible, but every EntityType still needs a renderer
+    // registered or the client crashes trying to draw it - unlike registerRenderTypes(),
+    // Architectury's EntityRendererRegistry is still present in 26.1+, so this isn't
+    // gated to before it.
+    private static void registerEntityRenderers() {
+        EntityRendererRegistry.register(ModEntities.SEAT, SeatEntityRenderer::new);
     }
 
     // Before 26.1, Minecraft picks a single render layer per Block for chunk rendering
