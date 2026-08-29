@@ -1,0 +1,31 @@
+{
+    "variants": {
+        "facing=north,half=lower": {
+            "model": "alotofinterior:block/chair_simple_bamboo_dark_oak"
+        },
+        "facing=east,half=lower": {
+            "model": "alotofinterior:block/chair_simple_bamboo_dark_oak",
+            "y": 90
+        },
+        "facing=south,half=lower": {
+            "model": "alotofinterior:block/chair_simple_bamboo_dark_oak",
+            "y": 180
+        },
+        "facing=west,half=lower": {
+            "model": "alotofinterior:block/chair_simple_bamboo_dark_oak",
+            "y": 270
+        },
+        "facing=north,half=upper": {
+            "model": "alotofinterior:block/base/chair_simple_upper"
+        },
+        "facing=east,half=upper": {
+            "model": "alotofinterior:block/base/chair_simple_upper"
+        },
+        "facing=south,half=upper": {
+            "model": "alotofinterior:block/base/chair_simple_upper"
+        },
+        "facing=west,half=upper": {
+            "model": "alotofinterior:block/base/chair_simple_upper"
+        }
+    }
+}

@@ -16,6 +16,12 @@ WOOD_TYPES = [
     "mangrove",
     "crimson",
     "warped",
+    # pale_oak needs Java-side registration gated to >=1.21.6 (added in 1.21.2 - see
+    # ModBlocks.java/ModCreativeTabs.java/ALotOfInteriorClient.java) - cherry/bamboo have
+    # existed since 1.20, so every version this project targets already has them.
+    "pale_oak",
+    "cherry",
+    "bamboo",
 ]
 TOP_TYPES = [
     "glass",
@@ -45,7 +51,17 @@ TOP_TYPES = [
     "mangrove",
     "crimson",
     "warped",
+    "pale_oak",
+    "cherry",
+    "bamboo",
 ]
+
+# Wood types whose Java registrations need a Stonecutter version gate, and the minimum
+# version each needs - kept here (not just in the Java-side generator script) since it's
+# a fact about the wood itself, not about any one block type's registration code.
+WOOD_TYPE_MIN_VERSION = {
+    "pale_oak": "1.21.6",
+}
 
 # Legs from y=0 to y=11, top slab from y=11 to y=13 - one unit taller than a plain 3/4
 # block so a player sitting on a nearby stool (seat height 8) has knee clearance

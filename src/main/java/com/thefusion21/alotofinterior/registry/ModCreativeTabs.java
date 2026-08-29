@@ -62,6 +62,13 @@ public final class ModCreativeTabs {
             ModBlocks.OAK_MANGROVE_TABLE,
             ModBlocks.OAK_CRIMSON_TABLE,
             ModBlocks.OAK_WARPED_TABLE,
+        //? if >= 1.21.6 {
+        /*
+            ModBlocks.OAK_PALE_OAK_TABLE,
+        */
+        //?}
+            ModBlocks.OAK_CHERRY_TABLE,
+            ModBlocks.OAK_BAMBOO_TABLE,
             ModBlocks.OAK_GLASS_TABLE,
             ModBlocks.OAK_TINTED_GLASS_TABLE,
             ModBlocks.OAK_WHITE_STAINED_GLASS_TABLE,
@@ -80,7 +87,6 @@ public final class ModCreativeTabs {
             ModBlocks.OAK_PURPLE_STAINED_GLASS_TABLE,
             ModBlocks.OAK_MAGENTA_STAINED_GLASS_TABLE,
             ModBlocks.OAK_PINK_STAINED_GLASS_TABLE,
-
             ModBlocks.SPRUCE_OAK_TABLE,
             ModBlocks.SPRUCE_SPRUCE_TABLE,
             ModBlocks.SPRUCE_BIRCH_TABLE,
@@ -90,6 +96,13 @@ public final class ModCreativeTabs {
             ModBlocks.SPRUCE_MANGROVE_TABLE,
             ModBlocks.SPRUCE_CRIMSON_TABLE,
             ModBlocks.SPRUCE_WARPED_TABLE,
+        //? if >= 1.21.6 {
+        /*
+            ModBlocks.SPRUCE_PALE_OAK_TABLE,
+        */
+        //?}
+            ModBlocks.SPRUCE_CHERRY_TABLE,
+            ModBlocks.SPRUCE_BAMBOO_TABLE,
             ModBlocks.SPRUCE_GLASS_TABLE,
             ModBlocks.SPRUCE_TINTED_GLASS_TABLE,
             ModBlocks.SPRUCE_WHITE_STAINED_GLASS_TABLE,
@@ -108,7 +121,6 @@ public final class ModCreativeTabs {
             ModBlocks.SPRUCE_PURPLE_STAINED_GLASS_TABLE,
             ModBlocks.SPRUCE_MAGENTA_STAINED_GLASS_TABLE,
             ModBlocks.SPRUCE_PINK_STAINED_GLASS_TABLE,
-
             ModBlocks.BIRCH_OAK_TABLE,
             ModBlocks.BIRCH_SPRUCE_TABLE,
             ModBlocks.BIRCH_BIRCH_TABLE,
@@ -118,6 +130,13 @@ public final class ModCreativeTabs {
             ModBlocks.BIRCH_MANGROVE_TABLE,
             ModBlocks.BIRCH_CRIMSON_TABLE,
             ModBlocks.BIRCH_WARPED_TABLE,
+        //? if >= 1.21.6 {
+        /*
+            ModBlocks.BIRCH_PALE_OAK_TABLE,
+        */
+        //?}
+            ModBlocks.BIRCH_CHERRY_TABLE,
+            ModBlocks.BIRCH_BAMBOO_TABLE,
             ModBlocks.BIRCH_GLASS_TABLE,
             ModBlocks.BIRCH_TINTED_GLASS_TABLE,
             ModBlocks.BIRCH_WHITE_STAINED_GLASS_TABLE,
@@ -136,7 +155,6 @@ public final class ModCreativeTabs {
             ModBlocks.BIRCH_PURPLE_STAINED_GLASS_TABLE,
             ModBlocks.BIRCH_MAGENTA_STAINED_GLASS_TABLE,
             ModBlocks.BIRCH_PINK_STAINED_GLASS_TABLE,
-
             ModBlocks.JUNGLE_OAK_TABLE,
             ModBlocks.JUNGLE_SPRUCE_TABLE,
             ModBlocks.JUNGLE_BIRCH_TABLE,
@@ -146,6 +164,13 @@ public final class ModCreativeTabs {
             ModBlocks.JUNGLE_MANGROVE_TABLE,
             ModBlocks.JUNGLE_CRIMSON_TABLE,
             ModBlocks.JUNGLE_WARPED_TABLE,
+        //? if >= 1.21.6 {
+        /*
+            ModBlocks.JUNGLE_PALE_OAK_TABLE,
+        */
+        //?}
+            ModBlocks.JUNGLE_CHERRY_TABLE,
+            ModBlocks.JUNGLE_BAMBOO_TABLE,
             ModBlocks.JUNGLE_GLASS_TABLE,
             ModBlocks.JUNGLE_TINTED_GLASS_TABLE,
             ModBlocks.JUNGLE_WHITE_STAINED_GLASS_TABLE,
@@ -164,7 +189,6 @@ public final class ModCreativeTabs {
             ModBlocks.JUNGLE_PURPLE_STAINED_GLASS_TABLE,
             ModBlocks.JUNGLE_MAGENTA_STAINED_GLASS_TABLE,
             ModBlocks.JUNGLE_PINK_STAINED_GLASS_TABLE,
-
             ModBlocks.ACACIA_OAK_TABLE,
             ModBlocks.ACACIA_SPRUCE_TABLE,
             ModBlocks.ACACIA_BIRCH_TABLE,
@@ -174,6 +198,13 @@ public final class ModCreativeTabs {
             ModBlocks.ACACIA_MANGROVE_TABLE,
             ModBlocks.ACACIA_CRIMSON_TABLE,
             ModBlocks.ACACIA_WARPED_TABLE,
+        //? if >= 1.21.6 {
+        /*
+            ModBlocks.ACACIA_PALE_OAK_TABLE,
+        */
+        //?}
+            ModBlocks.ACACIA_CHERRY_TABLE,
+            ModBlocks.ACACIA_BAMBOO_TABLE,
             ModBlocks.ACACIA_GLASS_TABLE,
             ModBlocks.ACACIA_TINTED_GLASS_TABLE,
             ModBlocks.ACACIA_WHITE_STAINED_GLASS_TABLE,
@@ -192,7 +223,6 @@ public final class ModCreativeTabs {
             ModBlocks.ACACIA_PURPLE_STAINED_GLASS_TABLE,
             ModBlocks.ACACIA_MAGENTA_STAINED_GLASS_TABLE,
             ModBlocks.ACACIA_PINK_STAINED_GLASS_TABLE,
-
             ModBlocks.DARK_OAK_OAK_TABLE,
             ModBlocks.DARK_OAK_SPRUCE_TABLE,
             ModBlocks.DARK_OAK_BIRCH_TABLE,
@@ -202,6 +232,13 @@ public final class ModCreativeTabs {
             ModBlocks.DARK_OAK_MANGROVE_TABLE,
             ModBlocks.DARK_OAK_CRIMSON_TABLE,
             ModBlocks.DARK_OAK_WARPED_TABLE,
+        //? if >= 1.21.6 {
+        /*
+            ModBlocks.DARK_OAK_PALE_OAK_TABLE,
+        */
+        //?}
+            ModBlocks.DARK_OAK_CHERRY_TABLE,
+            ModBlocks.DARK_OAK_BAMBOO_TABLE,
             ModBlocks.DARK_OAK_GLASS_TABLE,
             ModBlocks.DARK_OAK_TINTED_GLASS_TABLE,
             ModBlocks.DARK_OAK_WHITE_STAINED_GLASS_TABLE,
@@ -220,7 +257,6 @@ public final class ModCreativeTabs {
             ModBlocks.DARK_OAK_PURPLE_STAINED_GLASS_TABLE,
             ModBlocks.DARK_OAK_MAGENTA_STAINED_GLASS_TABLE,
             ModBlocks.DARK_OAK_PINK_STAINED_GLASS_TABLE,
-
             ModBlocks.MANGROVE_OAK_TABLE,
             ModBlocks.MANGROVE_SPRUCE_TABLE,
             ModBlocks.MANGROVE_BIRCH_TABLE,
@@ -230,6 +266,13 @@ public final class ModCreativeTabs {
             ModBlocks.MANGROVE_MANGROVE_TABLE,
             ModBlocks.MANGROVE_CRIMSON_TABLE,
             ModBlocks.MANGROVE_WARPED_TABLE,
+        //? if >= 1.21.6 {
+        /*
+            ModBlocks.MANGROVE_PALE_OAK_TABLE,
+        */
+        //?}
+            ModBlocks.MANGROVE_CHERRY_TABLE,
+            ModBlocks.MANGROVE_BAMBOO_TABLE,
             ModBlocks.MANGROVE_GLASS_TABLE,
             ModBlocks.MANGROVE_TINTED_GLASS_TABLE,
             ModBlocks.MANGROVE_WHITE_STAINED_GLASS_TABLE,
@@ -248,7 +291,6 @@ public final class ModCreativeTabs {
             ModBlocks.MANGROVE_PURPLE_STAINED_GLASS_TABLE,
             ModBlocks.MANGROVE_MAGENTA_STAINED_GLASS_TABLE,
             ModBlocks.MANGROVE_PINK_STAINED_GLASS_TABLE,
-
             ModBlocks.CRIMSON_OAK_TABLE,
             ModBlocks.CRIMSON_SPRUCE_TABLE,
             ModBlocks.CRIMSON_BIRCH_TABLE,
@@ -258,6 +300,13 @@ public final class ModCreativeTabs {
             ModBlocks.CRIMSON_MANGROVE_TABLE,
             ModBlocks.CRIMSON_CRIMSON_TABLE,
             ModBlocks.CRIMSON_WARPED_TABLE,
+        //? if >= 1.21.6 {
+        /*
+            ModBlocks.CRIMSON_PALE_OAK_TABLE,
+        */
+        //?}
+            ModBlocks.CRIMSON_CHERRY_TABLE,
+            ModBlocks.CRIMSON_BAMBOO_TABLE,
             ModBlocks.CRIMSON_GLASS_TABLE,
             ModBlocks.CRIMSON_TINTED_GLASS_TABLE,
             ModBlocks.CRIMSON_WHITE_STAINED_GLASS_TABLE,
@@ -276,7 +325,6 @@ public final class ModCreativeTabs {
             ModBlocks.CRIMSON_PURPLE_STAINED_GLASS_TABLE,
             ModBlocks.CRIMSON_MAGENTA_STAINED_GLASS_TABLE,
             ModBlocks.CRIMSON_PINK_STAINED_GLASS_TABLE,
-
             ModBlocks.WARPED_OAK_TABLE,
             ModBlocks.WARPED_SPRUCE_TABLE,
             ModBlocks.WARPED_BIRCH_TABLE,
@@ -286,6 +334,13 @@ public final class ModCreativeTabs {
             ModBlocks.WARPED_MANGROVE_TABLE,
             ModBlocks.WARPED_CRIMSON_TABLE,
             ModBlocks.WARPED_WARPED_TABLE,
+        //? if >= 1.21.6 {
+        /*
+            ModBlocks.WARPED_PALE_OAK_TABLE,
+        */
+        //?}
+            ModBlocks.WARPED_CHERRY_TABLE,
+            ModBlocks.WARPED_BAMBOO_TABLE,
             ModBlocks.WARPED_GLASS_TABLE,
             ModBlocks.WARPED_TINTED_GLASS_TABLE,
             ModBlocks.WARPED_WHITE_STAINED_GLASS_TABLE,
@@ -303,9 +358,110 @@ public final class ModCreativeTabs {
             ModBlocks.WARPED_BLUE_STAINED_GLASS_TABLE,
             ModBlocks.WARPED_PURPLE_STAINED_GLASS_TABLE,
             ModBlocks.WARPED_MAGENTA_STAINED_GLASS_TABLE,
-            ModBlocks.WARPED_PINK_STAINED_GLASS_TABLE
+            ModBlocks.WARPED_PINK_STAINED_GLASS_TABLE,
+        //? if >= 1.21.6 {
+        /*
+            ModBlocks.PALE_OAK_OAK_TABLE,
+            ModBlocks.PALE_OAK_SPRUCE_TABLE,
+            ModBlocks.PALE_OAK_BIRCH_TABLE,
+            ModBlocks.PALE_OAK_JUNGLE_TABLE,
+            ModBlocks.PALE_OAK_ACACIA_TABLE,
+            ModBlocks.PALE_OAK_DARK_OAK_TABLE,
+            ModBlocks.PALE_OAK_MANGROVE_TABLE,
+            ModBlocks.PALE_OAK_CRIMSON_TABLE,
+            ModBlocks.PALE_OAK_WARPED_TABLE,
+            ModBlocks.PALE_OAK_PALE_OAK_TABLE,
+            ModBlocks.PALE_OAK_CHERRY_TABLE,
+            ModBlocks.PALE_OAK_BAMBOO_TABLE,
+            ModBlocks.PALE_OAK_GLASS_TABLE,
+            ModBlocks.PALE_OAK_TINTED_GLASS_TABLE,
+            ModBlocks.PALE_OAK_WHITE_STAINED_GLASS_TABLE,
+            ModBlocks.PALE_OAK_LIGHT_GRAY_STAINED_GLASS_TABLE,
+            ModBlocks.PALE_OAK_GRAY_STAINED_GLASS_TABLE,
+            ModBlocks.PALE_OAK_BLACK_STAINED_GLASS_TABLE,
+            ModBlocks.PALE_OAK_BROWN_STAINED_GLASS_TABLE,
+            ModBlocks.PALE_OAK_RED_STAINED_GLASS_TABLE,
+            ModBlocks.PALE_OAK_ORANGE_STAINED_GLASS_TABLE,
+            ModBlocks.PALE_OAK_YELLOW_STAINED_GLASS_TABLE,
+            ModBlocks.PALE_OAK_LIME_STAINED_GLASS_TABLE,
+            ModBlocks.PALE_OAK_GREEN_STAINED_GLASS_TABLE,
+            ModBlocks.PALE_OAK_CYAN_STAINED_GLASS_TABLE,
+            ModBlocks.PALE_OAK_LIGHT_BLUE_STAINED_GLASS_TABLE,
+            ModBlocks.PALE_OAK_BLUE_STAINED_GLASS_TABLE,
+            ModBlocks.PALE_OAK_PURPLE_STAINED_GLASS_TABLE,
+            ModBlocks.PALE_OAK_MAGENTA_STAINED_GLASS_TABLE,
+            ModBlocks.PALE_OAK_PINK_STAINED_GLASS_TABLE,
+        */
+        //?}
+            ModBlocks.CHERRY_OAK_TABLE,
+            ModBlocks.CHERRY_SPRUCE_TABLE,
+            ModBlocks.CHERRY_BIRCH_TABLE,
+            ModBlocks.CHERRY_JUNGLE_TABLE,
+            ModBlocks.CHERRY_ACACIA_TABLE,
+            ModBlocks.CHERRY_DARK_OAK_TABLE,
+            ModBlocks.CHERRY_MANGROVE_TABLE,
+            ModBlocks.CHERRY_CRIMSON_TABLE,
+            ModBlocks.CHERRY_WARPED_TABLE,
+        //? if >= 1.21.6 {
+        /*
+            ModBlocks.CHERRY_PALE_OAK_TABLE,
+        */
+        //?}
+            ModBlocks.CHERRY_CHERRY_TABLE,
+            ModBlocks.CHERRY_BAMBOO_TABLE,
+            ModBlocks.CHERRY_GLASS_TABLE,
+            ModBlocks.CHERRY_TINTED_GLASS_TABLE,
+            ModBlocks.CHERRY_WHITE_STAINED_GLASS_TABLE,
+            ModBlocks.CHERRY_LIGHT_GRAY_STAINED_GLASS_TABLE,
+            ModBlocks.CHERRY_GRAY_STAINED_GLASS_TABLE,
+            ModBlocks.CHERRY_BLACK_STAINED_GLASS_TABLE,
+            ModBlocks.CHERRY_BROWN_STAINED_GLASS_TABLE,
+            ModBlocks.CHERRY_RED_STAINED_GLASS_TABLE,
+            ModBlocks.CHERRY_ORANGE_STAINED_GLASS_TABLE,
+            ModBlocks.CHERRY_YELLOW_STAINED_GLASS_TABLE,
+            ModBlocks.CHERRY_LIME_STAINED_GLASS_TABLE,
+            ModBlocks.CHERRY_GREEN_STAINED_GLASS_TABLE,
+            ModBlocks.CHERRY_CYAN_STAINED_GLASS_TABLE,
+            ModBlocks.CHERRY_LIGHT_BLUE_STAINED_GLASS_TABLE,
+            ModBlocks.CHERRY_BLUE_STAINED_GLASS_TABLE,
+            ModBlocks.CHERRY_PURPLE_STAINED_GLASS_TABLE,
+            ModBlocks.CHERRY_MAGENTA_STAINED_GLASS_TABLE,
+            ModBlocks.CHERRY_PINK_STAINED_GLASS_TABLE,
+            ModBlocks.BAMBOO_OAK_TABLE,
+            ModBlocks.BAMBOO_SPRUCE_TABLE,
+            ModBlocks.BAMBOO_BIRCH_TABLE,
+            ModBlocks.BAMBOO_JUNGLE_TABLE,
+            ModBlocks.BAMBOO_ACACIA_TABLE,
+            ModBlocks.BAMBOO_DARK_OAK_TABLE,
+            ModBlocks.BAMBOO_MANGROVE_TABLE,
+            ModBlocks.BAMBOO_CRIMSON_TABLE,
+            ModBlocks.BAMBOO_WARPED_TABLE,
+        //? if >= 1.21.6 {
+        /*
+            ModBlocks.BAMBOO_PALE_OAK_TABLE,
+        */
+        //?}
+            ModBlocks.BAMBOO_CHERRY_TABLE,
+            ModBlocks.BAMBOO_BAMBOO_TABLE,
+            ModBlocks.BAMBOO_GLASS_TABLE,
+            ModBlocks.BAMBOO_TINTED_GLASS_TABLE,
+            ModBlocks.BAMBOO_WHITE_STAINED_GLASS_TABLE,
+            ModBlocks.BAMBOO_LIGHT_GRAY_STAINED_GLASS_TABLE,
+            ModBlocks.BAMBOO_GRAY_STAINED_GLASS_TABLE,
+            ModBlocks.BAMBOO_BLACK_STAINED_GLASS_TABLE,
+            ModBlocks.BAMBOO_BROWN_STAINED_GLASS_TABLE,
+            ModBlocks.BAMBOO_RED_STAINED_GLASS_TABLE,
+            ModBlocks.BAMBOO_ORANGE_STAINED_GLASS_TABLE,
+            ModBlocks.BAMBOO_YELLOW_STAINED_GLASS_TABLE,
+            ModBlocks.BAMBOO_LIME_STAINED_GLASS_TABLE,
+            ModBlocks.BAMBOO_GREEN_STAINED_GLASS_TABLE,
+            ModBlocks.BAMBOO_CYAN_STAINED_GLASS_TABLE,
+            ModBlocks.BAMBOO_LIGHT_BLUE_STAINED_GLASS_TABLE,
+            ModBlocks.BAMBOO_BLUE_STAINED_GLASS_TABLE,
+            ModBlocks.BAMBOO_PURPLE_STAINED_GLASS_TABLE,
+            ModBlocks.BAMBOO_MAGENTA_STAINED_GLASS_TABLE,
+            ModBlocks.BAMBOO_PINK_STAINED_GLASS_TABLE
         );
-
         CreativeTabRegistry.append(ALOTOFINTERIOR_TAB,
             ModBlocks.OAK_OAK_STOOL,
             ModBlocks.OAK_SPRUCE_STOOL,
@@ -316,6 +472,13 @@ public final class ModCreativeTabs {
             ModBlocks.OAK_MANGROVE_STOOL,
             ModBlocks.OAK_CRIMSON_STOOL,
             ModBlocks.OAK_WARPED_STOOL,
+        //? if >= 1.21.6 {
+        /*
+            ModBlocks.OAK_PALE_OAK_STOOL,
+        */
+        //?}
+            ModBlocks.OAK_CHERRY_STOOL,
+            ModBlocks.OAK_BAMBOO_STOOL,
             ModBlocks.SPRUCE_OAK_STOOL,
             ModBlocks.SPRUCE_SPRUCE_STOOL,
             ModBlocks.SPRUCE_BIRCH_STOOL,
@@ -325,6 +488,13 @@ public final class ModCreativeTabs {
             ModBlocks.SPRUCE_MANGROVE_STOOL,
             ModBlocks.SPRUCE_CRIMSON_STOOL,
             ModBlocks.SPRUCE_WARPED_STOOL,
+        //? if >= 1.21.6 {
+        /*
+            ModBlocks.SPRUCE_PALE_OAK_STOOL,
+        */
+        //?}
+            ModBlocks.SPRUCE_CHERRY_STOOL,
+            ModBlocks.SPRUCE_BAMBOO_STOOL,
             ModBlocks.BIRCH_OAK_STOOL,
             ModBlocks.BIRCH_SPRUCE_STOOL,
             ModBlocks.BIRCH_BIRCH_STOOL,
@@ -334,6 +504,13 @@ public final class ModCreativeTabs {
             ModBlocks.BIRCH_MANGROVE_STOOL,
             ModBlocks.BIRCH_CRIMSON_STOOL,
             ModBlocks.BIRCH_WARPED_STOOL,
+        //? if >= 1.21.6 {
+        /*
+            ModBlocks.BIRCH_PALE_OAK_STOOL,
+        */
+        //?}
+            ModBlocks.BIRCH_CHERRY_STOOL,
+            ModBlocks.BIRCH_BAMBOO_STOOL,
             ModBlocks.JUNGLE_OAK_STOOL,
             ModBlocks.JUNGLE_SPRUCE_STOOL,
             ModBlocks.JUNGLE_BIRCH_STOOL,
@@ -343,6 +520,13 @@ public final class ModCreativeTabs {
             ModBlocks.JUNGLE_MANGROVE_STOOL,
             ModBlocks.JUNGLE_CRIMSON_STOOL,
             ModBlocks.JUNGLE_WARPED_STOOL,
+        //? if >= 1.21.6 {
+        /*
+            ModBlocks.JUNGLE_PALE_OAK_STOOL,
+        */
+        //?}
+            ModBlocks.JUNGLE_CHERRY_STOOL,
+            ModBlocks.JUNGLE_BAMBOO_STOOL,
             ModBlocks.ACACIA_OAK_STOOL,
             ModBlocks.ACACIA_SPRUCE_STOOL,
             ModBlocks.ACACIA_BIRCH_STOOL,
@@ -352,6 +536,13 @@ public final class ModCreativeTabs {
             ModBlocks.ACACIA_MANGROVE_STOOL,
             ModBlocks.ACACIA_CRIMSON_STOOL,
             ModBlocks.ACACIA_WARPED_STOOL,
+        //? if >= 1.21.6 {
+        /*
+            ModBlocks.ACACIA_PALE_OAK_STOOL,
+        */
+        //?}
+            ModBlocks.ACACIA_CHERRY_STOOL,
+            ModBlocks.ACACIA_BAMBOO_STOOL,
             ModBlocks.DARK_OAK_OAK_STOOL,
             ModBlocks.DARK_OAK_SPRUCE_STOOL,
             ModBlocks.DARK_OAK_BIRCH_STOOL,
@@ -361,6 +552,13 @@ public final class ModCreativeTabs {
             ModBlocks.DARK_OAK_MANGROVE_STOOL,
             ModBlocks.DARK_OAK_CRIMSON_STOOL,
             ModBlocks.DARK_OAK_WARPED_STOOL,
+        //? if >= 1.21.6 {
+        /*
+            ModBlocks.DARK_OAK_PALE_OAK_STOOL,
+        */
+        //?}
+            ModBlocks.DARK_OAK_CHERRY_STOOL,
+            ModBlocks.DARK_OAK_BAMBOO_STOOL,
             ModBlocks.MANGROVE_OAK_STOOL,
             ModBlocks.MANGROVE_SPRUCE_STOOL,
             ModBlocks.MANGROVE_BIRCH_STOOL,
@@ -370,6 +568,13 @@ public final class ModCreativeTabs {
             ModBlocks.MANGROVE_MANGROVE_STOOL,
             ModBlocks.MANGROVE_CRIMSON_STOOL,
             ModBlocks.MANGROVE_WARPED_STOOL,
+        //? if >= 1.21.6 {
+        /*
+            ModBlocks.MANGROVE_PALE_OAK_STOOL,
+        */
+        //?}
+            ModBlocks.MANGROVE_CHERRY_STOOL,
+            ModBlocks.MANGROVE_BAMBOO_STOOL,
             ModBlocks.CRIMSON_OAK_STOOL,
             ModBlocks.CRIMSON_SPRUCE_STOOL,
             ModBlocks.CRIMSON_BIRCH_STOOL,
@@ -379,6 +584,13 @@ public final class ModCreativeTabs {
             ModBlocks.CRIMSON_MANGROVE_STOOL,
             ModBlocks.CRIMSON_CRIMSON_STOOL,
             ModBlocks.CRIMSON_WARPED_STOOL,
+        //? if >= 1.21.6 {
+        /*
+            ModBlocks.CRIMSON_PALE_OAK_STOOL,
+        */
+        //?}
+            ModBlocks.CRIMSON_CHERRY_STOOL,
+            ModBlocks.CRIMSON_BAMBOO_STOOL,
             ModBlocks.WARPED_OAK_STOOL,
             ModBlocks.WARPED_SPRUCE_STOOL,
             ModBlocks.WARPED_BIRCH_STOOL,
@@ -387,7 +599,62 @@ public final class ModCreativeTabs {
             ModBlocks.WARPED_DARK_OAK_STOOL,
             ModBlocks.WARPED_MANGROVE_STOOL,
             ModBlocks.WARPED_CRIMSON_STOOL,
-            ModBlocks.WARPED_WARPED_STOOL
+            ModBlocks.WARPED_WARPED_STOOL,
+        //? if >= 1.21.6 {
+        /*
+            ModBlocks.WARPED_PALE_OAK_STOOL,
+        */
+        //?}
+            ModBlocks.WARPED_CHERRY_STOOL,
+            ModBlocks.WARPED_BAMBOO_STOOL,
+        //? if >= 1.21.6 {
+        /*
+            ModBlocks.PALE_OAK_OAK_STOOL,
+            ModBlocks.PALE_OAK_SPRUCE_STOOL,
+            ModBlocks.PALE_OAK_BIRCH_STOOL,
+            ModBlocks.PALE_OAK_JUNGLE_STOOL,
+            ModBlocks.PALE_OAK_ACACIA_STOOL,
+            ModBlocks.PALE_OAK_DARK_OAK_STOOL,
+            ModBlocks.PALE_OAK_MANGROVE_STOOL,
+            ModBlocks.PALE_OAK_CRIMSON_STOOL,
+            ModBlocks.PALE_OAK_WARPED_STOOL,
+            ModBlocks.PALE_OAK_PALE_OAK_STOOL,
+            ModBlocks.PALE_OAK_CHERRY_STOOL,
+            ModBlocks.PALE_OAK_BAMBOO_STOOL,
+        */
+        //?}
+            ModBlocks.CHERRY_OAK_STOOL,
+            ModBlocks.CHERRY_SPRUCE_STOOL,
+            ModBlocks.CHERRY_BIRCH_STOOL,
+            ModBlocks.CHERRY_JUNGLE_STOOL,
+            ModBlocks.CHERRY_ACACIA_STOOL,
+            ModBlocks.CHERRY_DARK_OAK_STOOL,
+            ModBlocks.CHERRY_MANGROVE_STOOL,
+            ModBlocks.CHERRY_CRIMSON_STOOL,
+            ModBlocks.CHERRY_WARPED_STOOL,
+        //? if >= 1.21.6 {
+        /*
+            ModBlocks.CHERRY_PALE_OAK_STOOL,
+        */
+        //?}
+            ModBlocks.CHERRY_CHERRY_STOOL,
+            ModBlocks.CHERRY_BAMBOO_STOOL,
+            ModBlocks.BAMBOO_OAK_STOOL,
+            ModBlocks.BAMBOO_SPRUCE_STOOL,
+            ModBlocks.BAMBOO_BIRCH_STOOL,
+            ModBlocks.BAMBOO_JUNGLE_STOOL,
+            ModBlocks.BAMBOO_ACACIA_STOOL,
+            ModBlocks.BAMBOO_DARK_OAK_STOOL,
+            ModBlocks.BAMBOO_MANGROVE_STOOL,
+            ModBlocks.BAMBOO_CRIMSON_STOOL,
+            ModBlocks.BAMBOO_WARPED_STOOL,
+        //? if >= 1.21.6 {
+        /*
+            ModBlocks.BAMBOO_PALE_OAK_STOOL,
+        */
+        //?}
+            ModBlocks.BAMBOO_CHERRY_STOOL,
+            ModBlocks.BAMBOO_BAMBOO_STOOL
         );
         CreativeTabRegistry.append(ALOTOFINTERIOR_TAB,
             ModBlocks.OAK_OAK_CHAIR_SIMPLE,
@@ -399,6 +666,13 @@ public final class ModCreativeTabs {
             ModBlocks.OAK_MANGROVE_CHAIR_SIMPLE,
             ModBlocks.OAK_CRIMSON_CHAIR_SIMPLE,
             ModBlocks.OAK_WARPED_CHAIR_SIMPLE,
+        //? if >= 1.21.6 {
+        /*
+            ModBlocks.OAK_PALE_OAK_CHAIR_SIMPLE,
+        */
+        //?}
+            ModBlocks.OAK_CHERRY_CHAIR_SIMPLE,
+            ModBlocks.OAK_BAMBOO_CHAIR_SIMPLE,
             ModBlocks.SPRUCE_OAK_CHAIR_SIMPLE,
             ModBlocks.SPRUCE_SPRUCE_CHAIR_SIMPLE,
             ModBlocks.SPRUCE_BIRCH_CHAIR_SIMPLE,
@@ -408,6 +682,13 @@ public final class ModCreativeTabs {
             ModBlocks.SPRUCE_MANGROVE_CHAIR_SIMPLE,
             ModBlocks.SPRUCE_CRIMSON_CHAIR_SIMPLE,
             ModBlocks.SPRUCE_WARPED_CHAIR_SIMPLE,
+        //? if >= 1.21.6 {
+        /*
+            ModBlocks.SPRUCE_PALE_OAK_CHAIR_SIMPLE,
+        */
+        //?}
+            ModBlocks.SPRUCE_CHERRY_CHAIR_SIMPLE,
+            ModBlocks.SPRUCE_BAMBOO_CHAIR_SIMPLE,
             ModBlocks.BIRCH_OAK_CHAIR_SIMPLE,
             ModBlocks.BIRCH_SPRUCE_CHAIR_SIMPLE,
             ModBlocks.BIRCH_BIRCH_CHAIR_SIMPLE,
@@ -417,6 +698,13 @@ public final class ModCreativeTabs {
             ModBlocks.BIRCH_MANGROVE_CHAIR_SIMPLE,
             ModBlocks.BIRCH_CRIMSON_CHAIR_SIMPLE,
             ModBlocks.BIRCH_WARPED_CHAIR_SIMPLE,
+        //? if >= 1.21.6 {
+        /*
+            ModBlocks.BIRCH_PALE_OAK_CHAIR_SIMPLE,
+        */
+        //?}
+            ModBlocks.BIRCH_CHERRY_CHAIR_SIMPLE,
+            ModBlocks.BIRCH_BAMBOO_CHAIR_SIMPLE,
             ModBlocks.JUNGLE_OAK_CHAIR_SIMPLE,
             ModBlocks.JUNGLE_SPRUCE_CHAIR_SIMPLE,
             ModBlocks.JUNGLE_BIRCH_CHAIR_SIMPLE,
@@ -426,6 +714,13 @@ public final class ModCreativeTabs {
             ModBlocks.JUNGLE_MANGROVE_CHAIR_SIMPLE,
             ModBlocks.JUNGLE_CRIMSON_CHAIR_SIMPLE,
             ModBlocks.JUNGLE_WARPED_CHAIR_SIMPLE,
+        //? if >= 1.21.6 {
+        /*
+            ModBlocks.JUNGLE_PALE_OAK_CHAIR_SIMPLE,
+        */
+        //?}
+            ModBlocks.JUNGLE_CHERRY_CHAIR_SIMPLE,
+            ModBlocks.JUNGLE_BAMBOO_CHAIR_SIMPLE,
             ModBlocks.ACACIA_OAK_CHAIR_SIMPLE,
             ModBlocks.ACACIA_SPRUCE_CHAIR_SIMPLE,
             ModBlocks.ACACIA_BIRCH_CHAIR_SIMPLE,
@@ -435,6 +730,13 @@ public final class ModCreativeTabs {
             ModBlocks.ACACIA_MANGROVE_CHAIR_SIMPLE,
             ModBlocks.ACACIA_CRIMSON_CHAIR_SIMPLE,
             ModBlocks.ACACIA_WARPED_CHAIR_SIMPLE,
+        //? if >= 1.21.6 {
+        /*
+            ModBlocks.ACACIA_PALE_OAK_CHAIR_SIMPLE,
+        */
+        //?}
+            ModBlocks.ACACIA_CHERRY_CHAIR_SIMPLE,
+            ModBlocks.ACACIA_BAMBOO_CHAIR_SIMPLE,
             ModBlocks.DARK_OAK_OAK_CHAIR_SIMPLE,
             ModBlocks.DARK_OAK_SPRUCE_CHAIR_SIMPLE,
             ModBlocks.DARK_OAK_BIRCH_CHAIR_SIMPLE,
@@ -444,6 +746,13 @@ public final class ModCreativeTabs {
             ModBlocks.DARK_OAK_MANGROVE_CHAIR_SIMPLE,
             ModBlocks.DARK_OAK_CRIMSON_CHAIR_SIMPLE,
             ModBlocks.DARK_OAK_WARPED_CHAIR_SIMPLE,
+        //? if >= 1.21.6 {
+        /*
+            ModBlocks.DARK_OAK_PALE_OAK_CHAIR_SIMPLE,
+        */
+        //?}
+            ModBlocks.DARK_OAK_CHERRY_CHAIR_SIMPLE,
+            ModBlocks.DARK_OAK_BAMBOO_CHAIR_SIMPLE,
             ModBlocks.MANGROVE_OAK_CHAIR_SIMPLE,
             ModBlocks.MANGROVE_SPRUCE_CHAIR_SIMPLE,
             ModBlocks.MANGROVE_BIRCH_CHAIR_SIMPLE,
@@ -453,6 +762,13 @@ public final class ModCreativeTabs {
             ModBlocks.MANGROVE_MANGROVE_CHAIR_SIMPLE,
             ModBlocks.MANGROVE_CRIMSON_CHAIR_SIMPLE,
             ModBlocks.MANGROVE_WARPED_CHAIR_SIMPLE,
+        //? if >= 1.21.6 {
+        /*
+            ModBlocks.MANGROVE_PALE_OAK_CHAIR_SIMPLE,
+        */
+        //?}
+            ModBlocks.MANGROVE_CHERRY_CHAIR_SIMPLE,
+            ModBlocks.MANGROVE_BAMBOO_CHAIR_SIMPLE,
             ModBlocks.CRIMSON_OAK_CHAIR_SIMPLE,
             ModBlocks.CRIMSON_SPRUCE_CHAIR_SIMPLE,
             ModBlocks.CRIMSON_BIRCH_CHAIR_SIMPLE,
@@ -462,6 +778,13 @@ public final class ModCreativeTabs {
             ModBlocks.CRIMSON_MANGROVE_CHAIR_SIMPLE,
             ModBlocks.CRIMSON_CRIMSON_CHAIR_SIMPLE,
             ModBlocks.CRIMSON_WARPED_CHAIR_SIMPLE,
+        //? if >= 1.21.6 {
+        /*
+            ModBlocks.CRIMSON_PALE_OAK_CHAIR_SIMPLE,
+        */
+        //?}
+            ModBlocks.CRIMSON_CHERRY_CHAIR_SIMPLE,
+            ModBlocks.CRIMSON_BAMBOO_CHAIR_SIMPLE,
             ModBlocks.WARPED_OAK_CHAIR_SIMPLE,
             ModBlocks.WARPED_SPRUCE_CHAIR_SIMPLE,
             ModBlocks.WARPED_BIRCH_CHAIR_SIMPLE,
@@ -470,7 +793,62 @@ public final class ModCreativeTabs {
             ModBlocks.WARPED_DARK_OAK_CHAIR_SIMPLE,
             ModBlocks.WARPED_MANGROVE_CHAIR_SIMPLE,
             ModBlocks.WARPED_CRIMSON_CHAIR_SIMPLE,
-            ModBlocks.WARPED_WARPED_CHAIR_SIMPLE
+            ModBlocks.WARPED_WARPED_CHAIR_SIMPLE,
+        //? if >= 1.21.6 {
+        /*
+            ModBlocks.WARPED_PALE_OAK_CHAIR_SIMPLE,
+        */
+        //?}
+            ModBlocks.WARPED_CHERRY_CHAIR_SIMPLE,
+            ModBlocks.WARPED_BAMBOO_CHAIR_SIMPLE,
+        //? if >= 1.21.6 {
+        /*
+            ModBlocks.PALE_OAK_OAK_CHAIR_SIMPLE,
+            ModBlocks.PALE_OAK_SPRUCE_CHAIR_SIMPLE,
+            ModBlocks.PALE_OAK_BIRCH_CHAIR_SIMPLE,
+            ModBlocks.PALE_OAK_JUNGLE_CHAIR_SIMPLE,
+            ModBlocks.PALE_OAK_ACACIA_CHAIR_SIMPLE,
+            ModBlocks.PALE_OAK_DARK_OAK_CHAIR_SIMPLE,
+            ModBlocks.PALE_OAK_MANGROVE_CHAIR_SIMPLE,
+            ModBlocks.PALE_OAK_CRIMSON_CHAIR_SIMPLE,
+            ModBlocks.PALE_OAK_WARPED_CHAIR_SIMPLE,
+            ModBlocks.PALE_OAK_PALE_OAK_CHAIR_SIMPLE,
+            ModBlocks.PALE_OAK_CHERRY_CHAIR_SIMPLE,
+            ModBlocks.PALE_OAK_BAMBOO_CHAIR_SIMPLE,
+        */
+        //?}
+            ModBlocks.CHERRY_OAK_CHAIR_SIMPLE,
+            ModBlocks.CHERRY_SPRUCE_CHAIR_SIMPLE,
+            ModBlocks.CHERRY_BIRCH_CHAIR_SIMPLE,
+            ModBlocks.CHERRY_JUNGLE_CHAIR_SIMPLE,
+            ModBlocks.CHERRY_ACACIA_CHAIR_SIMPLE,
+            ModBlocks.CHERRY_DARK_OAK_CHAIR_SIMPLE,
+            ModBlocks.CHERRY_MANGROVE_CHAIR_SIMPLE,
+            ModBlocks.CHERRY_CRIMSON_CHAIR_SIMPLE,
+            ModBlocks.CHERRY_WARPED_CHAIR_SIMPLE,
+        //? if >= 1.21.6 {
+        /*
+            ModBlocks.CHERRY_PALE_OAK_CHAIR_SIMPLE,
+        */
+        //?}
+            ModBlocks.CHERRY_CHERRY_CHAIR_SIMPLE,
+            ModBlocks.CHERRY_BAMBOO_CHAIR_SIMPLE,
+            ModBlocks.BAMBOO_OAK_CHAIR_SIMPLE,
+            ModBlocks.BAMBOO_SPRUCE_CHAIR_SIMPLE,
+            ModBlocks.BAMBOO_BIRCH_CHAIR_SIMPLE,
+            ModBlocks.BAMBOO_JUNGLE_CHAIR_SIMPLE,
+            ModBlocks.BAMBOO_ACACIA_CHAIR_SIMPLE,
+            ModBlocks.BAMBOO_DARK_OAK_CHAIR_SIMPLE,
+            ModBlocks.BAMBOO_MANGROVE_CHAIR_SIMPLE,
+            ModBlocks.BAMBOO_CRIMSON_CHAIR_SIMPLE,
+            ModBlocks.BAMBOO_WARPED_CHAIR_SIMPLE,
+        //? if >= 1.21.6 {
+        /*
+            ModBlocks.BAMBOO_PALE_OAK_CHAIR_SIMPLE,
+        */
+        //?}
+            ModBlocks.BAMBOO_CHERRY_CHAIR_SIMPLE,
+            ModBlocks.BAMBOO_BAMBOO_CHAIR_SIMPLE
         );
     }
 }

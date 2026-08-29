@@ -26,11 +26,17 @@ public final class ModEntities {
     public static final DeferredRegister<EntityType<?>> ENTITIES =
             DeferredRegister.create(ALotOfInterior.MOD_ID, Registries.ENTITY_TYPE);
 
+    // Deliberately NOT .noSave(): 1.21.6 added a check to Entity#startRiding() that silently
+    // refuses to mount a passenger onto a vehicle whose EntityType "can't serialize" (i.e. is
+    // built with .noSave()) - found by decompiling startRiding() on both sides of that
+    // boundary after sitting silently stopped working on 1.21.6+ with no exception anywhere
+    // (the mount attempt just returns false). SeatEntity's own tick() already discards it
+    // within a tick or two of losing its passenger regardless, so allowing it to serialize
+    // costs nothing in practice - it just means startRiding() actually works again.
     public static final RegistrySupplier<EntityType<SeatEntity>> SEAT = ENTITIES.register("seat",
             () -> buildType("seat", EntityType.Builder.of(SeatEntity::new, MobCategory.MISC)
                     .sized(0.5f, 0.01f)
-                    .noSummon()
-                    .noSave()));
+                    .noSummon()));
 
     private ModEntities() {
     }

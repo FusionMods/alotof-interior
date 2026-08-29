@@ -1,0 +1,7 @@
+{
+    "parent": "alotofinterior:block/base/chair_simple_core",
+    "textures": {
+        "0": "minecraft:block/oak_planks",
+        "1": "minecraft:block/cherry_planks"
+    }
+}

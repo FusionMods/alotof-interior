@@ -31,9 +31,12 @@ import java.util.List;
 /**
  * Invisible, non-colliding vehicle a player rides while sitting on a {@link Seat} block -
  * see {@link #sit} for the shared interaction every such block calls into. Ephemeral by
- * design: never saved, never summonable, and self-discards the instant it has no
- * passenger or its anchor block stops being the block that spawned it (covers both a
- * normal dismount and the block being broken/replaced while occupied).
+ * design: never summonable, and self-discards the instant it has no passenger or its
+ * anchor block stops being the block that spawned it (covers both a normal dismount and
+ * the block being broken/replaced while occupied). Deliberately NOT built with
+ * {@code .noSave()} in {@link ModEntities} despite that - see the comment there.
+ * {@link #tick()} treats a reloaded instance with no {@link #anchorPos} (never persisted,
+ * since {@link #readAdditionalSaveData} is a no-op) as invalid and discards it immediately.
  *
  * Deliberately does NOT override any of the passenger-attachment-point APIs (which differ
  * incompatibly across 1.20.1/1.20.2/1.21+ - {@code getPassengersRidingOffset()} vs
@@ -108,7 +111,7 @@ public class SeatEntity extends Entity {
         if (this.level().isClientSide()) {
             return;
         }
-        if (this.getPassengers().isEmpty() || this.level().getBlockState(this.anchorPos).getBlock() != this.anchorBlock) {
+        if (this.anchorPos == null || this.getPassengers().isEmpty() || this.level().getBlockState(this.anchorPos).getBlock() != this.anchorBlock) {
             this.ejectPassengers();
             this.discard();
         }

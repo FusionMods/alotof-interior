@@ -56,7 +56,9 @@ public final class ALotOfInteriorClient {
             ModBlocks.DARK_OAK_GLASS_TABLE.get(),
             ModBlocks.MANGROVE_GLASS_TABLE.get(),
             ModBlocks.CRIMSON_GLASS_TABLE.get(),
-            ModBlocks.WARPED_GLASS_TABLE.get()
+            ModBlocks.WARPED_GLASS_TABLE.get(),
+            ModBlocks.CHERRY_GLASS_TABLE.get(),
+            ModBlocks.BAMBOO_GLASS_TABLE.get()
         );
         RenderTypeRegistry.register(
                 RenderType.translucent(),
@@ -220,13 +222,49 @@ public final class ALotOfInteriorClient {
                 ModBlocks.WARPED_PURPLE_STAINED_GLASS_TABLE.get(),
                 ModBlocks.WARPED_MAGENTA_STAINED_GLASS_TABLE.get(),
                 ModBlocks.WARPED_PINK_STAINED_GLASS_TABLE.get(),
-                ModBlocks.WARPED_TINTED_GLASS_TABLE.get()
+                ModBlocks.WARPED_TINTED_GLASS_TABLE.get(),
+
+                ModBlocks.CHERRY_WHITE_STAINED_GLASS_TABLE.get(),
+                ModBlocks.CHERRY_LIGHT_GRAY_STAINED_GLASS_TABLE.get(),
+                ModBlocks.CHERRY_GRAY_STAINED_GLASS_TABLE.get(),
+                ModBlocks.CHERRY_BLACK_STAINED_GLASS_TABLE.get(),
+                ModBlocks.CHERRY_BROWN_STAINED_GLASS_TABLE.get(),
+                ModBlocks.CHERRY_RED_STAINED_GLASS_TABLE.get(),
+                ModBlocks.CHERRY_ORANGE_STAINED_GLASS_TABLE.get(),
+                ModBlocks.CHERRY_YELLOW_STAINED_GLASS_TABLE.get(),
+                ModBlocks.CHERRY_LIME_STAINED_GLASS_TABLE.get(),
+                ModBlocks.CHERRY_GREEN_STAINED_GLASS_TABLE.get(),
+                ModBlocks.CHERRY_CYAN_STAINED_GLASS_TABLE.get(),
+                ModBlocks.CHERRY_LIGHT_BLUE_STAINED_GLASS_TABLE.get(),
+                ModBlocks.CHERRY_BLUE_STAINED_GLASS_TABLE.get(),
+                ModBlocks.CHERRY_PURPLE_STAINED_GLASS_TABLE.get(),
+                ModBlocks.CHERRY_MAGENTA_STAINED_GLASS_TABLE.get(),
+                ModBlocks.CHERRY_PINK_STAINED_GLASS_TABLE.get(),
+                ModBlocks.CHERRY_TINTED_GLASS_TABLE.get(),
+
+                ModBlocks.BAMBOO_WHITE_STAINED_GLASS_TABLE.get(),
+                ModBlocks.BAMBOO_LIGHT_GRAY_STAINED_GLASS_TABLE.get(),
+                ModBlocks.BAMBOO_GRAY_STAINED_GLASS_TABLE.get(),
+                ModBlocks.BAMBOO_BLACK_STAINED_GLASS_TABLE.get(),
+                ModBlocks.BAMBOO_BROWN_STAINED_GLASS_TABLE.get(),
+                ModBlocks.BAMBOO_RED_STAINED_GLASS_TABLE.get(),
+                ModBlocks.BAMBOO_ORANGE_STAINED_GLASS_TABLE.get(),
+                ModBlocks.BAMBOO_YELLOW_STAINED_GLASS_TABLE.get(),
+                ModBlocks.BAMBOO_LIME_STAINED_GLASS_TABLE.get(),
+                ModBlocks.BAMBOO_GREEN_STAINED_GLASS_TABLE.get(),
+                ModBlocks.BAMBOO_CYAN_STAINED_GLASS_TABLE.get(),
+                ModBlocks.BAMBOO_LIGHT_BLUE_STAINED_GLASS_TABLE.get(),
+                ModBlocks.BAMBOO_BLUE_STAINED_GLASS_TABLE.get(),
+                ModBlocks.BAMBOO_PURPLE_STAINED_GLASS_TABLE.get(),
+                ModBlocks.BAMBOO_MAGENTA_STAINED_GLASS_TABLE.get(),
+                ModBlocks.BAMBOO_PINK_STAINED_GLASS_TABLE.get(),
+                ModBlocks.BAMBOO_TINTED_GLASS_TABLE.get()
         );
     }
     //?} else if < 26.1 {
     /*
     private static void registerRenderTypes() {
-        RenderTypeRegistry.register(ChunkSectionLayer.CUTOUT, 
+        RenderTypeRegistry.register(ChunkSectionLayer.CUTOUT,
             ModBlocks.OAK_GLASS_TABLE.get(),
             ModBlocks.SPRUCE_GLASS_TABLE.get(),
             ModBlocks.BIRCH_GLASS_TABLE.get(),
@@ -235,7 +273,10 @@ public final class ALotOfInteriorClient {
             ModBlocks.DARK_OAK_GLASS_TABLE.get(),
             ModBlocks.MANGROVE_GLASS_TABLE.get(),
             ModBlocks.CRIMSON_GLASS_TABLE.get(),
-            ModBlocks.WARPED_GLASS_TABLE.get()
+            ModBlocks.WARPED_GLASS_TABLE.get(),
+            ModBlocks.CHERRY_GLASS_TABLE.get(),
+            ModBlocks.BAMBOO_GLASS_TABLE.get(),
+            ModBlocks.PALE_OAK_GLASS_TABLE.get()
         );
         RenderTypeRegistry.register(
                 ChunkSectionLayer.TRANSLUCENT,
@@ -399,7 +440,61 @@ public final class ALotOfInteriorClient {
                 ModBlocks.WARPED_PURPLE_STAINED_GLASS_TABLE.get(),
                 ModBlocks.WARPED_MAGENTA_STAINED_GLASS_TABLE.get(),
                 ModBlocks.WARPED_PINK_STAINED_GLASS_TABLE.get(),
-                ModBlocks.WARPED_TINTED_GLASS_TABLE.get()
+                ModBlocks.WARPED_TINTED_GLASS_TABLE.get(),
+
+                ModBlocks.CHERRY_WHITE_STAINED_GLASS_TABLE.get(),
+                ModBlocks.CHERRY_LIGHT_GRAY_STAINED_GLASS_TABLE.get(),
+                ModBlocks.CHERRY_GRAY_STAINED_GLASS_TABLE.get(),
+                ModBlocks.CHERRY_BLACK_STAINED_GLASS_TABLE.get(),
+                ModBlocks.CHERRY_BROWN_STAINED_GLASS_TABLE.get(),
+                ModBlocks.CHERRY_RED_STAINED_GLASS_TABLE.get(),
+                ModBlocks.CHERRY_ORANGE_STAINED_GLASS_TABLE.get(),
+                ModBlocks.CHERRY_YELLOW_STAINED_GLASS_TABLE.get(),
+                ModBlocks.CHERRY_LIME_STAINED_GLASS_TABLE.get(),
+                ModBlocks.CHERRY_GREEN_STAINED_GLASS_TABLE.get(),
+                ModBlocks.CHERRY_CYAN_STAINED_GLASS_TABLE.get(),
+                ModBlocks.CHERRY_LIGHT_BLUE_STAINED_GLASS_TABLE.get(),
+                ModBlocks.CHERRY_BLUE_STAINED_GLASS_TABLE.get(),
+                ModBlocks.CHERRY_PURPLE_STAINED_GLASS_TABLE.get(),
+                ModBlocks.CHERRY_MAGENTA_STAINED_GLASS_TABLE.get(),
+                ModBlocks.CHERRY_PINK_STAINED_GLASS_TABLE.get(),
+                ModBlocks.CHERRY_TINTED_GLASS_TABLE.get(),
+
+                ModBlocks.BAMBOO_WHITE_STAINED_GLASS_TABLE.get(),
+                ModBlocks.BAMBOO_LIGHT_GRAY_STAINED_GLASS_TABLE.get(),
+                ModBlocks.BAMBOO_GRAY_STAINED_GLASS_TABLE.get(),
+                ModBlocks.BAMBOO_BLACK_STAINED_GLASS_TABLE.get(),
+                ModBlocks.BAMBOO_BROWN_STAINED_GLASS_TABLE.get(),
+                ModBlocks.BAMBOO_RED_STAINED_GLASS_TABLE.get(),
+                ModBlocks.BAMBOO_ORANGE_STAINED_GLASS_TABLE.get(),
+                ModBlocks.BAMBOO_YELLOW_STAINED_GLASS_TABLE.get(),
+                ModBlocks.BAMBOO_LIME_STAINED_GLASS_TABLE.get(),
+                ModBlocks.BAMBOO_GREEN_STAINED_GLASS_TABLE.get(),
+                ModBlocks.BAMBOO_CYAN_STAINED_GLASS_TABLE.get(),
+                ModBlocks.BAMBOO_LIGHT_BLUE_STAINED_GLASS_TABLE.get(),
+                ModBlocks.BAMBOO_BLUE_STAINED_GLASS_TABLE.get(),
+                ModBlocks.BAMBOO_PURPLE_STAINED_GLASS_TABLE.get(),
+                ModBlocks.BAMBOO_MAGENTA_STAINED_GLASS_TABLE.get(),
+                ModBlocks.BAMBOO_PINK_STAINED_GLASS_TABLE.get(),
+                ModBlocks.BAMBOO_TINTED_GLASS_TABLE.get(),
+
+                ModBlocks.PALE_OAK_WHITE_STAINED_GLASS_TABLE.get(),
+                ModBlocks.PALE_OAK_LIGHT_GRAY_STAINED_GLASS_TABLE.get(),
+                ModBlocks.PALE_OAK_GRAY_STAINED_GLASS_TABLE.get(),
+                ModBlocks.PALE_OAK_BLACK_STAINED_GLASS_TABLE.get(),
+                ModBlocks.PALE_OAK_BROWN_STAINED_GLASS_TABLE.get(),
+                ModBlocks.PALE_OAK_RED_STAINED_GLASS_TABLE.get(),
+                ModBlocks.PALE_OAK_ORANGE_STAINED_GLASS_TABLE.get(),
+                ModBlocks.PALE_OAK_YELLOW_STAINED_GLASS_TABLE.get(),
+                ModBlocks.PALE_OAK_LIME_STAINED_GLASS_TABLE.get(),
+                ModBlocks.PALE_OAK_GREEN_STAINED_GLASS_TABLE.get(),
+                ModBlocks.PALE_OAK_CYAN_STAINED_GLASS_TABLE.get(),
+                ModBlocks.PALE_OAK_LIGHT_BLUE_STAINED_GLASS_TABLE.get(),
+                ModBlocks.PALE_OAK_BLUE_STAINED_GLASS_TABLE.get(),
+                ModBlocks.PALE_OAK_PURPLE_STAINED_GLASS_TABLE.get(),
+                ModBlocks.PALE_OAK_MAGENTA_STAINED_GLASS_TABLE.get(),
+                ModBlocks.PALE_OAK_PINK_STAINED_GLASS_TABLE.get(),
+                ModBlocks.PALE_OAK_TINTED_GLASS_TABLE.get()
         );
     }
     */
