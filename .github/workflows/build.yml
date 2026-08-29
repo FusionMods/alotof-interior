@@ -1,0 +1,41 @@
+name: Build
+
+# Runs the whole 1.20.1-26.2 x Fabric/Forge/NeoForge matrix (chiseledBuild - see
+# stonecutter.gradle.kts) on every push/PR, plus a standalone check that the datagen/
+# module (see README.md's "Data generation" section) still runs. This is the same pair
+# of commands used throughout local development to confirm a change didn't quietly break
+# some other version/loader combination.
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+# Cancel a still-running run for the same branch/PR once a newer commit shows up.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # One JDK to launch Gradle itself - the foojay toolchain resolver (see
+      # settings.gradle.kts) auto-downloads whichever per-version JDK (17/21/25, see
+      # each versions/<mc>/gradle.properties) each subproject actually needs to compile.
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: |
+            - 17
+            - 21
+            - 25
+
+      - uses: gradle/actions/setup-gradle@v4
+
+      - name: Build every Minecraft version x loader combination
+        run: ./gradlew chiseledBuild --no-parallel --stacktrace

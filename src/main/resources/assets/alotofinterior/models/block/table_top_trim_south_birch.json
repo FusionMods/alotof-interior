@@ -1,0 +1,7 @@
+{
+    "parent": "alotofinterior:block/base/table_top_trim_south",
+    "render_type": "solid",
+    "textures": {
+        "1": "minecraft:block/birch_planks"
+    }
+}

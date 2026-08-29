@@ -1,0 +1,48 @@
+modLoader = "javafml"
+loaderVersion = "[47,)"
+license = "${mod_license}"
+
+[[mods]]
+modId = "${mod_id}"
+version = "${mod_version}"
+displayName = "${mod_name}"
+authors = "${mod_authors}"
+description = "${mod_description}"
+
+[[dependencies.${mod_id}]]
+modId = "forge"
+type = "required"
+mandatory=true
+versionRange = "[47,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.${mod_id}]]
+modId = "minecraft"
+type = "required"
+mandatory=true
+versionRange = "[${minecraft_version},)"
+ordering = "NONE"
+side = "BOTH"
+
+# Architectury's own Forge mod must construct before ours - its DeferredRegister
+# implementation needs a per-mod event bus that Forge only wires up once
+# Architectury's @Mod class has run, and our ModRegistries.init() (called from our
+# own @Mod constructor) uses DeferredRegister immediately. Without this "AFTER"
+# ordering, ours can construct first and crash with "Can't get event bus for mod
+# 'alotofinterior' because it was not registered!".
+[[dependencies.${mod_id}]]
+modId = "architectury"
+type = "required"
+mandatory=true
+versionRange = "[${architectury_api_version},)"
+ordering = "AFTER"
+side = "BOTH"
+
+# Optional/soft dependency - see forge/build.gradle.kts.
+[[dependencies.${mod_id}]]
+modId = "cloth-config"
+type = "optional"
+mandatory=false
+ordering = "NONE"
+side = "BOTH"

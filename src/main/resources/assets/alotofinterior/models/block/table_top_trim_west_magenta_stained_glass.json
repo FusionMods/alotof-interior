@@ -1,0 +1,7 @@
+{
+    "parent": "alotofinterior:block/base/table_top_trim_west",
+    "render_type": "translucent",
+    "textures": {
+        "1": "minecraft:block/magenta_stained_glass_pane_top"
+    }
+}
