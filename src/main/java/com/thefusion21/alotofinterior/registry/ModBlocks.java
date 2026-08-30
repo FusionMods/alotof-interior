@@ -11,6 +11,7 @@ import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 
+import java.util.List;
 import java.util.function.Function;
 
 public final class ModBlocks {
@@ -1517,1265 +1518,628 @@ public final class ModBlocks {
         properties -> new TableBlock(properties.mapColor(MapColor.NONE).sound(SoundType.GLASS).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
 
-    // STOOLS
-    public static final RegistrySupplier<StoolBlock> OAK_OAK_STOOL = registerWithItem(
-        "stool_oak_oak",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> OAK_SPRUCE_STOOL = registerWithItem(
-        "stool_oak_spruce",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> OAK_BIRCH_STOOL = registerWithItem(
-        "stool_oak_birch",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> OAK_JUNGLE_STOOL = registerWithItem(
-        "stool_oak_jungle",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> OAK_ACACIA_STOOL = registerWithItem(
-        "stool_oak_acacia",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> OAK_DARK_OAK_STOOL = registerWithItem(
-        "stool_oak_dark_oak",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> OAK_MANGROVE_STOOL = registerWithItem(
-        "stool_oak_mangrove",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> OAK_CRIMSON_STOOL = registerWithItem(
-        "stool_oak_crimson",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> OAK_WARPED_STOOL = registerWithItem(
-        "stool_oak_warped",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    //? if >= 1.21.6 {
-    /*
-    public static final RegistrySupplier<StoolBlock> OAK_PALE_OAK_STOOL = registerWithItem(
-        "stool_oak_pale_oak",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    */
-    //?}
-    public static final RegistrySupplier<StoolBlock> OAK_CHERRY_STOOL = registerWithItem(
-        "stool_oak_cherry",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> OAK_BAMBOO_STOOL = registerWithItem(
-        "stool_oak_bamboo",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    // SPRUCE STOOLS
-    public static final RegistrySupplier<StoolBlock> SPRUCE_OAK_STOOL = registerWithItem(
-        "stool_spruce_oak",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> SPRUCE_SPRUCE_STOOL = registerWithItem(
-        "stool_spruce_spruce",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> SPRUCE_BIRCH_STOOL = registerWithItem(
-        "stool_spruce_birch",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> SPRUCE_JUNGLE_STOOL = registerWithItem(
-        "stool_spruce_jungle",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> SPRUCE_ACACIA_STOOL = registerWithItem(
-        "stool_spruce_acacia",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> SPRUCE_DARK_OAK_STOOL = registerWithItem(
-        "stool_spruce_dark_oak",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> SPRUCE_MANGROVE_STOOL = registerWithItem(
-        "stool_spruce_mangrove",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> SPRUCE_CRIMSON_STOOL = registerWithItem(
-        "stool_spruce_crimson",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> SPRUCE_WARPED_STOOL = registerWithItem(
-        "stool_spruce_warped",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    //? if >= 1.21.6 {
-    /*
-    public static final RegistrySupplier<StoolBlock> SPRUCE_PALE_OAK_STOOL = registerWithItem(
-        "stool_spruce_pale_oak",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    */
-    //?}
-    public static final RegistrySupplier<StoolBlock> SPRUCE_CHERRY_STOOL = registerWithItem(
-        "stool_spruce_cherry",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> SPRUCE_BAMBOO_STOOL = registerWithItem(
-        "stool_spruce_bamboo",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    // BIRCH STOOLS
-    public static final RegistrySupplier<StoolBlock> BIRCH_OAK_STOOL = registerWithItem(
-        "stool_birch_oak",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> BIRCH_SPRUCE_STOOL = registerWithItem(
-        "stool_birch_spruce",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> BIRCH_BIRCH_STOOL = registerWithItem(
-        "stool_birch_birch",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> BIRCH_JUNGLE_STOOL = registerWithItem(
-        "stool_birch_jungle",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> BIRCH_ACACIA_STOOL = registerWithItem(
-        "stool_birch_acacia",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> BIRCH_DARK_OAK_STOOL = registerWithItem(
-        "stool_birch_dark_oak",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> BIRCH_MANGROVE_STOOL = registerWithItem(
-        "stool_birch_mangrove",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> BIRCH_CRIMSON_STOOL = registerWithItem(
-        "stool_birch_crimson",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> BIRCH_WARPED_STOOL = registerWithItem(
-        "stool_birch_warped",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    //? if >= 1.21.6 {
-    /*
-    public static final RegistrySupplier<StoolBlock> BIRCH_PALE_OAK_STOOL = registerWithItem(
-        "stool_birch_pale_oak",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    */
-    //?}
-    public static final RegistrySupplier<StoolBlock> BIRCH_CHERRY_STOOL = registerWithItem(
-        "stool_birch_cherry",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> BIRCH_BAMBOO_STOOL = registerWithItem(
-        "stool_birch_bamboo",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    // JUNGLE STOOLS
-    public static final RegistrySupplier<StoolBlock> JUNGLE_OAK_STOOL = registerWithItem(
-        "stool_jungle_oak",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> JUNGLE_SPRUCE_STOOL = registerWithItem(
-        "stool_jungle_spruce",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> JUNGLE_BIRCH_STOOL = registerWithItem(
-        "stool_jungle_birch",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> JUNGLE_JUNGLE_STOOL = registerWithItem(
-        "stool_jungle_jungle",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> JUNGLE_ACACIA_STOOL = registerWithItem(
-        "stool_jungle_acacia",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> JUNGLE_DARK_OAK_STOOL = registerWithItem(
-        "stool_jungle_dark_oak",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> JUNGLE_MANGROVE_STOOL = registerWithItem(
-        "stool_jungle_mangrove",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> JUNGLE_CRIMSON_STOOL = registerWithItem(
-        "stool_jungle_crimson",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> JUNGLE_WARPED_STOOL = registerWithItem(
-        "stool_jungle_warped",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    //? if >= 1.21.6 {
-    /*
-    public static final RegistrySupplier<StoolBlock> JUNGLE_PALE_OAK_STOOL = registerWithItem(
-        "stool_jungle_pale_oak",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    */
-    //?}
-    public static final RegistrySupplier<StoolBlock> JUNGLE_CHERRY_STOOL = registerWithItem(
-        "stool_jungle_cherry",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> JUNGLE_BAMBOO_STOOL = registerWithItem(
-        "stool_jungle_bamboo",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    // ACACIA STOOLS
-    public static final RegistrySupplier<StoolBlock> ACACIA_OAK_STOOL = registerWithItem(
-        "stool_acacia_oak",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> ACACIA_SPRUCE_STOOL = registerWithItem(
-        "stool_acacia_spruce",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> ACACIA_BIRCH_STOOL = registerWithItem(
-        "stool_acacia_birch",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> ACACIA_JUNGLE_STOOL = registerWithItem(
-        "stool_acacia_jungle",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> ACACIA_ACACIA_STOOL = registerWithItem(
-        "stool_acacia_acacia",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> ACACIA_DARK_OAK_STOOL = registerWithItem(
-        "stool_acacia_dark_oak",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> ACACIA_MANGROVE_STOOL = registerWithItem(
-        "stool_acacia_mangrove",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> ACACIA_CRIMSON_STOOL = registerWithItem(
-        "stool_acacia_crimson",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> ACACIA_WARPED_STOOL = registerWithItem(
-        "stool_acacia_warped",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    //? if >= 1.21.6 {
-    /*
-    public static final RegistrySupplier<StoolBlock> ACACIA_PALE_OAK_STOOL = registerWithItem(
-        "stool_acacia_pale_oak",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    */
-    //?}
-    public static final RegistrySupplier<StoolBlock> ACACIA_CHERRY_STOOL = registerWithItem(
-        "stool_acacia_cherry",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> ACACIA_BAMBOO_STOOL = registerWithItem(
-        "stool_acacia_bamboo",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    // DARK_OAK STOOLS
-    public static final RegistrySupplier<StoolBlock> DARK_OAK_OAK_STOOL = registerWithItem(
-        "stool_dark_oak_oak",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> DARK_OAK_SPRUCE_STOOL = registerWithItem(
-        "stool_dark_oak_spruce",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> DARK_OAK_BIRCH_STOOL = registerWithItem(
-        "stool_dark_oak_birch",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> DARK_OAK_JUNGLE_STOOL = registerWithItem(
-        "stool_dark_oak_jungle",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> DARK_OAK_ACACIA_STOOL = registerWithItem(
-        "stool_dark_oak_acacia",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> DARK_OAK_DARK_OAK_STOOL = registerWithItem(
-        "stool_dark_oak_dark_oak",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> DARK_OAK_MANGROVE_STOOL = registerWithItem(
-        "stool_dark_oak_mangrove",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> DARK_OAK_CRIMSON_STOOL = registerWithItem(
-        "stool_dark_oak_crimson",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> DARK_OAK_WARPED_STOOL = registerWithItem(
-        "stool_dark_oak_warped",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    //? if >= 1.21.6 {
-    /*
-    public static final RegistrySupplier<StoolBlock> DARK_OAK_PALE_OAK_STOOL = registerWithItem(
-        "stool_dark_oak_pale_oak",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    */
-    //?}
-    public static final RegistrySupplier<StoolBlock> DARK_OAK_CHERRY_STOOL = registerWithItem(
-        "stool_dark_oak_cherry",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> DARK_OAK_BAMBOO_STOOL = registerWithItem(
-        "stool_dark_oak_bamboo",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    // MANGROVE STOOLS
-    public static final RegistrySupplier<StoolBlock> MANGROVE_OAK_STOOL = registerWithItem(
-        "stool_mangrove_oak",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> MANGROVE_SPRUCE_STOOL = registerWithItem(
-        "stool_mangrove_spruce",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> MANGROVE_BIRCH_STOOL = registerWithItem(
-        "stool_mangrove_birch",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> MANGROVE_JUNGLE_STOOL = registerWithItem(
-        "stool_mangrove_jungle",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> MANGROVE_ACACIA_STOOL = registerWithItem(
-        "stool_mangrove_acacia",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> MANGROVE_DARK_OAK_STOOL = registerWithItem(
-        "stool_mangrove_dark_oak",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> MANGROVE_MANGROVE_STOOL = registerWithItem(
-        "stool_mangrove_mangrove",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> MANGROVE_CRIMSON_STOOL = registerWithItem(
-        "stool_mangrove_crimson",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> MANGROVE_WARPED_STOOL = registerWithItem(
-        "stool_mangrove_warped",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    //? if >= 1.21.6 {
-    /*
-    public static final RegistrySupplier<StoolBlock> MANGROVE_PALE_OAK_STOOL = registerWithItem(
-        "stool_mangrove_pale_oak",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    */
-    //?}
-    public static final RegistrySupplier<StoolBlock> MANGROVE_CHERRY_STOOL = registerWithItem(
-        "stool_mangrove_cherry",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> MANGROVE_BAMBOO_STOOL = registerWithItem(
-        "stool_mangrove_bamboo",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    // CRIMSON STOOLS
-    public static final RegistrySupplier<StoolBlock> CRIMSON_OAK_STOOL = registerWithItem(
-        "stool_crimson_oak",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> CRIMSON_SPRUCE_STOOL = registerWithItem(
-        "stool_crimson_spruce",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> CRIMSON_BIRCH_STOOL = registerWithItem(
-        "stool_crimson_birch",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> CRIMSON_JUNGLE_STOOL = registerWithItem(
-        "stool_crimson_jungle",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> CRIMSON_ACACIA_STOOL = registerWithItem(
-        "stool_crimson_acacia",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> CRIMSON_DARK_OAK_STOOL = registerWithItem(
-        "stool_crimson_dark_oak",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> CRIMSON_MANGROVE_STOOL = registerWithItem(
-        "stool_crimson_mangrove",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> CRIMSON_CRIMSON_STOOL = registerWithItem(
-        "stool_crimson_crimson",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> CRIMSON_WARPED_STOOL = registerWithItem(
-        "stool_crimson_warped",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    //? if >= 1.21.6 {
-    /*
-    public static final RegistrySupplier<StoolBlock> CRIMSON_PALE_OAK_STOOL = registerWithItem(
-        "stool_crimson_pale_oak",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    */
-    //?}
-    public static final RegistrySupplier<StoolBlock> CRIMSON_CHERRY_STOOL = registerWithItem(
-        "stool_crimson_cherry",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> CRIMSON_BAMBOO_STOOL = registerWithItem(
-        "stool_crimson_bamboo",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    // WARPED STOOLS
-    public static final RegistrySupplier<StoolBlock> WARPED_OAK_STOOL = registerWithItem(
-        "stool_warped_oak",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> WARPED_SPRUCE_STOOL = registerWithItem(
-        "stool_warped_spruce",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> WARPED_BIRCH_STOOL = registerWithItem(
-        "stool_warped_birch",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> WARPED_JUNGLE_STOOL = registerWithItem(
-        "stool_warped_jungle",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> WARPED_ACACIA_STOOL = registerWithItem(
-        "stool_warped_acacia",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> WARPED_DARK_OAK_STOOL = registerWithItem(
-        "stool_warped_dark_oak",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> WARPED_MANGROVE_STOOL = registerWithItem(
-        "stool_warped_mangrove",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> WARPED_CRIMSON_STOOL = registerWithItem(
-        "stool_warped_crimson",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> WARPED_WARPED_STOOL = registerWithItem(
-        "stool_warped_warped",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    //? if >= 1.21.6 {
-    /*
-    public static final RegistrySupplier<StoolBlock> WARPED_PALE_OAK_STOOL = registerWithItem(
-        "stool_warped_pale_oak",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    */
-    //?}
-    public static final RegistrySupplier<StoolBlock> WARPED_CHERRY_STOOL = registerWithItem(
-        "stool_warped_cherry",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> WARPED_BAMBOO_STOOL = registerWithItem(
-        "stool_warped_bamboo",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    // PALE_OAK STOOLS
-    //? if >= 1.21.6 {
-    /*
-    public static final RegistrySupplier<StoolBlock> PALE_OAK_OAK_STOOL = registerWithItem(
-        "stool_pale_oak_oak",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> PALE_OAK_SPRUCE_STOOL = registerWithItem(
-        "stool_pale_oak_spruce",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> PALE_OAK_BIRCH_STOOL = registerWithItem(
-        "stool_pale_oak_birch",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> PALE_OAK_JUNGLE_STOOL = registerWithItem(
-        "stool_pale_oak_jungle",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> PALE_OAK_ACACIA_STOOL = registerWithItem(
-        "stool_pale_oak_acacia",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> PALE_OAK_DARK_OAK_STOOL = registerWithItem(
-        "stool_pale_oak_dark_oak",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> PALE_OAK_MANGROVE_STOOL = registerWithItem(
-        "stool_pale_oak_mangrove",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> PALE_OAK_CRIMSON_STOOL = registerWithItem(
-        "stool_pale_oak_crimson",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> PALE_OAK_WARPED_STOOL = registerWithItem(
-        "stool_pale_oak_warped",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> PALE_OAK_PALE_OAK_STOOL = registerWithItem(
-        "stool_pale_oak_pale_oak",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> PALE_OAK_CHERRY_STOOL = registerWithItem(
-        "stool_pale_oak_cherry",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> PALE_OAK_BAMBOO_STOOL = registerWithItem(
-        "stool_pale_oak_bamboo",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    */
-    //?}
-    // CHERRY STOOLS
-    public static final RegistrySupplier<StoolBlock> CHERRY_OAK_STOOL = registerWithItem(
-        "stool_cherry_oak",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> CHERRY_SPRUCE_STOOL = registerWithItem(
-        "stool_cherry_spruce",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> CHERRY_BIRCH_STOOL = registerWithItem(
-        "stool_cherry_birch",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> CHERRY_JUNGLE_STOOL = registerWithItem(
-        "stool_cherry_jungle",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> CHERRY_ACACIA_STOOL = registerWithItem(
-        "stool_cherry_acacia",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> CHERRY_DARK_OAK_STOOL = registerWithItem(
-        "stool_cherry_dark_oak",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> CHERRY_MANGROVE_STOOL = registerWithItem(
-        "stool_cherry_mangrove",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> CHERRY_CRIMSON_STOOL = registerWithItem(
-        "stool_cherry_crimson",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> CHERRY_WARPED_STOOL = registerWithItem(
-        "stool_cherry_warped",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    //? if >= 1.21.6 {
-    /*
-    public static final RegistrySupplier<StoolBlock> CHERRY_PALE_OAK_STOOL = registerWithItem(
-        "stool_cherry_pale_oak",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    */
-    //?}
-    public static final RegistrySupplier<StoolBlock> CHERRY_CHERRY_STOOL = registerWithItem(
-        "stool_cherry_cherry",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> CHERRY_BAMBOO_STOOL = registerWithItem(
-        "stool_cherry_bamboo",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    // BAMBOO STOOLS
-    public static final RegistrySupplier<StoolBlock> BAMBOO_OAK_STOOL = registerWithItem(
-        "stool_bamboo_oak",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> BAMBOO_SPRUCE_STOOL = registerWithItem(
-        "stool_bamboo_spruce",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> BAMBOO_BIRCH_STOOL = registerWithItem(
-        "stool_bamboo_birch",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> BAMBOO_JUNGLE_STOOL = registerWithItem(
-        "stool_bamboo_jungle",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> BAMBOO_ACACIA_STOOL = registerWithItem(
-        "stool_bamboo_acacia",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> BAMBOO_DARK_OAK_STOOL = registerWithItem(
-        "stool_bamboo_dark_oak",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> BAMBOO_MANGROVE_STOOL = registerWithItem(
-        "stool_bamboo_mangrove",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> BAMBOO_CRIMSON_STOOL = registerWithItem(
-        "stool_bamboo_crimson",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> BAMBOO_WARPED_STOOL = registerWithItem(
-        "stool_bamboo_warped",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    //? if >= 1.21.6 {
-    /*
-    public static final RegistrySupplier<StoolBlock> BAMBOO_PALE_OAK_STOOL = registerWithItem(
-        "stool_bamboo_pale_oak",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    */
-    //?}
-    public static final RegistrySupplier<StoolBlock> BAMBOO_CHERRY_STOOL = registerWithItem(
-        "stool_bamboo_cherry",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-    public static final RegistrySupplier<StoolBlock> BAMBOO_BAMBOO_STOOL = registerWithItem(
-        "stool_bamboo_bamboo",
-        properties -> new StoolBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
-        new Item.Properties());
-
     // CHAIRS
-    public static final RegistrySupplier<ChairSimpleBlock> OAK_OAK_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> OAK_OAK_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_oak_oak",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> OAK_SPRUCE_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> OAK_SPRUCE_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_oak_spruce",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> OAK_BIRCH_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> OAK_BIRCH_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_oak_birch",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> OAK_JUNGLE_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> OAK_JUNGLE_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_oak_jungle",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> OAK_ACACIA_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> OAK_ACACIA_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_oak_acacia",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> OAK_DARK_OAK_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> OAK_DARK_OAK_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_oak_dark_oak",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> OAK_MANGROVE_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> OAK_MANGROVE_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_oak_mangrove",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> OAK_CRIMSON_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> OAK_CRIMSON_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_oak_crimson",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> OAK_WARPED_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> OAK_WARPED_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_oak_warped",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
     //? if >= 1.21.6 {
     /*
-    public static final RegistrySupplier<ChairSimpleBlock> OAK_PALE_OAK_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> OAK_PALE_OAK_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_oak_pale_oak",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
     */
     //?}
-    public static final RegistrySupplier<ChairSimpleBlock> OAK_CHERRY_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> OAK_CHERRY_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_oak_cherry",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> OAK_BAMBOO_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> OAK_BAMBOO_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_oak_bamboo",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> SPRUCE_OAK_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> SPRUCE_OAK_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_spruce_oak",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> SPRUCE_SPRUCE_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> SPRUCE_SPRUCE_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_spruce_spruce",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> SPRUCE_BIRCH_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> SPRUCE_BIRCH_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_spruce_birch",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> SPRUCE_JUNGLE_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> SPRUCE_JUNGLE_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_spruce_jungle",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> SPRUCE_ACACIA_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> SPRUCE_ACACIA_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_spruce_acacia",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> SPRUCE_DARK_OAK_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> SPRUCE_DARK_OAK_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_spruce_dark_oak",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> SPRUCE_MANGROVE_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> SPRUCE_MANGROVE_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_spruce_mangrove",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> SPRUCE_CRIMSON_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> SPRUCE_CRIMSON_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_spruce_crimson",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> SPRUCE_WARPED_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> SPRUCE_WARPED_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_spruce_warped",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
     //? if >= 1.21.6 {
     /*
-    public static final RegistrySupplier<ChairSimpleBlock> SPRUCE_PALE_OAK_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> SPRUCE_PALE_OAK_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_spruce_pale_oak",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
     */
     //?}
-    public static final RegistrySupplier<ChairSimpleBlock> SPRUCE_CHERRY_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> SPRUCE_CHERRY_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_spruce_cherry",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> SPRUCE_BAMBOO_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> SPRUCE_BAMBOO_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_spruce_bamboo",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> BIRCH_OAK_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> BIRCH_OAK_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_birch_oak",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> BIRCH_SPRUCE_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> BIRCH_SPRUCE_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_birch_spruce",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> BIRCH_BIRCH_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> BIRCH_BIRCH_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_birch_birch",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> BIRCH_JUNGLE_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> BIRCH_JUNGLE_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_birch_jungle",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> BIRCH_ACACIA_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> BIRCH_ACACIA_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_birch_acacia",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> BIRCH_DARK_OAK_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> BIRCH_DARK_OAK_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_birch_dark_oak",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> BIRCH_MANGROVE_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> BIRCH_MANGROVE_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_birch_mangrove",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> BIRCH_CRIMSON_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> BIRCH_CRIMSON_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_birch_crimson",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> BIRCH_WARPED_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> BIRCH_WARPED_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_birch_warped",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
     //? if >= 1.21.6 {
     /*
-    public static final RegistrySupplier<ChairSimpleBlock> BIRCH_PALE_OAK_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> BIRCH_PALE_OAK_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_birch_pale_oak",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
     */
     //?}
-    public static final RegistrySupplier<ChairSimpleBlock> BIRCH_CHERRY_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> BIRCH_CHERRY_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_birch_cherry",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> BIRCH_BAMBOO_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> BIRCH_BAMBOO_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_birch_bamboo",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> JUNGLE_OAK_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> JUNGLE_OAK_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_jungle_oak",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> JUNGLE_SPRUCE_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> JUNGLE_SPRUCE_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_jungle_spruce",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> JUNGLE_BIRCH_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> JUNGLE_BIRCH_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_jungle_birch",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> JUNGLE_JUNGLE_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> JUNGLE_JUNGLE_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_jungle_jungle",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> JUNGLE_ACACIA_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> JUNGLE_ACACIA_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_jungle_acacia",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> JUNGLE_DARK_OAK_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> JUNGLE_DARK_OAK_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_jungle_dark_oak",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> JUNGLE_MANGROVE_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> JUNGLE_MANGROVE_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_jungle_mangrove",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> JUNGLE_CRIMSON_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> JUNGLE_CRIMSON_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_jungle_crimson",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> JUNGLE_WARPED_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> JUNGLE_WARPED_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_jungle_warped",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
     //? if >= 1.21.6 {
     /*
-    public static final RegistrySupplier<ChairSimpleBlock> JUNGLE_PALE_OAK_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> JUNGLE_PALE_OAK_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_jungle_pale_oak",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
     */
     //?}
-    public static final RegistrySupplier<ChairSimpleBlock> JUNGLE_CHERRY_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> JUNGLE_CHERRY_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_jungle_cherry",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> JUNGLE_BAMBOO_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> JUNGLE_BAMBOO_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_jungle_bamboo",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> ACACIA_OAK_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> ACACIA_OAK_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_acacia_oak",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> ACACIA_SPRUCE_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> ACACIA_SPRUCE_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_acacia_spruce",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> ACACIA_BIRCH_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> ACACIA_BIRCH_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_acacia_birch",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> ACACIA_JUNGLE_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> ACACIA_JUNGLE_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_acacia_jungle",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> ACACIA_ACACIA_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> ACACIA_ACACIA_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_acacia_acacia",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> ACACIA_DARK_OAK_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> ACACIA_DARK_OAK_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_acacia_dark_oak",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> ACACIA_MANGROVE_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> ACACIA_MANGROVE_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_acacia_mangrove",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> ACACIA_CRIMSON_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> ACACIA_CRIMSON_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_acacia_crimson",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> ACACIA_WARPED_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> ACACIA_WARPED_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_acacia_warped",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
     //? if >= 1.21.6 {
     /*
-    public static final RegistrySupplier<ChairSimpleBlock> ACACIA_PALE_OAK_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> ACACIA_PALE_OAK_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_acacia_pale_oak",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
     */
     //?}
-    public static final RegistrySupplier<ChairSimpleBlock> ACACIA_CHERRY_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> ACACIA_CHERRY_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_acacia_cherry",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> ACACIA_BAMBOO_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> ACACIA_BAMBOO_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_acacia_bamboo",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> DARK_OAK_OAK_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> DARK_OAK_OAK_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_dark_oak_oak",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> DARK_OAK_SPRUCE_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> DARK_OAK_SPRUCE_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_dark_oak_spruce",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> DARK_OAK_BIRCH_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> DARK_OAK_BIRCH_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_dark_oak_birch",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> DARK_OAK_JUNGLE_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> DARK_OAK_JUNGLE_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_dark_oak_jungle",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> DARK_OAK_ACACIA_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> DARK_OAK_ACACIA_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_dark_oak_acacia",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> DARK_OAK_DARK_OAK_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> DARK_OAK_DARK_OAK_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_dark_oak_dark_oak",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> DARK_OAK_MANGROVE_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> DARK_OAK_MANGROVE_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_dark_oak_mangrove",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> DARK_OAK_CRIMSON_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> DARK_OAK_CRIMSON_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_dark_oak_crimson",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> DARK_OAK_WARPED_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> DARK_OAK_WARPED_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_dark_oak_warped",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
     //? if >= 1.21.6 {
     /*
-    public static final RegistrySupplier<ChairSimpleBlock> DARK_OAK_PALE_OAK_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> DARK_OAK_PALE_OAK_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_dark_oak_pale_oak",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
     */
     //?}
-    public static final RegistrySupplier<ChairSimpleBlock> DARK_OAK_CHERRY_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> DARK_OAK_CHERRY_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_dark_oak_cherry",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> DARK_OAK_BAMBOO_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> DARK_OAK_BAMBOO_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_dark_oak_bamboo",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> MANGROVE_OAK_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> MANGROVE_OAK_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_mangrove_oak",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> MANGROVE_SPRUCE_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> MANGROVE_SPRUCE_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_mangrove_spruce",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> MANGROVE_BIRCH_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> MANGROVE_BIRCH_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_mangrove_birch",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> MANGROVE_JUNGLE_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> MANGROVE_JUNGLE_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_mangrove_jungle",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> MANGROVE_ACACIA_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> MANGROVE_ACACIA_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_mangrove_acacia",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> MANGROVE_DARK_OAK_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> MANGROVE_DARK_OAK_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_mangrove_dark_oak",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> MANGROVE_MANGROVE_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> MANGROVE_MANGROVE_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_mangrove_mangrove",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> MANGROVE_CRIMSON_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> MANGROVE_CRIMSON_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_mangrove_crimson",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> MANGROVE_WARPED_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> MANGROVE_WARPED_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_mangrove_warped",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
     //? if >= 1.21.6 {
     /*
-    public static final RegistrySupplier<ChairSimpleBlock> MANGROVE_PALE_OAK_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> MANGROVE_PALE_OAK_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_mangrove_pale_oak",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
     */
     //?}
-    public static final RegistrySupplier<ChairSimpleBlock> MANGROVE_CHERRY_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> MANGROVE_CHERRY_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_mangrove_cherry",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> MANGROVE_BAMBOO_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> MANGROVE_BAMBOO_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_mangrove_bamboo",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> CRIMSON_OAK_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> CRIMSON_OAK_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_crimson_oak",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> CRIMSON_SPRUCE_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> CRIMSON_SPRUCE_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_crimson_spruce",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> CRIMSON_BIRCH_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> CRIMSON_BIRCH_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_crimson_birch",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> CRIMSON_JUNGLE_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> CRIMSON_JUNGLE_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_crimson_jungle",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> CRIMSON_ACACIA_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> CRIMSON_ACACIA_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_crimson_acacia",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> CRIMSON_DARK_OAK_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> CRIMSON_DARK_OAK_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_crimson_dark_oak",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> CRIMSON_MANGROVE_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> CRIMSON_MANGROVE_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_crimson_mangrove",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> CRIMSON_CRIMSON_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> CRIMSON_CRIMSON_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_crimson_crimson",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> CRIMSON_WARPED_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> CRIMSON_WARPED_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_crimson_warped",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
     //? if >= 1.21.6 {
     /*
-    public static final RegistrySupplier<ChairSimpleBlock> CRIMSON_PALE_OAK_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> CRIMSON_PALE_OAK_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_crimson_pale_oak",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
     */
     //?}
-    public static final RegistrySupplier<ChairSimpleBlock> CRIMSON_CHERRY_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> CRIMSON_CHERRY_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_crimson_cherry",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> CRIMSON_BAMBOO_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> CRIMSON_BAMBOO_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_crimson_bamboo",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> WARPED_OAK_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> WARPED_OAK_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_warped_oak",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> WARPED_SPRUCE_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> WARPED_SPRUCE_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_warped_spruce",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> WARPED_BIRCH_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> WARPED_BIRCH_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_warped_birch",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> WARPED_JUNGLE_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> WARPED_JUNGLE_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_warped_jungle",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> WARPED_ACACIA_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> WARPED_ACACIA_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_warped_acacia",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> WARPED_DARK_OAK_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> WARPED_DARK_OAK_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_warped_dark_oak",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> WARPED_MANGROVE_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> WARPED_MANGROVE_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_warped_mangrove",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> WARPED_CRIMSON_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> WARPED_CRIMSON_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_warped_crimson",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> WARPED_WARPED_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> WARPED_WARPED_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_warped_warped",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
     //? if >= 1.21.6 {
     /*
-    public static final RegistrySupplier<ChairSimpleBlock> WARPED_PALE_OAK_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> WARPED_PALE_OAK_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_warped_pale_oak",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
     */
     //?}
-    public static final RegistrySupplier<ChairSimpleBlock> WARPED_CHERRY_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> WARPED_CHERRY_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_warped_cherry",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> WARPED_BAMBOO_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> WARPED_BAMBOO_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_warped_bamboo",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
     //? if >= 1.21.6 {
     /*
-    public static final RegistrySupplier<ChairSimpleBlock> PALE_OAK_OAK_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> PALE_OAK_OAK_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_pale_oak_oak",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> PALE_OAK_SPRUCE_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> PALE_OAK_SPRUCE_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_pale_oak_spruce",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> PALE_OAK_BIRCH_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> PALE_OAK_BIRCH_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_pale_oak_birch",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> PALE_OAK_JUNGLE_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> PALE_OAK_JUNGLE_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_pale_oak_jungle",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> PALE_OAK_ACACIA_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> PALE_OAK_ACACIA_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_pale_oak_acacia",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> PALE_OAK_DARK_OAK_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> PALE_OAK_DARK_OAK_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_pale_oak_dark_oak",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> PALE_OAK_MANGROVE_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> PALE_OAK_MANGROVE_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_pale_oak_mangrove",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> PALE_OAK_CRIMSON_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> PALE_OAK_CRIMSON_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_pale_oak_crimson",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> PALE_OAK_WARPED_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> PALE_OAK_WARPED_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_pale_oak_warped",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> PALE_OAK_PALE_OAK_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> PALE_OAK_PALE_OAK_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_pale_oak_pale_oak",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> PALE_OAK_CHERRY_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> PALE_OAK_CHERRY_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_pale_oak_cherry",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> PALE_OAK_BAMBOO_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> PALE_OAK_BAMBOO_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_pale_oak_bamboo",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
     */
     //?}
-    public static final RegistrySupplier<ChairSimpleBlock> CHERRY_OAK_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> CHERRY_OAK_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_cherry_oak",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> CHERRY_SPRUCE_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> CHERRY_SPRUCE_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_cherry_spruce",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> CHERRY_BIRCH_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> CHERRY_BIRCH_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_cherry_birch",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> CHERRY_JUNGLE_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> CHERRY_JUNGLE_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_cherry_jungle",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> CHERRY_ACACIA_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> CHERRY_ACACIA_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_cherry_acacia",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> CHERRY_DARK_OAK_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> CHERRY_DARK_OAK_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_cherry_dark_oak",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> CHERRY_MANGROVE_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> CHERRY_MANGROVE_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_cherry_mangrove",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> CHERRY_CRIMSON_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> CHERRY_CRIMSON_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_cherry_crimson",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> CHERRY_WARPED_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> CHERRY_WARPED_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_cherry_warped",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
     //? if >= 1.21.6 {
     /*
-    public static final RegistrySupplier<ChairSimpleBlock> CHERRY_PALE_OAK_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> CHERRY_PALE_OAK_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_cherry_pale_oak",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
     */
     //?}
-    public static final RegistrySupplier<ChairSimpleBlock> CHERRY_CHERRY_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> CHERRY_CHERRY_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_cherry_cherry",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> CHERRY_BAMBOO_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> CHERRY_BAMBOO_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_cherry_bamboo",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> BAMBOO_OAK_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> BAMBOO_OAK_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_bamboo_oak",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> BAMBOO_SPRUCE_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> BAMBOO_SPRUCE_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_bamboo_spruce",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> BAMBOO_BIRCH_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> BAMBOO_BIRCH_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_bamboo_birch",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> BAMBOO_JUNGLE_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> BAMBOO_JUNGLE_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_bamboo_jungle",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> BAMBOO_ACACIA_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> BAMBOO_ACACIA_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_bamboo_acacia",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> BAMBOO_DARK_OAK_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> BAMBOO_DARK_OAK_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_bamboo_dark_oak",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> BAMBOO_MANGROVE_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> BAMBOO_MANGROVE_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_bamboo_mangrove",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> BAMBOO_CRIMSON_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> BAMBOO_CRIMSON_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_bamboo_crimson",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> BAMBOO_WARPED_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> BAMBOO_WARPED_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_bamboo_warped",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
     //? if >= 1.21.6 {
     /*
-    public static final RegistrySupplier<ChairSimpleBlock> BAMBOO_PALE_OAK_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> BAMBOO_PALE_OAK_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_bamboo_pale_oak",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
     */
     //?}
-    public static final RegistrySupplier<ChairSimpleBlock> BAMBOO_CHERRY_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> BAMBOO_CHERRY_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_bamboo_cherry",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
-    public static final RegistrySupplier<ChairSimpleBlock> BAMBOO_BAMBOO_CHAIR_SIMPLE = registerWithItem(
+    public static final RegistrySupplier<ChairSimpleBlock> BAMBOO_BAMBOO_SIMPLE_CHAIR = registerWithItem(
         "chair_simple_bamboo_bamboo",
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());

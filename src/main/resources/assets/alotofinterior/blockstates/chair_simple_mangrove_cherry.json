@@ -1,31 +1,614 @@
 {
-    "variants": {
-        "facing=north,half=lower": {
-            "model": "alotofinterior:block/chair_simple_mangrove_cherry"
+    "multipart": [
+        {
+            "when": {
+                "half": "lower",
+                "facing": "north",
+                "style": "0"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_legs_mangrove"
+            }
         },
-        "facing=east,half=lower": {
-            "model": "alotofinterior:block/chair_simple_mangrove_cherry",
-            "y": 90
+        {
+            "when": {
+                "half": "lower",
+                "facing": "north",
+                "style": "0"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_seat_cherry"
+            }
         },
-        "facing=south,half=lower": {
-            "model": "alotofinterior:block/chair_simple_mangrove_cherry",
-            "y": 180
+        {
+            "when": {
+                "half": "lower",
+                "facing": "north",
+                "style": "0"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_simple_backrest_cherry"
+            }
         },
-        "facing=west,half=lower": {
-            "model": "alotofinterior:block/chair_simple_mangrove_cherry",
-            "y": 270
+        {
+            "when": {
+                "half": "lower",
+                "facing": "east",
+                "style": "0"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_legs_mangrove",
+                "y": 90
+            }
         },
-        "facing=north,half=upper": {
-            "model": "alotofinterior:block/base/chair_simple_upper"
+        {
+            "when": {
+                "half": "lower",
+                "facing": "east",
+                "style": "0"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_seat_cherry",
+                "y": 90
+            }
         },
-        "facing=east,half=upper": {
-            "model": "alotofinterior:block/base/chair_simple_upper"
+        {
+            "when": {
+                "half": "lower",
+                "facing": "east",
+                "style": "0"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_simple_backrest_cherry",
+                "y": 90
+            }
         },
-        "facing=south,half=upper": {
-            "model": "alotofinterior:block/base/chair_simple_upper"
+        {
+            "when": {
+                "half": "lower",
+                "facing": "south",
+                "style": "0"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_legs_mangrove",
+                "y": 180
+            }
         },
-        "facing=west,half=upper": {
-            "model": "alotofinterior:block/base/chair_simple_upper"
+        {
+            "when": {
+                "half": "lower",
+                "facing": "south",
+                "style": "0"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_seat_cherry",
+                "y": 180
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "south",
+                "style": "0"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_simple_backrest_cherry",
+                "y": 180
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "west",
+                "style": "0"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_legs_mangrove",
+                "y": 270
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "west",
+                "style": "0"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_seat_cherry",
+                "y": 270
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "west",
+                "style": "0"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_simple_backrest_cherry",
+                "y": 270
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "north",
+                "style": "1"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_legs_mangrove"
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "north",
+                "style": "1"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_seat_cherry"
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "north",
+                "style": "1"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_tall_backrest_cherry"
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "east",
+                "style": "1"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_legs_mangrove",
+                "y": 90
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "east",
+                "style": "1"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_seat_cherry",
+                "y": 90
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "east",
+                "style": "1"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_tall_backrest_cherry",
+                "y": 90
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "south",
+                "style": "1"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_legs_mangrove",
+                "y": 180
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "south",
+                "style": "1"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_seat_cherry",
+                "y": 180
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "south",
+                "style": "1"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_tall_backrest_cherry",
+                "y": 180
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "west",
+                "style": "1"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_legs_mangrove",
+                "y": 270
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "west",
+                "style": "1"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_seat_cherry",
+                "y": 270
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "west",
+                "style": "1"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_tall_backrest_cherry",
+                "y": 270
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "north",
+                "style": "2"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_legs_mangrove"
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "north",
+                "style": "2"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_seat_cherry"
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "north",
+                "style": "2"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_open_backrest_cherry"
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "east",
+                "style": "2"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_legs_mangrove",
+                "y": 90
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "east",
+                "style": "2"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_seat_cherry",
+                "y": 90
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "east",
+                "style": "2"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_open_backrest_cherry",
+                "y": 90
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "south",
+                "style": "2"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_legs_mangrove",
+                "y": 180
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "south",
+                "style": "2"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_seat_cherry",
+                "y": 180
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "south",
+                "style": "2"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_open_backrest_cherry",
+                "y": 180
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "west",
+                "style": "2"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_legs_mangrove",
+                "y": 270
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "west",
+                "style": "2"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_seat_cherry",
+                "y": 270
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "west",
+                "style": "2"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_open_backrest_cherry",
+                "y": 270
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "north",
+                "style": "3"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_legs_mangrove"
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "north",
+                "style": "3"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_seat_cherry"
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "north",
+                "style": "3"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_tall_open_backrest_cherry"
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "east",
+                "style": "3"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_legs_mangrove",
+                "y": 90
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "east",
+                "style": "3"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_seat_cherry",
+                "y": 90
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "east",
+                "style": "3"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_tall_open_backrest_cherry",
+                "y": 90
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "south",
+                "style": "3"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_legs_mangrove",
+                "y": 180
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "south",
+                "style": "3"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_seat_cherry",
+                "y": 180
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "south",
+                "style": "3"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_tall_open_backrest_cherry",
+                "y": 180
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "west",
+                "style": "3"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_legs_mangrove",
+                "y": 270
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "west",
+                "style": "3"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_seat_cherry",
+                "y": 270
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "west",
+                "style": "3"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_tall_open_backrest_cherry",
+                "y": 270
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "north",
+                "style": "4"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_legs_mangrove"
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "north",
+                "style": "4"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_seat_cherry"
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "east",
+                "style": "4"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_legs_mangrove",
+                "y": 90
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "east",
+                "style": "4"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_seat_cherry",
+                "y": 90
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "south",
+                "style": "4"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_legs_mangrove",
+                "y": 180
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "south",
+                "style": "4"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_seat_cherry",
+                "y": 180
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "west",
+                "style": "4"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_legs_mangrove",
+                "y": 270
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "west",
+                "style": "4"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_seat_cherry",
+                "y": 270
+            }
+        },
+        {
+            "when": {
+                "half": "upper"
+            },
+            "apply": {
+                "model": "alotofinterior:block/base/chair_upper"
+            }
         }
-    }
+    ]
 }

@@ -37,8 +37,8 @@ public class TableBlock extends Block implements SimpleWaterloggedBlock {
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
     // Legs from y=0 to y=11, top slab from y=11 to y=13 - one unit taller than a plain
-    // 3/4 block so a player sitting on a nearby stool has knee clearance underneath
-    // instead of clipping the tabletop - matching the geometry gen.py writes into
+    // 3/4 block so a player sitting on a nearby chair/stool-style seat has knee clearance
+    // underneath instead of clipping the tabletop - matching the geometry gen.py writes into
     // models/block/base/table_*.json.
     private static final VoxelShape TOP = Block.box(0, 11, 0, 16, 13, 16);
     private static final VoxelShape LEG_NW = Block.box(0, 0, 0, 2, 11, 2);

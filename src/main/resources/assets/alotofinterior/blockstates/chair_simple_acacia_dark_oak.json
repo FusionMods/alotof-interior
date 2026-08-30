@@ -1,31 +1,614 @@
 {
-    "variants": {
-        "facing=north,half=lower": {
-            "model": "alotofinterior:block/chair_simple_acacia_dark_oak"
+    "multipart": [
+        {
+            "when": {
+                "half": "lower",
+                "facing": "north",
+                "style": "0"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_legs_acacia"
+            }
         },
-        "facing=east,half=lower": {
-            "model": "alotofinterior:block/chair_simple_acacia_dark_oak",
-            "y": 90
+        {
+            "when": {
+                "half": "lower",
+                "facing": "north",
+                "style": "0"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_seat_dark_oak"
+            }
         },
-        "facing=south,half=lower": {
-            "model": "alotofinterior:block/chair_simple_acacia_dark_oak",
-            "y": 180
+        {
+            "when": {
+                "half": "lower",
+                "facing": "north",
+                "style": "0"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_simple_backrest_dark_oak"
+            }
         },
-        "facing=west,half=lower": {
-            "model": "alotofinterior:block/chair_simple_acacia_dark_oak",
-            "y": 270
+        {
+            "when": {
+                "half": "lower",
+                "facing": "east",
+                "style": "0"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_legs_acacia",
+                "y": 90
+            }
         },
-        "facing=north,half=upper": {
-            "model": "alotofinterior:block/base/chair_simple_upper"
+        {
+            "when": {
+                "half": "lower",
+                "facing": "east",
+                "style": "0"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_seat_dark_oak",
+                "y": 90
+            }
         },
-        "facing=east,half=upper": {
-            "model": "alotofinterior:block/base/chair_simple_upper"
+        {
+            "when": {
+                "half": "lower",
+                "facing": "east",
+                "style": "0"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_simple_backrest_dark_oak",
+                "y": 90
+            }
         },
-        "facing=south,half=upper": {
-            "model": "alotofinterior:block/base/chair_simple_upper"
+        {
+            "when": {
+                "half": "lower",
+                "facing": "south",
+                "style": "0"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_legs_acacia",
+                "y": 180
+            }
         },
-        "facing=west,half=upper": {
-            "model": "alotofinterior:block/base/chair_simple_upper"
+        {
+            "when": {
+                "half": "lower",
+                "facing": "south",
+                "style": "0"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_seat_dark_oak",
+                "y": 180
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "south",
+                "style": "0"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_simple_backrest_dark_oak",
+                "y": 180
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "west",
+                "style": "0"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_legs_acacia",
+                "y": 270
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "west",
+                "style": "0"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_seat_dark_oak",
+                "y": 270
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "west",
+                "style": "0"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_simple_backrest_dark_oak",
+                "y": 270
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "north",
+                "style": "1"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_legs_acacia"
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "north",
+                "style": "1"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_seat_dark_oak"
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "north",
+                "style": "1"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_tall_backrest_dark_oak"
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "east",
+                "style": "1"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_legs_acacia",
+                "y": 90
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "east",
+                "style": "1"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_seat_dark_oak",
+                "y": 90
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "east",
+                "style": "1"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_tall_backrest_dark_oak",
+                "y": 90
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "south",
+                "style": "1"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_legs_acacia",
+                "y": 180
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "south",
+                "style": "1"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_seat_dark_oak",
+                "y": 180
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "south",
+                "style": "1"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_tall_backrest_dark_oak",
+                "y": 180
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "west",
+                "style": "1"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_legs_acacia",
+                "y": 270
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "west",
+                "style": "1"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_seat_dark_oak",
+                "y": 270
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "west",
+                "style": "1"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_tall_backrest_dark_oak",
+                "y": 270
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "north",
+                "style": "2"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_legs_acacia"
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "north",
+                "style": "2"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_seat_dark_oak"
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "north",
+                "style": "2"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_open_backrest_dark_oak"
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "east",
+                "style": "2"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_legs_acacia",
+                "y": 90
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "east",
+                "style": "2"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_seat_dark_oak",
+                "y": 90
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "east",
+                "style": "2"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_open_backrest_dark_oak",
+                "y": 90
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "south",
+                "style": "2"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_legs_acacia",
+                "y": 180
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "south",
+                "style": "2"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_seat_dark_oak",
+                "y": 180
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "south",
+                "style": "2"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_open_backrest_dark_oak",
+                "y": 180
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "west",
+                "style": "2"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_legs_acacia",
+                "y": 270
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "west",
+                "style": "2"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_seat_dark_oak",
+                "y": 270
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "west",
+                "style": "2"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_open_backrest_dark_oak",
+                "y": 270
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "north",
+                "style": "3"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_legs_acacia"
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "north",
+                "style": "3"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_seat_dark_oak"
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "north",
+                "style": "3"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_tall_open_backrest_dark_oak"
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "east",
+                "style": "3"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_legs_acacia",
+                "y": 90
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "east",
+                "style": "3"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_seat_dark_oak",
+                "y": 90
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "east",
+                "style": "3"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_tall_open_backrest_dark_oak",
+                "y": 90
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "south",
+                "style": "3"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_legs_acacia",
+                "y": 180
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "south",
+                "style": "3"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_seat_dark_oak",
+                "y": 180
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "south",
+                "style": "3"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_tall_open_backrest_dark_oak",
+                "y": 180
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "west",
+                "style": "3"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_legs_acacia",
+                "y": 270
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "west",
+                "style": "3"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_seat_dark_oak",
+                "y": 270
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "west",
+                "style": "3"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_tall_open_backrest_dark_oak",
+                "y": 270
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "north",
+                "style": "4"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_legs_acacia"
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "north",
+                "style": "4"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_seat_dark_oak"
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "east",
+                "style": "4"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_legs_acacia",
+                "y": 90
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "east",
+                "style": "4"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_seat_dark_oak",
+                "y": 90
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "south",
+                "style": "4"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_legs_acacia",
+                "y": 180
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "south",
+                "style": "4"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_seat_dark_oak",
+                "y": 180
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "west",
+                "style": "4"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_legs_acacia",
+                "y": 270
+            }
+        },
+        {
+            "when": {
+                "half": "lower",
+                "facing": "west",
+                "style": "4"
+            },
+            "apply": {
+                "model": "alotofinterior:block/chair_seat_dark_oak",
+                "y": 270
+            }
+        },
+        {
+            "when": {
+                "half": "upper"
+            },
+            "apply": {
+                "model": "alotofinterior:block/base/chair_upper"
+            }
         }
-    }
+    ]
 }

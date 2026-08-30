@@ -1,0 +1,6 @@
+{
+    "parent": "alotofinterior:block/base/chair_seat_core",
+    "textures": {
+        "1": "minecraft:block/jungle_planks"
+    }
+}

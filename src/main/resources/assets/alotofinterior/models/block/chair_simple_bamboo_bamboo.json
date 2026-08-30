@@ -1,5 +1,5 @@
 {
-    "parent": "alotofinterior:block/base/chair_simple_core",
+    "parent": "alotofinterior:block/base/chair_full_core",
     "textures": {
         "0": "minecraft:block/bamboo_planks",
         "1": "minecraft:block/bamboo_planks"

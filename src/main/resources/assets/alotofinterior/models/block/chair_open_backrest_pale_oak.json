@@ -1,0 +1,6 @@
+{
+    "parent": "alotofinterior:block/base/chair_open_backrest_core",
+    "textures": {
+        "1": "minecraft:block/pale_oak_planks"
+    }
+}

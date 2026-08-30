@@ -341,14 +341,341 @@ def gen_table() -> None:
             with open(ASSETS_DIR / f"optifine/ctm/table/table_{wood_type}_{top_type}.properties", "w") as f:
                 f.write(ctm_properties(wood_type, top_type))
 
-def gen_chair_simple() -> None:
-    # Seat and legs are geometrically identical to stool_core.json (same box
-    # coordinates/UVs) - the backrest is the only new element. Its UV is a plain full-face
-    # stretch rather than a real unwrap: the source model this was based on had broken UV
-    # data for this element, and since it's just sampling a generic repeating planks
-    # texture (not bespoke art), an exact unwrap buys nothing visually.
+def gen_chair_shared() -> None:
+    # Base geometry + per-wood pieces shared by every chair style (simple/open/no_back).
+    # Previously each style baked one fully-fused, fully-textured model per (leg wood, seat
+    # wood) combo - 144 files each, only 2 of which (the wood textures) ever actually varied
+    # per file. The geometry only varies along 2 independent axes - which wood the legs use,
+    # which wood the seat/backrest uses - so it's generated once per axis value here and
+    # combined per-block via a blockstate "multipart" (see _chair_multipart below), the same
+    # technique gen_table() already uses for its leg/top split.
+    #
+    # Legs and the seat cushion are the same piece across every style - chair_open was
+    # originally modelled with a different leg UV unwrap on the north face than
+    # chair_simple/stool's legs, but with all 3 styles now just STYLE values on the same
+    # block (cycled in place with shift-right-click), that showed up as the legs visibly
+    # changing look when cycling styles, which reads as a bug rather than an intentional
+    # style difference - unified onto the one shared leg piece instead.
+
     write_json(
-        ASSETS_DIR / "models/block/base/chair_simple_core.json",
+        ASSETS_DIR / "models/block/base/chair_seat_core.json",
+        {
+            "parent": "block/block",
+            "format_version": "1.9.0",
+            "credit": "Made with Blockbench",
+            "textures": {"particle": "#1"},
+            "elements": [
+                {
+                    "from": [2, 6, 2],
+                    "to": [14, 8, 14],
+                    "faces": {
+                        "north": {"uv": [2, 12, 14, 14], "texture": "#1"},
+                        "east": {"uv": [2, 12, 14, 14], "texture": "#1"},
+                        "south": {"uv": [2, 12, 14, 14], "texture": "#1"},
+                        "west": {"uv": [2, 12, 14, 14], "texture": "#1"},
+                        "up": {"uv": [14, 14, 2, 2], "texture": "#1"},
+                        "down": {"uv": [14, 2, 2, 14], "texture": "#1"},
+                    },
+                },
+            ],
+        },
+    )
+
+    def leg_element(from_, to_, north_uv):
+        return {
+            "from": from_,
+            "to": to_,
+            "faces": {
+                "north": {"uv": north_uv, "texture": "#0"},
+                "east": {"uv": [2, 10, 4, 16], "texture": "#0"},
+                "south": {"uv": [8, 10, 10, 16], "texture": "#0"},
+                "west": {"uv": [6, 10, 8, 16], "texture": "#0"},
+                "down": {"uv": [8, 8, 6, 10], "texture": "#0", "cullface": "down"},
+            },
+        }
+
+    def leg_element_inner(from_, to_, north_uv):
+        # The two "inner" legs (nw/ne) share east/south/west UVs distinct from the two
+        # "outer" legs (sw/se) - matches the original hand-authored models exactly.
+        return {
+            "from": from_,
+            "to": to_,
+            "faces": {
+                "north": {"uv": north_uv, "texture": "#0"},
+                "east": {"uv": [6, 10, 8, 16], "texture": "#0"},
+                "south": {"uv": [12, 10, 14, 16], "texture": "#0"},
+                "west": {"uv": [10, 10, 12, 16], "texture": "#0"},
+                "down": {"uv": [12, 8, 10, 10], "texture": "#0", "cullface": "down"},
+            },
+        }
+
+    write_json(
+        ASSETS_DIR / "models/block/base/chair_legs_core.json",
+        {
+            "parent": "block/block",
+            "format_version": "1.9.0",
+            "credit": "Made with Blockbench",
+            "textures": {"particle": "#0"},
+            "elements": [
+                leg_element([3, 0, 11], [5, 6, 13], [4, 10, 6, 16]),
+                leg_element([11, 0, 11], [13, 6, 13], [4, 10, 6, 16]),
+                leg_element_inner([3, 0, 3], [5, 6, 5], [8, 10, 10, 16]),
+                leg_element_inner([11, 0, 3], [13, 6, 5], [8, 10, 10, 16]),
+            ],
+        },
+    )
+    write_json(
+        ASSETS_DIR / "models/block/base/chair_simple_backrest_core.json",
+        {
+            "parent": "block/block",
+            "format_version": "1.9.0",
+            "credit": "Made with Blockbench",
+            "textures": {"particle": "#1"},
+            "elements": [
+                {
+                    "from": [2, 8, 12],
+                    "to": [14, 19, 14],
+                    "faces": {
+                        "north": {"uv": [2, 3, 14, 14], "texture": "#1"},
+                        "east": {"uv": [2, 3, 4, 14], "texture": "#1"},
+                        "south": {"uv": [2, 3, 14, 14], "texture": "#1"},
+                        "west": {"uv": [12, 3, 14, 14], "texture": "#1"},
+                        "up": {"uv": [2, 11, 14, 13], "texture": "#1"}
+                    },
+                },
+            ],
+        },
+    )
+    
+    write_json(
+        ASSETS_DIR / "models/block/base/chair_tall_backrest_core.json",
+        {
+            "parent": "block/block",
+            "format_version": "1.9.0",
+            "credit": "Made with Blockbench",
+            "textures": {"particle": "#1"},
+            "elements": [
+                {
+                    "from": [2, 8, 12],
+                    "to": [14, 19+2, 14],
+                    "faces": {
+                        "north": {"uv": [2, 3-2, 14, 14], "texture": "#1"},
+                        "east": {"uv": [2, 3-2, 4, 14], "texture": "#1"},
+                        "south": {"uv": [2, 3-2, 14, 14], "texture": "#1"},
+                        "west": {"uv": [12, 3-2, 14, 14], "texture": "#1"},
+                        "up": {"uv": [2, 11, 14, 13], "texture": "#1"}
+                    },
+                },
+            ],
+        },
+    )
+    
+    write_json(
+        ASSETS_DIR / "models/block/base/chair_open_backrest_core.json",
+        {
+            "parent": "block/block",
+            "format_version": "1.9.0",
+            "credit": "Made with Blockbench",
+            "textures": {"particle": "#1"},
+            "elements": [
+                {
+                    "from": [2, 8, 12],
+                    "to": [4, 19, 14],
+                    "faces": {
+                        "north": {"uv": [12, 3, 14, 14], "texture": "#1"},
+                        "east": {"uv": [2, 3, 4, 14], "texture": "#1"},
+                        "south": {"uv": [2, 3, 4, 14], "texture": "#1"},
+                        "west": {"uv": [12, 3, 14, 14], "texture": "#1"},
+                        "up": {"uv": [12, 2, 14, 4], "texture": "#1"}
+                    }
+                },
+                {
+                    "from": [12, 8, 12],
+                    "to": [14, 19, 14],
+                    "faces": {
+                        "north": {"uv": [2, 3, 4, 14], "texture": "#1"},
+                        "east": {"uv": [2, 3, 4, 14], "texture": "#1"},
+                        "south": {"uv": [12, 3, 14, 14], "texture": "#1"},
+                        "west": {"uv": [12, 3, 14, 14], "texture": "#1"},
+                        "up": {"uv": [2, 2, 4, 4], "texture": "#1"}
+                    }
+                },
+                {
+                    "from": [4, 17, 12],
+                    "to": [12, 19, 14],
+                    "faces": {
+                        "north": {"uv": [4, 3, 12, 5], "texture": "#1"},
+                        "south": {"uv": [4, 3, 12, 5], "texture": "#1"},
+                        "up": {"uv": [4, 11, 12, 13], "texture": "#1"},
+                        "down": {"uv": [4, 3, 12, 5], "texture": "#1"}
+                    }
+                },
+                {
+                    "from": [4, 12, 12],
+                    "to": [12, 13, 14],
+                    "faces": {
+                        "north": {"uv": [4, 7, 12, 8], "texture": "#1"},
+                        "south": {"uv": [4, 7, 12, 8], "texture": "#1"},
+                        "up": {"uv": [4, 11, 12, 13], "texture": "#1"},
+                        "down": {"uv": [4, 3, 12, 5], "texture": "#1"}
+                    }
+                },
+            ],
+        },
+    )
+    
+    write_json(
+        ASSETS_DIR / "models/block/base/chair_tall_open_backrest_core.json",
+        {
+            "parent": "block/block",
+            "format_version": "1.9.0",
+            "credit": "Made with Blockbench",
+            "textures": {"particle": "#1"},
+            "elements": [
+                {
+                    "from": [2, 8, 12],
+                    "to": [4, 19+2, 14],
+                    "faces": {
+                        "north": {"uv": [12, 3-2, 14, 14], "texture": "#1"},
+                        "east": {"uv": [2, 3-2, 4, 14], "texture": "#1"},
+                        "south": {"uv": [2, 3-2, 4, 14], "texture": "#1"},
+                        "west": {"uv": [12, 3-2, 14, 14], "texture": "#1"},
+                        "up": {"uv": [12, 2, 14, 4], "texture": "#1"}
+                    }
+                },
+                {
+                    "from": [12, 8, 12],
+                    "to": [14, 19+2, 14],
+                    "faces": {
+                        "north": {"uv": [2, 3-2, 4, 14], "texture": "#1"},
+                        "east": {"uv": [2, 3-2, 4, 14], "texture": "#1"},
+                        "south": {"uv": [12, 3-2, 14, 14], "texture": "#1"},
+                        "west": {"uv": [12, 3-2, 14, 14], "texture": "#1"},
+                        "up": {"uv": [2, 2, 4, 4], "texture": "#1"}
+                    }
+                },
+                {
+                    "from": [4, 17+2, 12],
+                    "to": [12, 19+2, 14],
+                    "faces": {
+                        "north": {"uv": [4, 3, 12, 5], "texture": "#1"},
+                        "south": {"uv": [4, 3, 12, 5], "texture": "#1"},
+                        "up": {"uv": [4, 11, 12, 13], "texture": "#1"},
+                        "down": {"uv": [4, 3, 12, 5], "texture": "#1"}
+                    }
+                },
+                {
+                    "from": [4, 12-1, 12],
+                    "to": [12, 13-1, 14],
+                    "faces": {
+                        "north": {"uv": [4, 7-1, 12, 8-1], "texture": "#1"},
+                        "south": {"uv": [4, 7-1, 12, 8-1], "texture": "#1"},
+                        "up": {"uv": [4, 11, 12, 13], "texture": "#1"},
+                        "down": {"uv": [4, 3, 12, 5], "texture": "#1"}
+                    }
+                },
+                {
+                    "from": [4, 12+3, 12],
+                    "to": [12, 13+3, 14],
+                    "faces": {
+                        "north": {"uv": [4, 7+3, 12, 8+3], "texture": "#1"},
+                        "south": {"uv": [4, 7+3, 12, 8+3], "texture": "#1"},
+                        "up": {"uv": [4, 11, 12, 13], "texture": "#1"},
+                        "down": {"uv": [4, 3, 12, 5], "texture": "#1"}
+                    }
+                },
+            ],
+        },
+    )
+
+    # Every chair style's half=upper state renders nothing (see ChairBlock's class doc) -
+    # one shared empty model covers simple/open/no_back instead of one each.
+    write_json(ASSETS_DIR / "models/block/base/chair_upper.json", {"elements": []})
+
+    for wood_type in WOOD_TYPES:
+        write_json(
+            ASSETS_DIR / f"models/block/chair_seat_{wood_type}.json",
+            {"parent": "alotofinterior:block/base/chair_seat_core", "textures": {"1": f"minecraft:block/{wood_type}_planks"}},
+        )
+        write_json(
+            ASSETS_DIR / f"models/block/chair_legs_{wood_type}.json",
+            {"parent": "alotofinterior:block/base/chair_legs_core", "textures": {"0": f"minecraft:block/{wood_type}_planks"}},
+        )
+        write_json(
+            ASSETS_DIR / f"models/block/chair_simple_backrest_{wood_type}.json",
+            {"parent": "alotofinterior:block/base/chair_simple_backrest_core", "textures": {"1": f"minecraft:block/{wood_type}_planks"}},
+        )
+        write_json(
+            ASSETS_DIR / f"models/block/chair_tall_backrest_{wood_type}.json",
+            {"parent": "alotofinterior:block/base/chair_tall_backrest_core", "textures": {"1": f"minecraft:block/{wood_type}_planks"}},
+        )
+        write_json(
+            ASSETS_DIR / f"models/block/chair_open_backrest_{wood_type}.json",
+            {"parent": "alotofinterior:block/base/chair_open_backrest_core", "textures": {"1": f"minecraft:block/{wood_type}_planks"}},
+        )
+        write_json(
+            ASSETS_DIR / f"models/block/chair_tall_open_backrest_{wood_type}.json",
+            {"parent": "alotofinterior:block/base/chair_tall_open_backrest_core", "textures": {"1": f"minecraft:block/{wood_type}_planks"}},
+        )
+
+
+# STYLE values (must match ChairBlock.STYLE_SIMPLE/STYLE_OPEN/STYLE_NO_BACK) -> the layer
+# models (already wood-resolved) that make up that style's LOWER-half appearance.
+_CHAIR_STYLE_LAYERS = {
+    0: lambda leg, seat: [
+        f"alotofinterior:block/chair_legs_{leg}",
+        f"alotofinterior:block/chair_seat_{seat}",
+        f"alotofinterior:block/chair_simple_backrest_{seat}",
+    ],
+    1: lambda leg, seat: [
+        f"alotofinterior:block/chair_legs_{leg}",
+        f"alotofinterior:block/chair_seat_{seat}",
+        f"alotofinterior:block/chair_tall_backrest_{seat}"
+    ], 
+    2: lambda leg, seat: [
+        f"alotofinterior:block/chair_legs_{leg}",
+        f"alotofinterior:block/chair_seat_{seat}",
+        f"alotofinterior:block/chair_open_backrest_{seat}",
+    ],
+    3: lambda leg, seat: [
+        f"alotofinterior:block/chair_legs_{leg}",
+        f"alotofinterior:block/chair_seat_{seat}",
+        f"alotofinterior:block/chair_tall_open_backrest_{seat}"
+    ],
+    4: lambda leg, seat: [
+        f"alotofinterior:block/chair_legs_{leg}",
+        f"alotofinterior:block/chair_seat_{seat}",
+    ],
+}
+
+
+def _chair_blockstate(wood_type_leg: str, wood_type_seat: str) -> dict:
+    # One block, one STYLE property (see ChairBlock) instead of one registered block per
+    # style - so this is the only blockstate file per (leg wood, seat wood) combo, with
+    # "style" joining "half"/"facing" in the multipart "when" conditions instead of style
+    # being which file/block you're looking at. half=upper renders nothing regardless of
+    # style, so it only needs one unconditional entry.
+    multipart = []
+    for style, layers_for in _CHAIR_STYLE_LAYERS.items():
+        layers = layers_for(wood_type_leg, wood_type_seat)
+        for facing, y in (("north", None), ("east", 90), ("south", 180), ("west", 270)):
+            for model in layers:
+                apply = {"model": model}
+                if y:
+                    apply["y"] = y
+                multipart.append({"when": {"half": "lower", "facing": facing, "style": str(style)}, "apply": apply})
+    multipart.append({"when": {"half": "upper"}, "apply": {"model": "alotofinterior:block/base/chair_upper"}})
+    return {"multipart": multipart}
+
+
+def gen_chair() -> None:
+    # Full fused geometry (legs + seat + solid backrest, i.e. how style=0/STYLE_SIMPLE looks)
+    # - not used for in-world rendering (that's the multipart blockstate above, sharing
+    # pieces via gen_chair_shared()), but items can't be multipart, and every wood combo has
+    # exactly one registered item regardless of STYLE (see ChairBlock/ModBlocks.java), so
+    # this is still needed as that item model's parent.
+    write_json(
+        ASSETS_DIR / "models/block/base/chair_full_core.json",
         {
             "parent": "block/block",
             "format_version": "1.9.0",
@@ -371,15 +698,11 @@ def gen_chair_simple() -> None:
                     "from": [2, 8, 12],
                     "to": [14, 19, 14],
                     "faces": {
-                        "north": {"uv": [0, 0, 16, 16], "texture": "#1"},
-                        # East/west are only 2 units deep (like the legs' 2-unit-wide side
-                        # faces) and up is only 2 units deep (like the legs' 2x2 footprint) -
-                        # a full 16x16 stretch squished both badly, so crop a UV rect that
-                        # actually matches each face's real proportions instead.
+                        "north": {"uv": [2, 2, 14, 13], "texture": "#1"},
                         "east": {"uv": [0, 5, 2, 16], "texture": "#1"},
-                        "south": {"uv": [0, 0, 16, 16], "texture": "#1"},
+                        "south": {"uv": [2, 1, 14, 12], "texture": "#1"},
                         "west": {"uv": [0, 5, 2, 16], "texture": "#1"},
-                        "up": {"uv": [2, 0, 14, 2], "texture": "#1"},
+                        "up": {"uv": [2, 0, 14, 2], "texture": "#1"}
                     },
                 },
                 {
@@ -430,160 +753,30 @@ def gen_chair_simple() -> None:
         },
     )
 
-    # ChairSimpleBlock is a two-position "tall block" (like doors/tall flowers) since the
-    # backrest overflows into the block above - the LOWER half draws the whole model
-    # (already reaching up into that space visually), so the UPPER half just needs some
-    # valid, empty model to point at. Shared across every wood combo since it renders nothing.
-    write_json(ASSETS_DIR / "models/block/base/chair_simple_upper.json", {"elements": []})
-
     for wood_type_leg in WOOD_TYPES:
         for wood_type_seat in WOOD_TYPES:
+            fused_model = f"alotofinterior:block/chair_simple_{wood_type_leg}_{wood_type_seat}"
             write_json(
                 ASSETS_DIR / f"models/block/chair_simple_{wood_type_leg}_{wood_type_seat}.json",
                 {
-                    "parent": "alotofinterior:block/base/chair_simple_core",
+                    "parent": "alotofinterior:block/base/chair_full_core",
                     "textures": {
                         "0": f"minecraft:block/{wood_type_leg}_planks",
                         "1": f"minecraft:block/{wood_type_seat}_planks",
                     },
                 },
             )
-
-            # Model is authored facing north by default (backrest on the south side) -
-            # the blockstate rotates it for the other three FACING values the same way
-            # vanilla furnaces/anvils do. half=upper always points at the shared empty
-            # model regardless of facing, since it never renders anything.
-            model = f"alotofinterior:block/chair_simple_{wood_type_leg}_{wood_type_seat}"
-            upper_model = "alotofinterior:block/base/chair_simple_upper"
             write_json(
                 ASSETS_DIR / f"blockstates/chair_simple_{wood_type_leg}_{wood_type_seat}.json",
-                {
-                    "variants": {
-                        "facing=north,half=lower": {"model": model},
-                        "facing=east,half=lower": {"model": model, "y": 90},
-                        "facing=south,half=lower": {"model": model, "y": 180},
-                        "facing=west,half=lower": {"model": model, "y": 270},
-                        "facing=north,half=upper": {"model": upper_model},
-                        "facing=east,half=upper": {"model": upper_model},
-                        "facing=south,half=upper": {"model": upper_model},
-                        "facing=west,half=upper": {"model": upper_model},
-                    }
-                },
+                _chair_blockstate(wood_type_leg, wood_type_seat),
             )
             write_json(
                 ASSETS_DIR / f"models/item/chair_simple_{wood_type_leg}_{wood_type_seat}.json",
-                {"parent": model},
+                {"parent": fused_model},
             )
             write_json(
                 ASSETS_DIR / f"items/chair_simple_{wood_type_leg}_{wood_type_seat}.json",
-                {"model": {"type": "minecraft:model", "model": model}},
-            )
-
-
-def gen_stool() -> None:
-    write_json(
-        ASSETS_DIR / "models/block/base/stool_core.json",
-        {
-            "parent": "block/block",
-            "format_version": "1.9.0",
-            "credit": "Made with Blockbench",
-            "textures": {"particle": "#0"},
-            "elements": [
-                {
-                    "from": [2, 6, 2],
-                    "to": [14, 8, 14],
-                    "rotation": {"angle": 0, "axis": "y", "origin": [2, 6, 2]},
-                    "faces": {
-                        "north": {"uv": [2, 12, 14, 14], "texture": "#1"},
-                        "east": {"uv": [2, 12, 14, 14], "texture": "#1"},
-                        "south": {"uv": [2, 12, 14, 14], "texture": "#1"},
-                        "west": {"uv": [2, 12, 14, 14], "texture": "#1"},
-                        "up": {"uv": [14, 14, 2, 2], "texture": "#1"},
-                        "down": {"uv": [14, 2, 2, 14], "texture": "#1"}
-                    }
-                },
-                {
-                    "from": [3, 0, 11],
-                    "to": [5, 6, 13],
-                    "rotation": {"angle": 0, "axis": "y", "origin": [3, 0, 11]},
-                    "faces": {
-                        "north": {"uv": [4, 10, 6, 16], "texture": "#0"},
-                        "east": {"uv": [2, 10, 4, 16], "texture": "#0"},
-                        "south": {"uv": [8, 10, 10, 16], "texture": "#0"},
-                        "west": {"uv": [6, 10, 8, 16], "texture": "#0"},
-                        "down": {"uv": [8, 8, 6, 10], "texture": "#0", "cullface": "down"}
-                    }
-                },
-                {
-                    "from": [11, 0, 11],
-                    "to": [13, 6, 13],
-                    "rotation": {"angle": 0, "axis": "y", "origin": [11, 0, 11]},
-                    "faces": {
-                        "north": {"uv": [4, 10, 6, 16], "texture": "#0"},
-                        "east": {"uv": [2, 10, 4, 16], "texture": "#0"},
-                        "south": {"uv": [8, 10, 10, 16], "texture": "#0"},
-                        "west": {"uv": [6, 10, 8, 16], "texture": "#0"},
-                        "down": {"uv": [8, 8, 6, 10], "texture": "#0", "cullface": "down"}
-                    }
-                },
-                {
-                    "from": [3, 0, 3],
-                    "to": [5, 6, 5],
-                    "rotation": {"angle": 0, "axis": "y", "origin": [3, 0, 3]},
-                    "faces": {
-                        "north": {"uv": [8, 10, 10, 16], "texture": "#0"},
-                        "east": {"uv": [6, 10, 8, 16], "texture": "#0"},
-                        "south": {"uv": [12, 10, 14, 16], "texture": "#0"},
-                        "west": {"uv": [10, 10, 12, 16], "texture": "#0"},
-                        "down": {"uv": [12, 8, 10, 10], "texture": "#0", "cullface": "down"}
-                    }
-                },
-                {
-                    "from": [11, 0, 3],
-                    "to": [13, 6, 5],
-                    "rotation": {"angle": 0, "axis": "y", "origin": [11, 0, 3]},
-                    "faces": {
-                        "north": {"uv": [8, 10, 10, 16], "texture": "#0"},
-                        "east": {"uv": [6, 10, 8, 16], "texture": "#0"},
-                        "south": {"uv": [12, 10, 14, 16], "texture": "#0"},
-                        "west": {"uv": [10, 10, 12, 16], "texture": "#0"},
-                        "down": {"uv": [12, 8, 10, 10], "texture": "#0", "cullface": "down"}
-                    }
-                }
-            ]
-        },
-    )
-    
-    for wood_type_leg in WOOD_TYPES:
-        for wood_type_seat in WOOD_TYPES:
-            write_json(
-                ASSETS_DIR / f"models/block/stool_{wood_type_leg}_{wood_type_seat}.json",
-                {
-                    "parent": "alotofinterior:block/base/stool_core",
-                    "textures": {
-                        "0": f"minecraft:block/{wood_type_leg}_planks",
-                        "1": f"minecraft:block/{wood_type_seat}_planks",
-                    },
-                },
-            )
-            
-            # blockstate (stool doesn't have any multipart conditions, so it's just a single model with no variants)
-            write_json(
-                ASSETS_DIR / f"blockstates/stool_{wood_type_leg}_{wood_type_seat}.json",
-                {
-                    "variants": {
-                        "": {"model": f"alotofinterior:block/stool_{wood_type_leg}_{wood_type_seat}"}
-                    }
-                },
-            )
-            # item model
-            write_json(
-                ASSETS_DIR / f"models/item/stool_{wood_type_leg}_{wood_type_seat}.json",
-                {"parent": f"alotofinterior:block/stool_{wood_type_leg}_{wood_type_seat}"},
-            )
-            write_json(
-                ASSETS_DIR / f"items/stool_{wood_type_leg}_{wood_type_seat}.json",
-                {"model": {"type": "minecraft:model", "model": f"alotofinterior:block/stool_{wood_type_leg}_{wood_type_seat}"}},
+                {"model": {"type": "minecraft:model", "model": fused_model}},
             )
 
 
@@ -598,10 +791,14 @@ if __name__ == "__main__":
     for subdir in ("models/block/base", "blockstates", "models/item", "models/block", "items", "optifine/ctm/table"):
         for file in (ASSETS_DIR / subdir).glob("table_*"):
             file.unlink()
+        # One-time purge of assets from earlier chair/stool layouts this project has since
+        # moved past: gen_stool() (StoolBlock, folded into ChairBlock's STYLE_NO_BACK), and
+        # the per-style chair_simple_*/chair_open_*/chair_no_back_* split (ChairSimpleBlock/
+        # ChairOpenBlock/ChairNoBackBlock, folded into ChairBlock's STYLE property).
         for file in (ASSETS_DIR / subdir).glob("stool_*"):
             file.unlink()
-        for file in (ASSETS_DIR / subdir).glob("chair_simple_*"):
+        for file in (ASSETS_DIR / subdir).glob("chair_*"):
             file.unlink()
     gen_table()
-    gen_stool()
-    gen_chair_simple()
+    gen_chair_shared()
+    gen_chair()

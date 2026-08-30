@@ -1,7 +1,0 @@
-{
-    "parent": "alotofinterior:block/base/stool_core",
-    "textures": {
-        "0": "minecraft:block/crimson_planks",
-        "1": "minecraft:block/pale_oak_planks"
-    }
-}
