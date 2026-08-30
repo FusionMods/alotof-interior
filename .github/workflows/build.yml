@@ -1,10 +1,8 @@
 name: Build
 
 # Runs the whole 1.20.1-26.2 x Fabric/Forge/NeoForge matrix (chiseledBuild - see
-# stonecutter.gradle.kts) on every push/PR, plus a standalone check that the datagen/
-# module (see README.md's "Data generation" section) still runs. This is the same pair
-# of commands used throughout local development to confirm a change didn't quietly break
-# some other version/loader combination.
+# stonecutter.gradle.kts) on every push/PR - the same command used locally to confirm
+# a change didn't quietly break some other version/loader combination.
 on:
   pull_request:
     types: [ready_for_review, reopened]

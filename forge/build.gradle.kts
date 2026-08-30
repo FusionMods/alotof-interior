@@ -74,9 +74,9 @@ dependencies {
     // properties files. Only published for 1.20.1 on Forge (see
     // versions/1.20.1/gradle.properties), so only added when set. Pulled from
     // Modrinth's maven since Continuity doesn't publish to a maven of its own.
-    (common.findProperty("continuityForgeVersion") as String?)?.let {
-        modLocalRuntime("maven.modrinth:continuity:$it")
-    }
+    //(common.findProperty("continuityForgeVersion") as String?)?.let {
+    //    modLocalRuntime("maven.modrinth:continuity:$it")
+    //}
 
     commonBundle(project(common.path, "namedElements")) { isTransitive = false }
     shadowBundle(project(common.path, "transformProductionForge")) { isTransitive = false }

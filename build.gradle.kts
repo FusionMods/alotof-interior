@@ -4,7 +4,7 @@
 // `common` project - the classic Architectury common module, shared by
 // that version's fabric/forge/neoforge projects (see their own
 // build.gradle.kts). 26.2 uses build.26.gradle.kts instead - see
-// settings.gradle.kts and README.md.
+// settings.gradle.kts.
 
 plugins {
     id("dev.architectury.loom")

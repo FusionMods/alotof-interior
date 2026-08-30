@@ -18,9 +18,8 @@ import net.minecraft.world.item.ItemStack;
  * of yours registered some other way - not for registering a new one; calling
  * {@code appendBuiltin} on a tab {@code create} just built throws
  * {@code IllegalArgumentException: Builtin tab ... is not registered!} the moment any code
- * path actually runs (only caught by the {@code fabric/src/gametest/} GameTests actually
- * booting a server - see README.md's "Testing" section - {@code chiseledBuild} alone doesn't
- * exercise this at all, since it only compiles). Wrapping the tab in an ordinary
+ * path actually runs (only caught by actually booting a server - {@code chiseledBuild} alone
+ * doesn't exercise this at all, since it only compiles). Wrapping the tab in an ordinary
  * {@code DeferredRegister<CreativeModeTab>} sidesteps the question entirely: it handles
  * per-loader registration timing the same proven way it does for every other content type
  * here, and {@link CreativeTabRegistry#append(dev.architectury.registry.registries.DeferredSupplier, net.minecraft.world.level.ItemLike...)}

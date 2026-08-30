@@ -4,8 +4,8 @@
 // (minecraft.net/en-us/article/removing-obfuscation-in-java-edition), so
 // there's nothing left for Loom to remap. `dev.architectury.loom-no-remap`
 // is the currently-documented workaround for architectury-loom not finding
-// "official mappings" for these versions (architectury/architectury-loom#328)
-// - see README.md. Otherwise this mirrors build.gradle.kts.
+// "official mappings" for these versions (architectury/architectury-loom#328).
+// Otherwise this mirrors build.gradle.kts.
 
 plugins {
     id("dev.architectury.loom-no-remap")

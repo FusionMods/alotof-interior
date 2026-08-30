@@ -7,21 +7,17 @@ import org.slf4j.LoggerFactory;
 /**
  * Entry point shared by every loader (fabric/forge/neoforge) for this
  * Minecraft version - see the fabric/forge/neoforge projects' own entry
- * point classes for how each loader calls into this class, and README.md
- * for how the multi-version build actually assembles this common project
- * once per targeted Minecraft version.
+ * point classes for how each loader calls into this class.
  *
  * Real content (items, blocks, registries, ...) belongs in the {@code registry}/
  * {@code block} packages next to this class, using Architectury API's cross-loader
  * registry/event/network abstractions (https://docs.architectury.dev/) so it doesn't
- * need per-loader copies - see {@link ModRegistries} and {@link com.thefusion21.alotofinterior.block.ExampleBlock}
- * for the pattern this template ships as a worked example, and README.md's
- * "Adding content" section for an overview. Where an actual Minecraft/Architectury API
- * genuinely changed between 1.20.1, 1.21.1 and 26.2 (as opposed to a loader
- * difference, which Architectury API already handles), reach for a Stonecutter
- * {@code //? if <mc version>} comment instead (e.g. {@code //? if <1.21 {} else {}}) -
+ * need per-loader copies - see {@link ModRegistries} for the pattern. Where an actual
+ * Minecraft/Architectury API genuinely changed between 1.20.1, 1.21.1 and 26.2 (as
+ * opposed to a loader difference, which Architectury API already handles), reach for a
+ * Stonecutter {@code //? if <mc version>} comment instead (e.g. {@code //? if <1.21 {} else {}}) -
  * see https://stonecutter.kikugie.dev/ for the full syntax) - {@link com.thefusion21.alotofinterior.registry.ModSounds}
- * and {@link com.thefusion21.alotofinterior.block.ExampleBlockEntity} both do this for real,
+ * and {@link com.thefusion21.alotofinterior.registry.ModBlocks} both do this for real,
  * narrowly-scoped API changes rather than duplicating whole files.
  */
 public final class ALotOfInterior {

@@ -7,9 +7,8 @@ package com.thefusion21.alotofinterior.registry;
  * here too. {@link ModCreativeTabs} runs last, since it references content the other
  * registries just bound.
  *
- * <p><b>{@code ModBlocks} must bulk-register before {@code ModItems}</b> - caught by the
- * {@code fabric/src/gametest/} GameTests (see README.md's "Testing" section) actually
- * booting a server, not by {@code chiseledBuild}, which only proves things compile. On
+ * <p><b>{@code ModBlocks} must bulk-register before {@code ModItems}</b> - only caught by
+ * actually booting a server, not by {@code chiseledBuild}, which only proves things compile. On
  * Fabric, a {@code DeferredRegister} entry added *after* its container's own bulk
  * {@code register()} call already ran gets registered eagerly, on the spot, instead of
  * waiting - and {@link ModBlocks#registerWithItem} adds exactly such a late entry to

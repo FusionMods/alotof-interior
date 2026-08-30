@@ -3,8 +3,8 @@
 // Stonecutter handles the *Minecraft version* axis (it turns the root
 // `common`/`fabric`/`forge`/`neoforge` projects into one copy per targeted
 // version under versions/<mcVersion>/<loader>/), while those four projects
-// use the classic Architectury multiloader split for the *loader* axis.
-// See README.md for the reasoning and for the alternative, non-Architectury
+// use the classic Architectury multiloader split for the *loader* axis, rather than the
+// alternative, non-Architectury
 // https://github.com/stonecutter-versioning/stonecutter-template-multiloader
 // approach this project deliberately did not take.
 pluginManagement {
@@ -34,10 +34,9 @@ stonecutter {
 
     create(rootProject) {
         // Deliberately excludes three real API-shape "eras" that have no explicitly-wanted
-        // version in them (see README.md's "Vanilla API breaks" table and "Supported
-        // versions" section): 1.20.5/1.20.6, 1.21.2-1.21.4, and 1.21.5 each need their own
+        // version in them: 1.20.5/1.20.6, 1.21.2-1.21.4, and 1.21.5 each need their own
         // unique //? if branch that nothing else here needs, for near-zero real-world
-        // coverage (see README.md for the Modrinth-sourced adoption numbers). Every *other*
+        // coverage per Modrinth's version-adoption stats. Every *other*
         // point release is kept - it's code-identical to a version already being built here
         // (1.20.2/1.20.4 to 1.20.1; 1.21.6-1.21.10 to 1.21.11), so keeping it costs a
         // versions/<mcVersion>/gradle.properties to research and keep current, but no extra
