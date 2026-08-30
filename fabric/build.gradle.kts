@@ -157,14 +157,20 @@ val curseforgeProjectId: String by project
 publishMods {
     file.set(tasks.remapJar.flatMap { it.archiveFile })
     changelog.set(providers.environmentVariable("CHANGELOG").orElse("See the commit history."))
-    type.set(STABLE)
+    type.set(BETA)
     modLoaders.add("fabric")
     dryRun.set(providers.gradleProperty("publish.dryRun").map(String::toBoolean).orElse(true))
 
-    modrinth {
-        projectId.set(modrinthProjectId)
-        accessToken.set(providers.environmentVariable("MODRINTH_TOKEN"))
-        minecraftVersions.add(minecraft)
+    // Skipped until a real Modrinth project ID replaces the placeholder - otherwise a
+    // doomed publishModrinth (invalid project ID, no MODRINTH_TOKEN) fails the whole
+    // build and stops publishCurseforge from running too.
+    if (modrinthProjectId != "TODO_MODRINTH_PROJECT_ID") {
+        modrinth {
+            projectId.set(modrinthProjectId)
+            accessToken.set(providers.environmentVariable("MODRINTH_TOKEN"))
+            minecraftVersions.add(minecraft)
+            environment.set(CLIENT_AND_SERVER)
+        }
     }
     curseforge {
         projectId.set(curseforgeProjectId)
