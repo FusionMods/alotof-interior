@@ -39,8 +39,12 @@ public final class ModItems {
         return ITEMS.register(name, () -> new Item(properties.setId(itemId(name))));
     }
 
+    // useBlockDescriptionPrefix() matters here: BlockItem no longer overrides
+    // getDescriptionId() as of 1.21.6 (that's now a final method on Item itself), so
+    // without this every block item's tooltip/name would fall back to Properties'
+    // default "item.<id>" translation key instead of the block's own "block.<id>" one.
     public static RegistrySupplier<Item> registerBlockItem(String name, Supplier<? extends Block> block, Item.Properties properties) {
-        return ITEMS.register(name, () -> new BlockItem(block.get(), properties.setId(itemId(name))));
+        return ITEMS.register(name, () -> new BlockItem(block.get(), properties.useBlockDescriptionPrefix().setId(itemId(name))));
     }
 
     private static net.minecraft.resources.ResourceKey<Item> itemId(String name) {
@@ -56,8 +60,12 @@ public final class ModItems {
         return ITEMS.register(name, () -> new Item(properties.setId(itemId(name))));
     }
 
+    // useBlockDescriptionPrefix() matters here: BlockItem no longer overrides
+    // getDescriptionId() as of 1.21.6 (that's now a final method on Item itself), so
+    // without this every block item's tooltip/name would fall back to Properties'
+    // default "item.<id>" translation key instead of the block's own "block.<id>" one.
     public static RegistrySupplier<Item> registerBlockItem(String name, Supplier<? extends Block> block, Item.Properties properties) {
-        return ITEMS.register(name, () -> new BlockItem(block.get(), properties.setId(itemId(name))));
+        return ITEMS.register(name, () -> new BlockItem(block.get(), properties.useBlockDescriptionPrefix().setId(itemId(name))));
     }
 
     private static net.minecraft.resources.ResourceKey<Item> itemId(String name) {

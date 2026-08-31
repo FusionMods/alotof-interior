@@ -1,7 +1,1 @@
-{
-    "parent": "alotofinterior:block/base/table_top_trim_west",
-    "render_type": "solid",
-    "textures": {
-        "1": "minecraft:block/bamboo_planks"
-    }
-}
+{"parent": "alotofinterior:block/base/table_top_trim_west", "render_type": "solid", "textures": {"1": "minecraft:block/bamboo_planks"}}

@@ -1,9 +1,1 @@
-{
-    "parent": "alotofinterior:block/base/table_full",
-    "render_type": "solid",
-    "textures": {
-        "0": "minecraft:block/mangrove_planks",
-        "1": "minecraft:block/mangrove_planks",
-        "2": "minecraft:block/warped_planks"
-    }
-}
+{"parent": "alotofinterior:block/base/table_full", "render_type": "solid", "textures": {"0": "minecraft:block/mangrove_planks", "1": "minecraft:block/mangrove_planks", "2": "minecraft:block/warped_planks"}}

@@ -1,0 +1,1 @@
+{"type": "minecraft:crafting_shapeless", "group": "alotofinterior:table", "ingredients": [{"item": "minecraft:acacia_planks"}, {"item": "minecraft:acacia_planks"}, {"item": "minecraft:jungle_fence"}, {"item": "minecraft:jungle_fence"}], "result": {"id": "alotofinterior:table_jungle_acacia", "count": 2}}

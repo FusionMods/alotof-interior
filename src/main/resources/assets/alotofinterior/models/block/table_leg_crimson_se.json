@@ -1,6 +1,1 @@
-{
-    "parent": "alotofinterior:block/base/table_leg_se",
-    "textures": {
-        "2": "minecraft:block/crimson_planks"
-    }
-}
+{"parent": "alotofinterior:block/base/table_leg_se", "textures": {"2": "minecraft:block/crimson_planks"}}

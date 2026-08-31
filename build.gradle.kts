@@ -33,6 +33,19 @@ loom {
     silentMojangMappingsLicense()
 }
 
+// gen.py writes recipe JSON into one folder per Minecraft "API-shape era" - see its
+// own header comment for exactly what changed and why one shared folder can't work.
+// stonecutter.eval(...) is the same version-comparison Stonecutter exposes for the
+// `//? if` Java comments elsewhere in this project, just callable from Kotlin here.
+val recipeEra = when {
+    stonecutter.eval(minecraft, "<1.21.1") -> "legacy"
+    stonecutter.eval(minecraft, "<1.21.6") -> "mid"
+    else -> "modern"
+}
+sourceSets.main {
+    resources.srcDir(rootProject.file("recipes/$recipeEra"))
+}
+
 val fabricLoaderVersion: String by project
 val architecturyApiVersion: String by project
 

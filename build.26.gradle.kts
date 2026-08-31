@@ -25,6 +25,13 @@ architectury.common(stonecutter.tree.branches.mapNotNull {
     else it.project.findProperty("loom.platform") as String?
 })
 
+// gen.py writes recipe JSON into one folder per Minecraft "API-shape era" - see its
+// own header comment. Every version this script builds (26.1+) is the "modern" era,
+// so unlike the pre-26.1 build.gradle.kts this needs no stonecutter.eval(...) switch.
+sourceSets.main {
+    resources.srcDir(rootProject.file("recipes/modern"))
+}
+
 val fabricLoaderVersion: String by project
 val architecturyApiVersion: String by project
 

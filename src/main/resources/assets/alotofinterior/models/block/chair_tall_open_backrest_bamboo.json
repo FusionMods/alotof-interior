@@ -1,6 +1,1 @@
-{
-    "parent": "alotofinterior:block/base/chair_tall_open_backrest_core",
-    "textures": {
-        "1": "minecraft:block/bamboo_planks"
-    }
-}
+{"parent": "alotofinterior:block/base/chair_tall_open_backrest_core", "textures": {"1": "minecraft:block/bamboo_planks"}}

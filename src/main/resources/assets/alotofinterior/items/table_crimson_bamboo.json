@@ -1,6 +1,1 @@
-{
-    "model": {
-        "type": "minecraft:model",
-        "model": "alotofinterior:block/table_crimson_bamboo"
-    }
-}
+{"model": {"type": "minecraft:model", "model": "alotofinterior:block/table_crimson_bamboo"}}

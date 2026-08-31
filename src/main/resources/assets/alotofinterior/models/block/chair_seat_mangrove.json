@@ -1,6 +1,1 @@
-{
-    "parent": "alotofinterior:block/base/chair_seat_core",
-    "textures": {
-        "1": "minecraft:block/mangrove_planks"
-    }
-}
+{"parent": "alotofinterior:block/base/chair_seat_core", "textures": {"1": "minecraft:block/mangrove_planks"}}

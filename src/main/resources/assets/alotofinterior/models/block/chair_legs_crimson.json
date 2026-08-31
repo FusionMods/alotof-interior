@@ -1,6 +1,1 @@
-{
-    "parent": "alotofinterior:block/base/chair_legs_core",
-    "textures": {
-        "0": "minecraft:block/crimson_planks"
-    }
-}
+{"parent": "alotofinterior:block/base/chair_legs_core", "textures": {"0": "minecraft:block/crimson_planks"}}

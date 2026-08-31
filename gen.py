@@ -94,7 +94,7 @@ CORNER_SIDES = {
 
 def write_json(path: Path, data: dict) -> None:
     with open(path, "w") as f:
-        f.write(json.dumps(data, indent=4))
+        f.write(json.dumps(data))
 
 
 def top_core_element() -> dict:
@@ -780,6 +780,155 @@ def gen_chair() -> None:
             )
 
 
+# --- Lang ------------------------------------------------------------------------
+#
+# Placeholder-only: every key a block/creative tab actually needs, mapped to "" for
+# now rather than guessed display text - real wording gets filled in by hand later.
+# Not era-split like recipes/ - the lang JSON format itself hasn't changed, and an
+# unused key for a version-gated block (pale_oak below 1.21.6) is as harmless here as
+# its already-unconditional blockstate/model files are.
+LANG_DIR = ASSETS_DIR / "lang"
+LANG_LOCALES = ("en_us", "de_de")
+
+
+def lang_keys() -> list:
+    keys = ["itemGroup.alotofinterior"]
+    for leg_wood in WOOD_TYPES:
+        for seat_wood in WOOD_TYPES:
+            keys.append(f"block.alotofinterior.chair_simple_{leg_wood}_{seat_wood}")
+    for leg_wood in WOOD_TYPES:
+        for top_type in TOP_TYPES:
+            keys.append(f"block.alotofinterior.table_{leg_wood}_{top_type}")
+    return keys
+
+
+def gen_lang() -> None:
+    LANG_DIR.mkdir(parents=True, exist_ok=True)
+    translations = {key: "" for key in sorted(set(lang_keys()))}
+    for locale in LANG_LOCALES:
+        with open(LANG_DIR / f"{locale}.json", "w") as f:
+            json.dump(translations, f, indent=2, sort_keys=True)
+            f.write("\n")
+
+
+# --- Recipes -------------------------------------------------------------------
+#
+# Minecraft's recipe JSON schema isn't stable across this project's targeted
+# versions - verified directly against the vanilla recipes each version's own jar
+# ships (e.g. data/minecraft/recipe(s)/dark_oak_fence.json and hay_block.json),
+# not assumed:
+#   - the data pack folder itself renamed data/<ns>/recipes/ -> data/<ns>/recipe/
+#     between 1.20.4 and 1.21.1;
+#   - the "result" object's item-reference key renamed "item" -> "id" at that same
+#     boundary;
+#   - ingredients flattened from {"item": "..."}/{"tag": "..."} objects to a bare
+#     item id string (or "#"+id for a tag) between 1.21.1 and 1.21.6 - confirmed via
+#     Ingredient.class itself, whose old ItemValue/TagValue representation is gone
+#     entirely by 1.21.6, so this isn't optional back-compat, it's a hard break.
+# These three shape changes land on exactly the "API-shape eras" settings.gradle.kts
+# already tracks (1.20.1/.2/.4 = "legacy"; 1.21.1 alone = "mid"; 1.21.6+ = "modern"),
+# so this generates one output folder per era; each common project's own
+# build.gradle.kts/build.26.gradle.kts picks the right one at build time via
+# stonecutter.eval(...), the same version comparison already used for the `//? if`
+# Java comments.
+RECIPE_ERAS = ("legacy", "mid", "modern")
+
+
+def era_recipe_dir(era: str) -> Path:
+    folder = "recipes" if era == "legacy" else "recipe"
+    return REPO_ROOT / f"recipes/{era}/data/alotofinterior/{folder}"
+
+
+def era_supports_wood(era: str, wood_type: str) -> bool:
+    min_version = WOOD_TYPE_MIN_VERSION.get(wood_type)
+    if min_version is None:
+        return True
+    if min_version != "1.21.6":
+        raise ValueError(f"No recipe-era gating rule for min_version {min_version!r}")
+    return era == "modern"
+
+
+def recipe_ingredient(era: str, item_id: str):
+    # Flattened to a bare string on "modern" (1.21.6+); "legacy"/"mid" both still
+    # need the old {"item": "..."} object - see the header comment above.
+    return item_id if era == "modern" else {"item": item_id}
+
+
+def recipe_result(era: str, item_id: str, count: int) -> dict:
+    # "item" only on "legacy" (1.20.x); "mid"/"modern" both renamed it to "id".
+    key = "item" if era == "legacy" else "id"
+    return {key: item_id, "count": count}
+
+
+def shapeless_recipe(era: str, inputs: list, result_id: str, result_count: int, group: str) -> dict:
+    # Shapeless recipes have no per-ingredient count field - needing N of the same
+    # item means listing that same ingredient N times in the flat array (verified
+    # against vanilla's own hay_block.json: 9 repeated "minecraft:wheat" entries).
+    ingredients = []
+    for item_id, count in inputs:
+        ingredients.extend([recipe_ingredient(era, item_id)] * count)
+    return {
+        "type": "minecraft:crafting_shapeless",
+        "group": group,
+        "ingredients": ingredients,
+        "result": recipe_result(era, result_id, result_count),
+    }
+
+
+def table_top_ingredient(top_type: str) -> str:
+    # Wood top types are planks; every other TOP_TYPES entry (glass/stained glass)
+    # is already a real vanilla block id on its own - see top_textures() above.
+    if top_type in WOOD_TYPES:
+        return f"minecraft:{top_type}_planks"
+    return f"minecraft:{top_type}"
+
+
+def gen_recipes() -> None:
+    for era in RECIPE_ERAS:
+        out_dir = era_recipe_dir(era)
+
+        # Chair: every leg wood gets its own fence, independent of the seat wood -
+        # the full leg x seat matrix, matching every combo gen_chair() already
+        # builds a block for.
+        for leg_wood in WOOD_TYPES:
+            if not era_supports_wood(era, leg_wood):
+                continue
+            for seat_wood in WOOD_TYPES:
+                if not era_supports_wood(era, seat_wood):
+                    continue
+                write_json(
+                    out_dir / f"chair_simple_{leg_wood}_{seat_wood}.json",
+                    shapeless_recipe(
+                        era,
+                        [(f"minecraft:{seat_wood}_planks", 2), (f"minecraft:{leg_wood}_fence", 2)],
+                        f"alotofinterior:chair_simple_{leg_wood}_{seat_wood}",
+                        4,
+                        "alotofinterior:chair_simple",
+                    ),
+                )
+
+        # Table: every leg wood gets its own fence, independent of the top - the
+        # full leg x top matrix (top may be a wood plank type or a glass/stained
+        # glass type; table_top_ingredient() picks the right vanilla block either
+        # way).
+        for leg_wood in WOOD_TYPES:
+            if not era_supports_wood(era, leg_wood):
+                continue
+            for top_type in TOP_TYPES:
+                if not era_supports_wood(era, top_type):
+                    continue
+                write_json(
+                    out_dir / f"table_{leg_wood}_{top_type}.json",
+                    shapeless_recipe(
+                        era,
+                        [(table_top_ingredient(top_type), 2), (f"minecraft:{leg_wood}_fence", 2)],
+                        f"alotofinterior:table_{leg_wood}_{top_type}",
+                        2,
+                        "alotofinterior:table",
+                    ),
+                )
+
+
 if __name__ == "__main__":
     (ASSETS_DIR / "models/block").mkdir(parents=True, exist_ok=True)
     (ASSETS_DIR / "models/block/base").mkdir(parents=True, exist_ok=True)
@@ -791,14 +940,18 @@ if __name__ == "__main__":
     for subdir in ("models/block/base", "blockstates", "models/item", "models/block", "items", "optifine/ctm/table"):
         for file in (ASSETS_DIR / subdir).glob("table_*"):
             file.unlink()
-        # One-time purge of assets from earlier chair/stool layouts this project has since
-        # moved past: gen_stool() (StoolBlock, folded into ChairBlock's STYLE_NO_BACK), and
-        # the per-style chair_simple_*/chair_open_*/chair_no_back_* split (ChairSimpleBlock/
-        # ChairOpenBlock/ChairNoBackBlock, folded into ChairBlock's STYLE property).
-        for file in (ASSETS_DIR / subdir).glob("stool_*"):
-            file.unlink()
         for file in (ASSETS_DIR / subdir).glob("chair_*"):
             file.unlink()
+    for era in RECIPE_ERAS:
+        out_dir = era_recipe_dir(era)
+        out_dir.mkdir(parents=True, exist_ok=True)
+        for file in out_dir.glob("table_*"):
+            file.unlink()
+        for file in out_dir.glob("chair_*"):
+            file.unlink()
+
     gen_table()
     gen_chair_shared()
     gen_chair()
+    gen_lang()
+    gen_recipes()

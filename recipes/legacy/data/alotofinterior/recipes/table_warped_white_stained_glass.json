@@ -1,0 +1,1 @@
+{"type": "minecraft:crafting_shapeless", "group": "alotofinterior:table", "ingredients": [{"item": "minecraft:white_stained_glass"}, {"item": "minecraft:white_stained_glass"}, {"item": "minecraft:warped_fence"}, {"item": "minecraft:warped_fence"}], "result": {"item": "alotofinterior:table_warped_white_stained_glass", "count": 2}}

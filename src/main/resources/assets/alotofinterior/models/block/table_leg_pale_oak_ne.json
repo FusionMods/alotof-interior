@@ -1,6 +1,1 @@
-{
-    "parent": "alotofinterior:block/base/table_leg_ne",
-    "textures": {
-        "2": "minecraft:block/pale_oak_planks"
-    }
-}
+{"parent": "alotofinterior:block/base/table_leg_ne", "textures": {"2": "minecraft:block/pale_oak_planks"}}

@@ -1,6 +1,1 @@
-{
-    "model": {
-        "type": "minecraft:model",
-        "model": "alotofinterior:block/table_warped_birch"
-    }
-}
+{"model": {"type": "minecraft:model", "model": "alotofinterior:block/table_warped_birch"}}

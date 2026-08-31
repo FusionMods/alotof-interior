@@ -1,7 +1,1 @@
-{
-    "parent": "alotofinterior:block/base/table_top_core",
-    "render_type": "translucent",
-    "textures": {
-        "0": "minecraft:block/brown_stained_glass"
-    }
-}
+{"parent": "alotofinterior:block/base/table_top_core", "render_type": "translucent", "textures": {"0": "minecraft:block/brown_stained_glass"}}

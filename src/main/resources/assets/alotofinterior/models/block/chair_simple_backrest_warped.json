@@ -1,6 +1,1 @@
-{
-    "parent": "alotofinterior:block/base/chair_simple_backrest_core",
-    "textures": {
-        "1": "minecraft:block/warped_planks"
-    }
-}
+{"parent": "alotofinterior:block/base/chair_simple_backrest_core", "textures": {"1": "minecraft:block/warped_planks"}}
