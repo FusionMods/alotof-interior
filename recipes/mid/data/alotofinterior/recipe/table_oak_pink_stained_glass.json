@@ -1,0 +1,1 @@
+{"type": "minecraft:crafting_shapeless", "group": "alotofinterior:table", "ingredients": [{"item": "minecraft:pink_stained_glass"}, {"item": "minecraft:pink_stained_glass"}, {"item": "minecraft:oak_fence"}, {"item": "minecraft:oak_fence"}], "result": {"id": "alotofinterior:table_oak_pink_stained_glass", "count": 2}}

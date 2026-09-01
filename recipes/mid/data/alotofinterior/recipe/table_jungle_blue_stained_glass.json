@@ -1,0 +1,1 @@
+{"type": "minecraft:crafting_shapeless", "group": "alotofinterior:table", "ingredients": [{"item": "minecraft:blue_stained_glass"}, {"item": "minecraft:blue_stained_glass"}, {"item": "minecraft:jungle_fence"}, {"item": "minecraft:jungle_fence"}], "result": {"id": "alotofinterior:table_jungle_blue_stained_glass", "count": 2}}

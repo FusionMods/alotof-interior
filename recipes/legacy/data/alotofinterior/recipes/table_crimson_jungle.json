@@ -1,0 +1,1 @@
+{"type": "minecraft:crafting_shapeless", "group": "alotofinterior:table", "ingredients": [{"item": "minecraft:jungle_planks"}, {"item": "minecraft:jungle_planks"}, {"item": "minecraft:crimson_fence"}, {"item": "minecraft:crimson_fence"}], "result": {"item": "alotofinterior:table_crimson_jungle", "count": 2}}

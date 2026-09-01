@@ -1,0 +1,1 @@
+{"type": "minecraft:crafting_shapeless", "group": "alotofinterior:table", "ingredients": [{"item": "minecraft:red_stained_glass"}, {"item": "minecraft:red_stained_glass"}, {"item": "minecraft:mangrove_fence"}, {"item": "minecraft:mangrove_fence"}], "result": {"id": "alotofinterior:table_mangrove_red_stained_glass", "count": 2}}

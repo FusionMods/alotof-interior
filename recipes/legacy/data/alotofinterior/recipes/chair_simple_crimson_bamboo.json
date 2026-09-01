@@ -1,0 +1,1 @@
+{"type": "minecraft:crafting_shapeless", "group": "alotofinterior:chair_simple", "ingredients": [{"item": "minecraft:bamboo_planks"}, {"item": "minecraft:bamboo_planks"}, {"item": "minecraft:crimson_fence"}, {"item": "minecraft:crimson_fence"}], "result": {"item": "alotofinterior:chair_simple_crimson_bamboo", "count": 4}}

@@ -1,0 +1,1 @@
+{"type": "minecraft:crafting_shapeless", "group": "alotofinterior:chair_simple", "ingredients": ["minecraft:spruce_planks", "minecraft:spruce_planks", "minecraft:birch_fence", "minecraft:birch_fence"], "result": {"id": "alotofinterior:chair_simple_birch_spruce", "count": 4}}

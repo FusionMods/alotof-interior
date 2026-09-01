@@ -1,0 +1,1 @@
+{"parent": "alotofinterior:block/base/table_full", "render_type": "cutout", "textures": {"0": "minecraft:block/glass", "1": "minecraft:block/glass_pane_top", "2": "minecraft:block/warped_planks"}}

@@ -1,0 +1,1 @@
+{"type": "minecraft:crafting_shapeless", "group": "alotofinterior:table", "ingredients": [{"item": "minecraft:cherry_planks"}, {"item": "minecraft:cherry_planks"}, {"item": "minecraft:bamboo_fence"}, {"item": "minecraft:bamboo_fence"}], "result": {"item": "alotofinterior:table_bamboo_cherry", "count": 2}}

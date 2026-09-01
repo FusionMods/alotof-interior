@@ -1,0 +1,1 @@
+{"type": "minecraft:crafting_shapeless", "group": "alotofinterior:table", "ingredients": ["minecraft:mangrove_planks", "minecraft:mangrove_planks", "minecraft:birch_fence", "minecraft:birch_fence"], "result": {"id": "alotofinterior:table_birch_mangrove", "count": 2}}
