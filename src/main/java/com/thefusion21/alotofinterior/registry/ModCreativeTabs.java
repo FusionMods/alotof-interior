@@ -655,5 +655,23 @@ public final class ModCreativeTabs {
             ModBlocks.BAMBOO_CHERRY_SIMPLE_CHAIR,
             ModBlocks.BAMBOO_BAMBOO_SIMPLE_CHAIR
         );
+        CreativeTabRegistry.append(ALOTOFINTERIOR_TAB,
+            ModBlocks.OAK_DRAWER,
+            ModBlocks.SPRUCE_DRAWER,
+            ModBlocks.BIRCH_DRAWER,
+            ModBlocks.JUNGLE_DRAWER,
+            ModBlocks.ACACIA_DRAWER,
+            ModBlocks.DARK_OAK_DRAWER,
+            ModBlocks.MANGROVE_DRAWER,
+            ModBlocks.CRIMSON_DRAWER,
+            ModBlocks.WARPED_DRAWER,
+        //? if >= 1.21.6 {
+        /*
+            ModBlocks.PALE_OAK_DRAWER,
+        */
+        //?}
+            ModBlocks.CHERRY_DRAWER,
+            ModBlocks.BAMBOO_DRAWER
+        );
     }
 }

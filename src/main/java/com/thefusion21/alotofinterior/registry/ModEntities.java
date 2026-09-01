@@ -1,6 +1,7 @@
 package com.thefusion21.alotofinterior.registry;
 
 import com.thefusion21.alotofinterior.ALotOfInterior;
+import com.thefusion21.alotofinterior.entity.DrawerBlockEntity;
 import com.thefusion21.alotofinterior.entity.SeatEntity;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;

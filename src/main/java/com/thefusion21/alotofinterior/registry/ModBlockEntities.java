@@ -1,6 +1,8 @@
 package com.thefusion21.alotofinterior.registry;
 
 import com.thefusion21.alotofinterior.ALotOfInterior;
+import com.thefusion21.alotofinterior.entity.DrawerBlockEntity;
+
 //import com.thefusion21.alotofinterior.block.entity.*;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
@@ -9,6 +11,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 
+import java.util.Arrays;
 import java.util.function.Supplier;
 
 /**
@@ -32,26 +35,57 @@ public final class ModBlockEntities {
     private ModBlockEntities() {
     }
 
-    public static RegistrySupplier<BlockEntityType<?>> register(
-            String name, BlockEntityType.BlockEntitySupplier<? extends BlockEntity> factory, Supplier<? extends Block> block) {
+    /** Registers a {@link BlockEntityType} valid for exactly one block - see {@link #register(String, BlockEntityType.BlockEntitySupplier, Supplier[])} for one shared across several (e.g. one wood matrix). */
+    public static <T extends BlockEntity> RegistrySupplier<BlockEntityType<T>> register(
+            String name, BlockEntityType.BlockEntitySupplier<T> factory, Supplier<? extends Block> block) {
         return BLOCK_ENTITIES.register(name, () -> newType(factory, block.get()));
     }
 
+    /**
+     * Registers a {@link BlockEntityType} valid for every given block - e.g. {@link DrawerBlockEntity}'s
+     * one type backing all 12 wood-variant {@code DrawerBlock}s, the same way vanilla's one
+     * {@code BlockEntityType.SIGN} backs oak/spruce/birch/... sign blocks.
+     */
+    @SafeVarargs
+    public static <T extends BlockEntity> RegistrySupplier<BlockEntityType<T>> register(
+            String name, BlockEntityType.BlockEntitySupplier<T> factory, Supplier<? extends Block>... blocks) {
+        return BLOCK_ENTITIES.register(name, () -> newType(factory, Arrays.stream(blocks).map(Supplier::get).toArray(Block[]::new)));
+    }
+
+    public static final RegistrySupplier<BlockEntityType<DrawerBlockEntity>> DRAWER = register("drawer_entity",
+            DrawerBlockEntity::new,
+            ModBlocks.OAK_DRAWER,
+            ModBlocks.SPRUCE_DRAWER,
+            ModBlocks.BIRCH_DRAWER,
+            ModBlocks.JUNGLE_DRAWER,
+            ModBlocks.ACACIA_DRAWER,
+            ModBlocks.DARK_OAK_DRAWER,
+            ModBlocks.MANGROVE_DRAWER,
+            ModBlocks.CRIMSON_DRAWER,
+            ModBlocks.WARPED_DRAWER,
+            //? if >= 1.21.6 {
+            /*
+            ModBlocks.PALE_OAK_DRAWER,
+            */
+            //?}
+            ModBlocks.CHERRY_DRAWER,
+            ModBlocks.BAMBOO_DRAWER);
+
     //? if >=1.21.2 {
     /*
-    private static BlockEntityType<?> newType(BlockEntityType.BlockEntitySupplier<? extends BlockEntity> factory, Block block) {
+    private static <T extends BlockEntity> BlockEntityType<T> newType(BlockEntityType.BlockEntitySupplier<T> factory, Block... blocks) {
         try {
             var constructor = BlockEntityType.class.getDeclaredConstructor(BlockEntityType.BlockEntitySupplier.class, java.util.Set.class);
             constructor.setAccessible(true);
-            return (BlockEntityType<?>) constructor.newInstance(factory, java.util.Set.of(block));
+            return (BlockEntityType<T>) constructor.newInstance(factory, java.util.Set.of(blocks));
         } catch (ReflectiveOperationException e) {
-            throw new RuntimeException("Failed to construct BlockEntityType for " + block, e);
+            throw new RuntimeException("Failed to construct BlockEntityType for " + Arrays.toString(blocks), e);
         }
     }
     */
     //?} else {
-    private static BlockEntityType<?> newType(BlockEntityType.BlockEntitySupplier<? extends BlockEntity> factory, Block block) {
-        return BlockEntityType.Builder.of(factory, block).build(null);
+    private static <T extends BlockEntity> BlockEntityType<T> newType(BlockEntityType.BlockEntitySupplier<T> factory, Block... blocks) {
+        return BlockEntityType.Builder.of(factory, blocks).build(null);
     }
     //?}
 }

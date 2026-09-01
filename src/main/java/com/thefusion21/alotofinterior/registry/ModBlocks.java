@@ -2144,6 +2144,60 @@ public final class ModBlocks {
         properties -> new ChairSimpleBlock(properties.mapColor(MapColor.NONE).strength(2.0f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false)),
         new Item.Properties());
 
+    // DRAWERS
+    public static final RegistrySupplier<DrawerBlock> OAK_DRAWER = registerWithItem(
+        "drawer_oak",
+        properties -> new DrawerBlock(properties.mapColor(MapColor.NONE).strength(2.5f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false), () -> ModBlockEntities.DRAWER.get()),
+        new Item.Properties());
+    public static final RegistrySupplier<DrawerBlock> SPRUCE_DRAWER = registerWithItem(
+        "drawer_spruce",
+        properties -> new DrawerBlock(properties.mapColor(MapColor.NONE).strength(2.5f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false), () -> ModBlockEntities.DRAWER.get()),
+        new Item.Properties());
+    public static final RegistrySupplier<DrawerBlock> BIRCH_DRAWER = registerWithItem(
+        "drawer_birch",
+        properties -> new DrawerBlock(properties.mapColor(MapColor.NONE).strength(2.5f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false), () -> ModBlockEntities.DRAWER.get()),
+        new Item.Properties());
+    public static final RegistrySupplier<DrawerBlock> JUNGLE_DRAWER = registerWithItem(
+        "drawer_jungle",
+        properties -> new DrawerBlock(properties.mapColor(MapColor.NONE).strength(2.5f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false), () -> ModBlockEntities.DRAWER.get()),
+        new Item.Properties());
+    public static final RegistrySupplier<DrawerBlock> ACACIA_DRAWER = registerWithItem(
+        "drawer_acacia",
+        properties -> new DrawerBlock(properties.mapColor(MapColor.NONE).strength(2.5f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false), () -> ModBlockEntities.DRAWER.get()),
+        new Item.Properties());
+    public static final RegistrySupplier<DrawerBlock> DARK_OAK_DRAWER = registerWithItem(
+        "drawer_dark_oak",
+        properties -> new DrawerBlock(properties.mapColor(MapColor.NONE).strength(2.5f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false), () -> ModBlockEntities.DRAWER.get()),
+        new Item.Properties());
+    public static final RegistrySupplier<DrawerBlock> MANGROVE_DRAWER = registerWithItem(
+        "drawer_mangrove",
+        properties -> new DrawerBlock(properties.mapColor(MapColor.NONE).strength(2.5f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false), () -> ModBlockEntities.DRAWER.get()),
+        new Item.Properties());
+    public static final RegistrySupplier<DrawerBlock> CRIMSON_DRAWER = registerWithItem(
+        "drawer_crimson",
+        properties -> new DrawerBlock(properties.mapColor(MapColor.NONE).strength(2.5f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false), () -> ModBlockEntities.DRAWER.get()),
+        new Item.Properties());
+    public static final RegistrySupplier<DrawerBlock> WARPED_DRAWER = registerWithItem(
+        "drawer_warped",
+        properties -> new DrawerBlock(properties.mapColor(MapColor.NONE).strength(2.5f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false), () -> ModBlockEntities.DRAWER.get()),
+        new Item.Properties());
+    //? if >= 1.21.6 {
+    /*
+    public static final RegistrySupplier<DrawerBlock> PALE_OAK_DRAWER = registerWithItem(
+        "drawer_pale_oak",
+        properties -> new DrawerBlock(properties.mapColor(MapColor.NONE).strength(2.5f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false), () -> ModBlockEntities.DRAWER.get()),
+        new Item.Properties());
+    */
+    //?}
+    public static final RegistrySupplier<DrawerBlock> CHERRY_DRAWER = registerWithItem(
+        "drawer_cherry",
+        properties -> new DrawerBlock(properties.mapColor(MapColor.NONE).strength(2.5f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false), () -> ModBlockEntities.DRAWER.get()),
+        new Item.Properties());
+    public static final RegistrySupplier<DrawerBlock> BAMBOO_DRAWER = registerWithItem(
+        "drawer_bamboo",
+        properties -> new DrawerBlock(properties.mapColor(MapColor.NONE).strength(2.5f).noOcclusion().isRedstoneConductor((a, b, c) -> false).isSuffocating((a, b, c) -> false), () -> ModBlockEntities.DRAWER.get()),
+        new Item.Properties());
+
     private ModBlocks() {
     }
 

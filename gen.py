@@ -780,6 +780,200 @@ def gen_chair() -> None:
             )
 
 
+DRAWER_TYPES = ("single", "left", "middle", "right")
+
+
+def _drawer_blockstate(wood_type: str) -> dict:
+    # Same facing -> y-rotation multipart pattern as _chair_blockstate, keyed on "type"
+    # (DrawerBlock.TYPE) instead of "style"/"half".
+    multipart = []
+    for drawer_type in DRAWER_TYPES:
+        for facing, y in (("north", None), ("east", 90), ("south", 180), ("west", 270)):
+            apply = {"model": f"alotofinterior:block/drawer_{drawer_type}_{wood_type}"}
+            if y:
+                apply["y"] = y
+            multipart.append({"when": {"facing": facing, "type": drawer_type}, "apply": apply})
+    return {"multipart": multipart}
+
+
+def gen_drawer() -> None:
+    # Placeholder geometry only ("elements": []) - real geometry (see drawer.json's "core"/
+    # "drawers" groups) gets filled in by hand later. One base per DrawerType rather than one
+    # shared base, since a left/middle/right segment (flush against a neighbor) will likely
+    # end up differing from a standalone single one once real geometry lands.
+    for drawer_type in DRAWER_TYPES:
+        write_json(
+            ASSETS_DIR / f"models/block/base/drawer_{drawer_type}_core.json",
+            {
+                "parent": "block/block",
+                "format_version": "1.9.0",
+                "credit": "Made with Blockbench",
+                "textures": {"particle": "#0"},
+                "elements": [
+                    {
+                        "from": [1, 0, 7],
+                        "to": [3, 2, 9],
+                        "rotation": {"angle": 0, "axis": "y", "origin": [1, 0, 7]},
+                        "color": 1,
+                        "faces": {
+                            "north": {"uv": [13, 15, 13.5, 15.5], "texture": "#0"},
+                            "east": {"uv": [12.5, 15, 13, 15.5], "texture": "#0"},
+                            "south": {"uv": [14, 15, 14.5, 15.5], "texture": "#0"},
+                            "west": {"uv": [13.5, 15, 14, 15.5], "texture": "#0"},
+                            "up": {"uv": [13.5, 15, 13, 14.5], "texture": "#0"},
+                            "down": {"uv": [14, 14.5, 13.5, 15], "texture": "#0"}
+                        }
+                    },
+                    {
+                        "from": [13, 0, 7],
+                        "to": [15, 2, 9],
+                        "rotation": {"angle": 0, "axis": "y", "origin": [13, 0, 7]},
+                        "color": 1,
+                        "faces": {
+                            "north": {"uv": [11, 15, 11.5, 15.5], "texture": "#0"},
+                            "east": {"uv": [10.5, 15, 11, 15.5], "texture": "#0"},
+                            "south": {"uv": [12, 15, 12.5, 15.5], "texture": "#0"},
+                            "west": {"uv": [11.5, 15, 12, 15.5], "texture": "#0"},
+                            "up": {"uv": [11.5, 15, 11, 14.5], "texture": "#0"},
+                            "down": {"uv": [12, 14.5, 11.5, 15], "texture": "#0"}
+                        }
+                    },
+                    {
+                        "from": [1, 0, 13],
+                        "to": [3, 2, 15],
+                        "rotation": {"angle": 0, "axis": "y", "origin": [1, 0, 13]},
+                        "color": 1,
+                        "faces": {
+                            "north": {"uv": [13, 14, 13.5, 14.5], "texture": "#0"},
+                            "east": {"uv": [12.5, 14, 13, 14.5], "texture": "#0"},
+                            "south": {"uv": [14, 14, 14.5, 14.5], "texture": "#0"},
+                            "west": {"uv": [13.5, 14, 14, 14.5], "texture": "#0"},
+                            "up": {"uv": [13.5, 14, 13, 13.5], "texture": "#0"},
+                            "down": {"uv": [14, 13.5, 13.5, 14], "texture": "#0"}
+                        }
+                    },
+                    {
+                        "from": [13, 0, 13],
+                        "to": [15, 2, 15],
+                        "rotation": {"angle": 0, "axis": "y", "origin": [13, 0, 13]},
+                        "color": 1,
+                        "faces": {
+                            "north": {"uv": [11, 14, 11.5, 14.5], "texture": "#0"},
+                            "east": {"uv": [10.5, 14, 11, 14.5], "texture": "#0"},
+                            "south": {"uv": [12, 14, 12.5, 14.5], "texture": "#0"},
+                            "west": {"uv": [11.5, 14, 12, 14.5], "texture": "#0"},
+                            "up": {"uv": [11.5, 14, 11, 13.5], "texture": "#0"},
+                            "down": {"uv": [12, 13.5, 11.5, 14], "texture": "#0"}
+                        }
+                    },
+                    {
+                        "from": [0, 2, 6],
+                        "to": [16, 4, 16],
+                        "rotation": {"angle": 0, "axis": "y", "origin": [0, 2, 6]},
+                        "color": 0,
+                        "faces": {
+                            "north": {"uv": [2.5, 15.5, 6.5, 16], "texture": "#0"},
+                            "east": {"uv": [0, 15.5, 2.5, 16], "texture": "#0"},
+                            "south": {"uv": [9, 15.5, 13, 16], "texture": "#0"},
+                            "west": {"uv": [6.5, 15.5, 9, 16], "texture": "#0"},
+                            "up": {"uv": [6.5, 15.5, 2.5, 13], "texture": "#0"},
+                            "down": {"uv": [10.5, 13, 6.5, 15.5], "texture": "#0"}
+                        }
+                    },
+                    {
+                        "from": [0, 14, 6],
+                        "to": [16, 16, 16],
+                        "rotation": {"angle": 0, "axis": "y", "origin": [0, 14, 6]},
+                        "color": 0,
+                        "faces": {
+                            "north": {"uv": [2.5, 15.5, 6.5, 16], "texture": "#0"},
+                            "east": {"uv": [0, 15.5, 2.5, 16], "texture": "#0"},
+                            "south": {"uv": [9, 15.5, 13, 16], "texture": "#0"},
+                            "west": {"uv": [6.5, 15.5, 9, 16], "texture": "#0"},
+                            "up": {"uv": [6.5, 15.5, 2.5, 13], "texture": "#0"},
+                            "down": {"uv": [10.5, 13, 6.5, 15.5], "texture": "#0"}
+                        }
+                    },
+                    {
+                        "from": [2, 8, 6],
+                        "to": [14, 10, 15],
+                        "rotation": {"angle": 0, "axis": "y", "origin": [2, 8, 6]},
+                        "color": 0,
+                        "faces": {
+                            "north": {"uv": [11, 12.5, 8, 13], "texture": "#0"},
+                            "east": {"uv": [13.25, 12.5, 11, 13], "texture": "#0"},
+                            "south": {"uv": [16.25, 12.5, 13.25, 13], "texture": "#0"},
+                            "west": {"uv": [8, 12.5, 5.75, 13], "texture": "#0"},
+                            "up": {"uv": [8, 12.5, 11, 10.25], "texture": "#0"},
+                            "down": {"uv": [11, 10.25, 14, 12.5], "texture": "#0"}
+                        }
+                    },
+                    {
+                        "from": [0, 4, 6],
+                        "to": [2, 14, 16],
+                        "rotation": {"angle": 0, "axis": "y", "origin": [0, 4, 6]},
+                        "color": 0,
+                        "faces": {
+                            "north": {"uv": [2.5, 10.5, 3, 13], "texture": "#0"},
+                            "east": {"uv": [0, 10.5, 2.5, 13], "texture": "#0"},
+                            "south": {"uv": [5.5, 10.5, 6, 13], "texture": "#0"},
+                            "west": {"uv": [3, 10.5, 5.5, 13], "texture": "#0"},
+                            "up": {"uv": [3, 10.5, 2.5, 8], "texture": "#0"},
+                            "down": {"uv": [3.5, 8, 3, 10.5], "texture": "#0"}
+                        }
+                    },
+                    {
+                        "from": [14, 4, 6],
+                        "to": [16, 14, 16],
+                        "rotation": {"angle": 0, "axis": "y", "origin": [14, 4, 6]},
+                        "color": 0,
+                        "faces": {
+                            "north": {"uv": [2.5, 10.5, 3, 13], "texture": "#0"},
+                            "east": {"uv": [0, 10.5, 2.5, 13], "texture": "#0"},
+                            "south": {"uv": [5.5, 10.5, 6, 13], "texture": "#0"},
+                            "west": {"uv": [3, 10.5, 5.5, 13], "texture": "#0"},
+                            "up": {"uv": [3, 10.5, 2.5, 8], "texture": "#0"},
+                            "down": {"uv": [3.5, 8, 3, 10.5], "texture": "#0"}
+                        }
+                    },
+                    {
+                        "from": [2, 4, 15],
+                        "to": [14, 14, 16],
+                        "rotation": {"angle": 0, "axis": "y", "origin": [2, 4, 15]},
+                        "color": 0,
+                        "faces": {
+                            "north": {"uv": [12.75, 7.75, 9.75, 10.25], "texture": "#0"},
+                            "east": {"uv": [13, 7.75, 12.75, 10.25], "texture": "#0"},
+                            "south": {"uv": [16, 7.75, 13, 10.25], "texture": "#0"},
+                            "west": {"uv": [9.75, 7.75, 9.5, 10.25], "texture": "#0"},
+                            "up": {"uv": [9.75, 7.75, 12.75, 7.5], "texture": "#0"},
+                            "down": {"uv": [12.75, 7.5, 15.75, 7.75], "texture": "#0"}
+                        }
+                    }
+                ],
+            },
+        )
+
+    for wood_type in WOOD_TYPES:
+        for drawer_type in DRAWER_TYPES:
+            write_json(
+                ASSETS_DIR / f"models/block/drawer_{drawer_type}_{wood_type}.json",
+                {
+                    "parent": f"alotofinterior:block/base/drawer_{drawer_type}_core",
+                    "textures": {"0": f"minecraft:block/{wood_type}_planks"},
+                },
+            )
+
+        write_json(ASSETS_DIR / f"blockstates/drawer_{wood_type}.json", _drawer_blockstate(wood_type))
+
+        item_parent = f"alotofinterior:block/drawer_single_{wood_type}"
+        write_json(ASSETS_DIR / f"models/item/drawer_{wood_type}.json", {"parent": item_parent})
+        write_json(
+            ASSETS_DIR / f"items/drawer_{wood_type}.json",
+            {"model": {"type": "minecraft:model", "model": item_parent}},
+        )
+
+
 # --- Lang ------------------------------------------------------------------------
 #
 # Placeholder-only: every key a block/creative tab actually needs, mapped to "" for
@@ -799,15 +993,30 @@ def lang_keys() -> list:
     for leg_wood in WOOD_TYPES:
         for top_type in TOP_TYPES:
             keys.append(f"block.alotofinterior.table_{leg_wood}_{top_type}")
+    for wood_type in WOOD_TYPES:
+        keys.append(f"block.alotofinterior.drawer_{wood_type}")
     return keys
 
 
 def gen_lang() -> None:
     LANG_DIR.mkdir(parents=True, exist_ok=True)
-    translations = {key: "" for key in sorted(set(lang_keys()))}
+    keys = sorted(set(lang_keys()))
     for locale in LANG_LOCALES:
-        with open(LANG_DIR / f"{locale}.json", "w") as f:
-            json.dump(translations, f, indent=2, sort_keys=True)
+        path = LANG_DIR / f"{locale}.json"
+        existing = {}
+        if path.exists():
+            with open(path, encoding="utf-8") as f:
+                existing = json.load(f)
+
+        # Hand-written translations always win over "" - only fill in keys that
+        # aren't there yet. Keys gen.py no longer computes (e.g. a renamed/removed
+        # block) are left alone too, rather than silently discarding that work.
+        translations = {key: existing.get(key, "") for key in keys}
+        for key, value in existing.items():
+            translations.setdefault(key, value)
+
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump(translations, f, indent=2, sort_keys=True, ensure_ascii=False)
             f.write("\n")
 
 
@@ -942,6 +1151,8 @@ if __name__ == "__main__":
             file.unlink()
         for file in (ASSETS_DIR / subdir).glob("chair_*"):
             file.unlink()
+        for file in (ASSETS_DIR / subdir).glob("drawer_*"):
+            file.unlink()
     for era in RECIPE_ERAS:
         out_dir = era_recipe_dir(era)
         out_dir.mkdir(parents=True, exist_ok=True)
@@ -953,5 +1164,6 @@ if __name__ == "__main__":
     gen_table()
     gen_chair_shared()
     gen_chair()
+    gen_drawer()
     gen_lang()
     gen_recipes()
